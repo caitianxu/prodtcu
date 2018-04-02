@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/newsinfo.css" rel="stylesheet"/>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">推荐</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+<div class="newsInfoContent">
+    <div class="main">
+        <div class="nav_bar">
+            <a href="${ctxPath}/web" target="_blank">首页</a>
+            <em>&gt;</em>
+            <a href="${ctxPath}/web/inf" target="_blank">推荐</a>
+            <em>&gt;</em>
+            <label id="cat_name">${newsinfo.article_title}</label>
+        </div>
+        <div class="newsContentHtml">
+            <h1 class="n_title">${newsinfo.article_title}</h1>
+            <h2 class="n_time">${newsinfo.create_time?string('yyyy/MM/dd')}</h2>
+            <div class="html_text">
+                ${newsinfo.article_content}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--公共底-->
+<#include "../firstModel/web_footer.html" />
+</body>
+</html>

@@ -1,0 +1,31 @@
+ 
+#facilityList .cl li:hover{background:none}
+#facilityList  .cl li{
+    padding: 0;
+}
+#facilityList .tree-icon{
+    display: none !important;
+}
+#facilityList .form_sm .form_html{
+    height:800px
+}
+#facilityList .cls{
+    width:100%;
+    padding: 0 2px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#facilityList .cls span{
+    border-left:none;
+    padding: 0 10px 0 10px;
+}
+#facilityList .dropdown_menu{
+    max-width: 100%;
+}
+#facilityList .box .check{
+    width: 100%;
+}
+#facilityList .box .check i{
+    width:100%;
+}

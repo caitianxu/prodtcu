@@ -1,0 +1,34 @@
+#outfit .cl li:hover{background:none}
+#outfit  .cl li{
+    padding: 0;
+}
+#outfit .tree-icon{
+    display: none !important;
+}
+#outfit .form_sm .form_html{
+    height:800px
+}
+#outfit .cls{
+    width:100%;
+    padding: 0 2px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+#outfit .cls span{
+    border-left:none;
+    padding: 0 10px 0 10px;
+}
+#outfit .dropdown_menu{
+    max-width: 100%;
+}
+#outfit .box .check{
+    width: 100%;
+}
+#outfit .box .check i{
+    width:100%;
+}
+#outfit .content_page_left {
+    overflow-x: hidden;
+    overflow-y: auto;
+}

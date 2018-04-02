@@ -1,0 +1,38 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "org_code": "All",
+      "org_id": 1,
+      "org_name": "全部组织",
+      "pid": 0,
+      "remark": "",
+      "create_time": 1478511503000,
+      "is_delete": 2,
+      "children": [
+        {
+          "org_code": "XZ",
+          "org_id": 2,
+          "org_name": "行政",
+          "pid": 1,
+          "remark": "",
+          "create_time": 1478511539000,
+          "is_delete": 2,
+          "children": [
+            {
+              "create_time": 1478746022000,
+              "is_delete": 2,
+              "nodes": [],
+              "org_code": "CS",
+              "org_id": 8,
+              "org_name": "测试",
+              "pid": 2,
+              "remark": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "message": "数据加载成功！"
+}

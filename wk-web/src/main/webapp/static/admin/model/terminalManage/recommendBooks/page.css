@@ -1,0 +1,212 @@
+#recommend_books .cl li:hover {
+    background: none
+}
+#recommend_books .cl li {
+    padding: 0;
+}
+#recommend_books #col_comTree {
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#recommend_books .note-editable {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke
+}
+
+
+#recommend_books .form_html .box label {
+    color: #333;
+    padding-right: 20px;
+}
+
+#recommend_books #temp {
+    width: 100%;
+}
+
+#recommend_books #temp:not(:first-child) {
+    margin-left: 16.6666666%;
+}
+
+#recommend_books #temp .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+
+#recommend_books #temp .box {
+    padding: 0 5px;
+}
+
+#recommend_books #temp .box:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+#recommend_books .image_text {
+    width: 100%;
+    height:100%;
+    float: left;
+    position: relative;
+}
+
+#recommend_books .image_text .leftImg {
+    float: left;
+    height: 100%;
+    width: 250px;
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+#recommend_books .image_text .leftImg .center {
+    height: 100%;
+    padding: 60px 95px;
+}
+
+#recommend_books .image_text .leftImg i {
+    font-size: 60px;
+    color: #fff;
+}
+
+#recommend_books .image_text .leftImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#recommend_books .image_text textarea {
+    width: calc(100% - 250px);
+    border-left: none;
+    border-radius: 0px;
+    height: 100%;
+}
+
+#recommend_books .image_text .image_text_row .hih {
+    height: 100%;
+    padding: 0;
+}
+
+#recommend_books .image_text .image_text_row {
+    width: 100%;
+    float: left;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#recommend_books .image_text .right label {
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+}
+
+#recommend_books .leftImg div {
+    height: 100%;
+}
+
+#recommend_books .leftImg span {
+    display: none !important;
+}
+#recommend_books  td .box label,#recommend_books  td .box i{
+    width:100%;
+}
+
+#recommend_books .icon-x{
+    font-size: 20px;
+}
+#recommend_books .icon-shangjiantou , .icon-shangjiantou-copy{
+    color: #3B8CFF;
+    font-size: 20px;
+}
+
+#recommend_books .form-left {
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#recommend_books .form-right {
+    float: left;
+    width: 100%;
+}
+#recommend_books #img_cc {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #ddd solid;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#recommend_books .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#img_tt{
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ff0000;
+}
+#recommend_books .cat-tree-action {
+    float: left;
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
+}
+#recommend_books  .content_page_left{
+    padding: 0;
+}
+#recommend_books #col_cat_data{
+    float: left;
+    width: 100%;
+    height: calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
+}
+#recommend_books #col_cat_data ul{
+    float: left;
+    width: 100%;
+    height: 98%;
+    overflow: auto;
+    border-bottom: 1px #ddd solid;
+}
+#recommend_books #col_cat_data li{
+    float: left;
+    width: 100%;
+    line-height: 35px;
+    height: 35px;
+    border-top: 1px #ddd solid;
+    cursor: pointer;
+    text-indent: 2em;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+#recommend_books #col_cat_data li:hover{
+    background: #f4f4f4;
+    font-weight: bold;
+}
+#recommend_books #col_cat_data li.active{
+    background: #ffcf5f;
+    color: #fff;
+    font-weight: bold;
+}
+#recommend_books .cover{
+    display: block;
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+
+    margin: 0 auto;
+    border: 1px #ddd solid;
+    background: url("coverNoBook.jpg") no-repeat 0 0 / 100% 100%  #f4f4f4;
+}
+#recommend_books .df_book{
+    background: url("coverNoBook.jpg") no-repeat 0 0 / 100% 100%  #f4f4f4;
+}

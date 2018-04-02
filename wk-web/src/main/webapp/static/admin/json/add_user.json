@@ -1,0 +1,22 @@
+{
+  "code": 0,
+  "message": "更新成功！",
+  "data": {
+    "address": "adress",
+    "birth": 658252800000,
+    "email": "email@qq.com",
+    "enabled": 1,
+    "icon": "32",
+    "is_delete": 2,
+    "org_id": 7,
+    "org_name": "开发部A",
+    "phone": "435",
+    "role_id": "3",
+    "role_name": "部门经理",
+    "sex": "nv",
+    "user_id": 13,
+    "user_name": "ceshi2",
+    "user_pwd": "222",
+    "user_real_name": "ceshi2"
+  }
+}

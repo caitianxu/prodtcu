@@ -1,0 +1,177 @@
+.header_menu, .public_footer {
+    background: #da251c !important;
+}
+.b_right h1 ul li.active{
+    color: #da251c!important;
+}
+.book_home_news ul li:hover * {
+    color: #da251c!important;
+}
+.header_menu a.active, .header_menu a:hover {
+    background: #af0c03 !important;
+}
+
+.book_home_news .news_title {
+    color: #da251c !important;
+}
+
+.hot_title_col ul li.active, .hot_title_col ul li:hover {
+    color: #da251c !important;
+}
+
+.btn_link {
+    background: #da251c !important;
+}
+
+.content_left h1 {
+    background: #da251c !important;
+}
+
+.header .hot_key span {
+    color: #da251c !important;
+}
+.banner .book_home_news{
+    background: #fcedec!important;
+}
+.order_content .book_item .detail a{
+    background: #da251c !important;
+}
+.order_content .book_item .detail a:hover{
+    background: #af0c03 !important;
+}
+.M-box .active, .M-box1 .active, .M-box2 .active, .M-box3 .active, .M-box4 .active {
+    background: #da251c !important;
+    border: 1px #af0c03 solid !important;
+}
+
+.M-box a:hover, .M-box1 a:hover, .M-box2 a:hover, .M-box3 a:hover, .M-box4 a:hover {
+    background: #da251c !important;
+}
+
+.content_left ul li:hover, .content_left ul li.active {
+    background: #f8f8f8 !important;
+}
+.content_left_cat .cat-child-list{
+    background: #fff!important;
+}
+.content_left_cat .cat-child-list a:hover{
+    background: #e1e1e1!important;
+}
+.detail .link_line .l1 {
+    background: #da251c !important;
+}
+
+.detail .link_line .l2 {
+    border: 1px #da251c solid !important;
+    color: #da251c !important;
+}
+
+.inf_item:hover {
+    color: #da251c !important;
+}
+
+.order_group a.active {
+    color: #da251c !important;
+}
+
+.login_form .submit {
+    background: #da251c !important;
+}
+
+.login_form .submit:hover {
+    background: #af0c03 !important;
+}
+
+.back_pass_plan .submit {
+    background: #da251c !important;
+}
+
+.back_pass_plan .submit:hover {
+    background: #af0c03 !important;
+}
+
+.sing_plan .submit {
+    background: #da251c !important;
+}
+
+.sing_plan .submit:hover {
+    background: #af0c03 !important;
+}
+
+.per_title ul li.active, .per_title ul li:hover {
+    color: #da251c !important;
+}
+
+/*登录页面*/
+#login_content_plan .sin-btn {
+    background: #da251c;
+}
+
+#login_content_plan .sin-btn:hover {
+    background: #af0c03;
+}
+
+#login_content_plan .forget:hover {
+    text-decoration: underline;
+    color: #af0c03;
+}
+
+#login_content_plan .form-line .l-user {
+    background: url("sign-in_03.png") no-repeat center center / 20px auto;
+}
+
+#login_content_plan .form-line .l-pwd {
+    background: url("sign-in_06.png") no-repeat center center / 20px auto;
+}
+
+/*注册*/
+#login_content_plan .get-code:hover {
+    color: #af0c03;
+}
+
+/*首页*/
+.hot_keys .hot_left .ii_3 {
+    background: url(hot_r_3.png) 0 0 no-repeat !important;
+}
+
+.hot_keys .hot_left {
+    background: #da251c !important;
+}
+
+.book-pos-deal .pos_button .btn {
+    border-color: #da251c !important;
+    color: #da251c !important;
+}
+
+.book-pos-deal .pos_button .btn.btn-green {
+    background: #da251c !important;
+    color: #fff !important;
+}
+
+.send_top .send_btn {
+    background: #da251c !important;
+}
+
+.fiex_plan ul li.c1:hover span {
+    background: url(app-ico-at.png) no-repeat center center
+}
+
+.fiex_plan ul li.c2:hover span {
+    background: url(weixin-ico-at.png) no-repeat center center
+}
+
+.fiex_plan ul li.c3:hover span {
+    background: url(top-ico-at.png) no-repeat center center
+}
+.fiex_plan ul li:hover label{color:#da251c!important;}
+.login_user_name{color: #da251c!important;}
+.fankui_pass_plan .submit{background: #da251c !important;}
+.content_left p.active, .content_left p:hover{
+    background: url("zt-02.png") no-repeat 0 0 !important;
+}
+.order-type li.active, .order-type li:hover{
+    color: #da251c !important;
+}
+.book_home_news h1 {
+    color: #da251c !important;
+}

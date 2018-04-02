@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>阅读记录</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/readRecord.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/readRecord.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<!-- 中 -->
+<div class="content" style="padding-bottom: 0">
+    <!--没有内容-->
+    <div class="noContent" style="padding-top: 50%;display: none">
+        <img src="${ctxPath}/static/mobile/img/readRecord_no.png" style="width: 100px">
+        <span>你还没有阅读记录~</span>
+    </div>
+    <div class="from-cells " id="searchValue" style="margin: 0;float: left;width: 100%;">
+
+    </div>
+</div>
+<script>
+    var toggleMenu = function () {
+        if (swiper.previousIndex == 0)
+            swiper.slidePrev()
+    }, swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        initialSlide: 0,
+        resistanceRatio: .00000000000001,
+        slideToClickedSlide: true
+    })
+</script>
+</body>
+</html>

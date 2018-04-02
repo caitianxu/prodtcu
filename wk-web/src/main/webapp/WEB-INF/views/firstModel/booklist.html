@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <script type="text/javascript">
+        var tag_name = "${tag_name}";
+        var searchKey = "${key}";
+        var book_cat_id = "${cat_id}";
+        var all_pages = "${bookList.pages}";
+    </script>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/booklist.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist" class="active">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">推荐</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+<div class="book_list_content">
+    <div class="main" style="overflow: visible">
+        <div class="content_left content_left_cat">
+            <h1>全部图书分类</h1>
+            <ul class="left_menu">
+                <#if bookCatList ?? &&bookCatList?size!=0>
+                    <#list bookCatList as cl_item>
+                        <li <#if cl_item.book_cat_id?string = cat_id>class="active"</#if> >
+                        <a  onclick="book(${cl_item.book_cat_id}, 1)" <#if cl_item.book_cat_id?string = cat_id>class="active_cc"</#if>>${cl_item.book_cat_name}</a>
+                        <#if cl_item["children"]?? && cl_item["children"]?size != 0>
+                            <i class="cat-right" onclick="book(${cl_item.book_cat_id}, 1)"></i>
+                            <div class="cat-child-list" style="display: none;">
+                                <#list cl_item["children"] as catChild>
+                                    <a onclick="book(${catChild.book_cat_id}, 2)" style="padding:0 24px;" <#if catChild.book_cat_id?string = cat_id>class="active_cc"</#if>>${catChild.book_cat_name}</a>
+                                </#list>
+                            </div>
+                        </#if>
+                        </li>
+                    </#list>
+                </#if>
+            </ul>
+            <div class="left_links">
+                <#if advModuleList ?? && advModuleList?size !=0>
+                    <#list advModuleList as adv>
+                        <#if adv_index lt 6>
+                            <#if adv.adv_url ??>
+                                <a href="${ctxPath}${adv.adv_url}" class="r_item" target="_blank">
+                                    <div class="cover"><img src="${ctxPath}${adv.adv_img}"></div>
+                                </a>
+                            </#if>
+                        </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+        <div class="content_right">
+                <div class="nav_bar">
+                    <div id="bookCats" style="width: 50%">
+                        <a href="${ctxPath}/web" target="_blank">首页</a>
+                        <em>&gt;</em>
+                        <label>图书</label>
+                        <#if key?? && key != "" >
+                            <div class="search_key_end">共找到 “<em>${key}</em>” 相关图书<em>${bookList.total}</em>本</div>
+                        </#if>
+                    </div>
+                    <div style="float: right;width: 50%">
+                        <ul class="order-type">
+                            <li class="active" onclick="set_order_type(this)">默认</li>
+                            <li onclick="set_order_type(this,'hot')">热度</li>
+                            <li onclick="set_order_type(this,'new')">最新</li>
+                        </ul>
+                    </div>
+
+                </div>
+            <div class="book_list">
+                <#if bookList ?? && bookList.rows?size != 0>
+                    <#list bookList.rows as list>
+                        <div  class="book_item" <#if (list_index+1)%5=0>style="margin-right:0"</#if> >
+                            <div class="cover">
+                                <#if list.book_cover_small ??>
+                                    <a href="${ctxPath}/web/bookinfo/${list.book_id}" target="_blank"><img src="${ctxPath}${list.book_cover_small}"></a>
+                                    <#else>
+                                    <a href="${ctxPath}/web/bookinfo/${list.book_id}" target="_blank"><img src="${ctxPath}/static/web/img/book_cover.png"></a>
+                                </#if>
+                                <div class="book-pos-deal">
+                                    <s></s>
+                                    <div class="pos_name">${list.book_name}</div>
+                                    <div class="pos_author">${list.book_author}</div>
+                                    <div class="pos_remark">${list.book_remark}</div>
+                                    <div class="pos_button">
+                                        <a href="javascript:void(0)" onclick="_toBookRead_public('${ctxPath}/web/book/${list.book_id}',event)" target="_blank" class="btn btn-green">开始阅读</a>
+                                        <button class="btn" onclick="_addBookShelf_tag(${list.book_id}, this, event)">加入书架</button>
+                                    </div>
+                                    <div class="pos-zhichi">
+                                        <p>适用阅读设备</p>
+                                        <img src="${ctxPath}/static/web/img/zhichi1.jpg" style="width: auto">
+                                    </div>
+                                </div>
+                            </div>
+                            <h1>${list.book_name}</h1>
+                        </div>
+                    </#list>
+                    <#else>
+                        <p class="un_msg">没搜到？把你想找的书<a href="javascript:void(0)">告诉我们</a>~</p>
+                </#if>
+            </div>
+            <div class="M-box" style="margin-top: 20px"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="${ctxPath}/static/web/js/booklist.js"></script>
+<!--公共底-->
+<#include "../firstModel/web_footer.html" />
+</body>
+</html>

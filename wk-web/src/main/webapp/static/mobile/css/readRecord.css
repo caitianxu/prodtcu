@@ -1,0 +1,124 @@
+
+.content {
+    padding-bottom: 0;
+    background: #fff;
+    padding-top: 0;
+}
+
+.from-cells .from-cell-row {
+    padding: 0;
+
+}
+
+.from-cells .swiper-slide {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.from-cells .swiper-slide.del {
+    min-width: 70px;
+    max-width: 100px;
+    text-align: center;
+    background-color: #ef4f4f;
+    position: absolute;
+    color: #fff;
+    top: 0;
+    right: -100px;
+}
+.from-cells .swiper-slide.del span{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.from-cells .from-cell-row .from-cell-cont {
+    position: relative;
+    text-align: left;
+    color: #000;
+}
+
+.from-cells .from-cell-row .from-cell-ft {
+    border: 1px solid #dddddd;
+    border-radius: 25px;
+    padding: 0 18px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.from-cells .from-cell-row .from-cell-cont.right_border:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #e2e2e2;
+}
+
+#searchValue .from-cell-label {
+    width: 95px;
+    height: 125px;
+    box-shadow: 0 4px 6px #b5b1b1;
+}
+
+#searchValue .from-cell-cont {
+    font-size: 14px;
+    width: calc(100% - 200px);
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+}
+
+#searchValue .from-cell-label img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+#searchValue .from-cell-cont h3 {
+    color: #5d5c5c;
+    font-weight: 400;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#searchValue .from-cell-cont p {
+    margin-top: 10px;
+    width: 100%;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#searchValue .from-cell-cont span {
+    color: #a5a3a3;
+    font-weight: 200;
+    text-align: justify;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#searchValue .swiper-container.wire:before {
+    bottom: -1px;
+    top: auto;
+    content: " ";
+    position: absolute;
+    height: 1px;
+    border-top: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    left: 15px;
+    right: 15px;
+}

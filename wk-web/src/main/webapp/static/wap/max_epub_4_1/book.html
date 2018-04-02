@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8">
+    <meta content="always" name="referrer"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>全民悦读器</title>
+    <link rel="stylesheet" href="Sweiper/css/swiper.min.css" />
+    <link rel="stylesheet" href="loaders.css" />
+    <link rel="stylesheet" href="Reader.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="Sweiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="qrcode.min.js"></script>
+</head>
+<!--book_display_two-->
+<body class="skin_2 single">
+    <div id="book_cover">
+        <a href="" class="slogan" style="min-height: 3em;">
+            <!--<img src="img/dd.jpg">-->
+        </a>
+        <div class="book_detail">
+            <h1></h1>
+            <p></p>
+        </div>
+        <div class="book_cover">
+            <img />
+        </div>
+        <div class="cover_code">
+            <div class="cm">
+                <div id="cover_code"></div>
+                <p>扫码阅读</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="doc">
+        <div id="factory">
+            <div class="book_content">
+                <div class="book_html"></div>
+                <div class="book_factory"></div>
+            </div>
+        </div>
+        <div id="market">
+            <div class="book_content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="readBook"></div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-next"></div>
+        <div class="slide-prev"></div>
+        <div class="slide-center"></div>
+    </div>
+
+    <div class="action_parent">
+        <!--操作菜单-->
+        <div class="action_menu">
+            <div class="menu_plan">
+                <ul>
+                    <li class="nav_1"><span>扫码阅读</span></li>
+                    <li class="nav_2">
+                        <span>目录</span>
+                        <!--菜单-->
+                        <div class="book_menu hide_item">
+                            <div class="book_title">
+                                <span>目录</span>
+                            </div>
+                            <div class="book_menu_list">
+                                <ul id="copers"></ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="nav_3"><span>书签</span></li>-->
+                    <li class="nav_9 active"><span>双页</span></li>
+                    <li class="nav_4"><span>夜间</span></li>
+                    <li class="nav_5">
+                        <span>皮肤</span>
+                        <!--皮肤-->
+                        <div class="skin_list hide_item">
+                            <div class="skin_plan">
+                                <ul>
+                                    <li><label class="skin_type_1" data-id="skin_1"></label></li>
+                                    <li><label class="skin_type_2 at" data-id="skin_2"></label></li>
+                                    <li><label class="skin_type_3" data-id="skin_3"></label></li>
+                                    <li><label class="skin_type_4" data-id="skin_4"></label></li>
+                                    <li><label class="skin_type_5" data-id="skin_5"></label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="nav_6"><span>放大</span></li>-->
+                    <!--<li class="nav_7"><span>缩小</span></li>-->
+                    <li class="nav_10"><span>上一页</span></li>
+                    <li class="nav_11"><span>下一页</span></li>
+                    <li class="nav_8"><span>退出</span></li>
+                </ul>
+            </div>
+        </div>
+        <!--二维码-->
+        <div class="action_code" style="display: none">
+            <div id="previewQrcode"></div>
+        </div>
+    </div>
+    <div id="errMessage"><span></span></div>
+    <div id="loaders" style="display: none">
+        <div class="loader">
+            <div class="loader-inner line-spin-fade-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Reader.js"></script>
+</body>
+</html>

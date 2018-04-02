@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>全部评论</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/commentAll.css" rel="stylesheet">
+    <script>
+        var bookId = "${bookId}";
+        var total = "${total}";
+    </script>
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/commentAll.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+    <!-- 中 -->
+    <div class="content">
+        <div class="from-cells" style="margin: 0;padding: 10px 0;">
+            <div class="comments" >
+                <#if commentAll.rows ?? && commentAll.rows?size != 0>
+                    <#list commentAll.rows as comment>
+                        <a class="row wire" href="${ctxPath}/mobile/commentDetail/${comment.review_id}">
+                            <div class="top">
+                                <div class="touxiang">
+                                    <#if comment.icon?? && comment.icon != "">
+                                        <img src="${ctxPath}${comment.icon}">
+                                    <#else>
+                                        <img src="${ctxPath}/static/mobile/img/touxiang.png">
+                                    </#if>
+                                </div>
+                                <span class="name">${comment.nick_name}</span><span class="time">${comment.create_time?string('MM月dd日 HH:mm')}</span>
+                                <i class="icon iconfont icon-message">
+                                    <span>${comment.review_nums}</span>
+                                </i>
+                            </div>
+                            <p>${comment.review_content}</p>
+                        </a>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+    <!--底-->
+    <div class="footer">
+        <div class="del">
+            <a class="btn btn-primary" href="${ctxPath}/mobile/publishComment/${bookId}">发表评论</a>
+        </div>
+    </div>
+
+    <a class="row wire clonObj" href="" style="display: none">
+        <div class="top">
+            <div class="touxiang">
+                <img src="${ctxPath}/static/mobile/img/touxiang.png">
+            </div>
+            <span class="name"></span><span class="time"></span>
+            <i class="icon iconfont icon-message">
+                <span></span>
+            </i>
+        </div>
+        <p></p>
+    </a>
+</body>
+</html>
+
+

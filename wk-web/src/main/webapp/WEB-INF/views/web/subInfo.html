@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/plugin/Sweiper/css/swiper.min.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/css/subInfo.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/Sweiper/js/swiper.min.js"></script>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript">
+        var all_pages = "${bookList.pages}";
+        var art_pages = "${articleList.pages}";
+        var subject_id = "${subject_id}";
+    </script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">资讯</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+<div class="index_page_content" style="display: inline-block;width: 100%">
+    <div class="main" style="overflow: visible">
+        <div class="content_left" style="padding-top: 30px">
+            <p id="newsContentHtml" class="cmcc active">导语</p>
+            <#if bookList ?? && bookList.rows?size != 0>
+                <p id="bookContentHtml" class="cmcc">推荐阅读</p>
+            </#if>
+            <#if articleList ?? && articleList.rows?size != 0>
+                <p id="articlesContentHtml" class="cmcc">推荐资讯</p>
+            </#if>
+            <!--<div class="left_links">-->
+                <!--<#if advModuleList ?? && advModuleList?size !=0>-->
+                    <!--<#list advModuleList as adv>-->
+                        <!--<#if adv_index lt 6>-->
+                            <!--<a href="${ctxPath}${adv.adv_url}" class="r_item" target="_blank">-->
+                                <!--<div class="cover"><img src="${ctxPath}${adv.adv_img}"></div>-->
+                            <!--</a>-->
+                        <!--</#if>-->
+                    <!--</#list>-->
+                <!--</#if>-->
+            <!--</div>-->
+        </div>
+        <div class="content_right" style="border-left: 1px #eee solid">
+            <div class="newsContentHtml">
+                <h1 class="n_title">${subject_name}</h1>
+                <#if subject_remark??>
+                    <div class="html_text">
+                        ${subject_remark}
+                    </div>
+                </#if>
+            </div>
+            <div class="bookContentHtml" style="display: none">
+                <div class="book_list">
+                    <#if bookList ?? && bookList.rows?size != 0>
+                        <#list bookList.rows as list>
+                            <div  class="book_item" <#if (list_index+1)%5=0>style="margin-right:0"</#if> >
+                                <div class="cover">
+                                    <a href="${ctxPath}/web/bookinfo/${list.book_id}" target="_blank">
+                                        <img src="${ctxPath}${list.book_cover_small}">
+                                    </a>
+                                    <div class="book-pos-deal">
+                                        <s></s>
+                                        <div class="pos_name">${list.book_name}</div>
+                                        <div class="pos_author">${list.book_author}</div>
+                                        <div class="pos_remark">${list.book_remark}</div>
+                                        <div class="pos_button">
+                                            <a href="javascript:void(0)" onclick="_toBookRead_public('${ctxPath}/web/book/${list.book_id}',event)" target="_blank" class="btn btn-green">开始阅读</a>
+                                            <button class="btn" onclick="_addBookShelf_tag(${list.book_id}, this, event)">加入书架</button>
+                                        </div>
+                                        <div class="pos-zhichi">
+                                            <p>适用阅读设备</p>
+                                            <img src="${ctxPath}/static/web/img/zhichi1.jpg" style="width: auto">
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1>${list.book_name}</h1>
+                            </div>
+                        </#list>
+                    </#if>
+                </div>
+                <div class="M-box" id="book_page" style="margin-top: 20px"></div>
+            </div>
+            <div class="articlesContentHtml" style="display: none">
+                <div class="inf_list">
+                    <#if articleList ?? && articleList.rows?size != 0>
+                        <#list articleList.rows as list>
+                            <#if list.article_type != 2>
+                                <a href="${ctxPath}/web/inf/${list.article_cat_id}/${list.article_id}" class="inf_item" target="_blank">
+                                    <h1>${list.article_title}</h1>
+                                    <#if list.publish_time??>
+                                        <label>${list.publish_time?string('yyyy-MM-dd')}</label>
+                                    </#if>
+                                </a>
+                                <#else>
+                                    <a href="${list.article_content}" target="_blank" class="inf_item">
+                                        <h1>${list.article_title}</h1>
+                                        <#if list.publish_time??>
+                                            <label>${list.publish_time?string('yyyy-MM-dd')}</label>
+                                        </#if>
+                                    </a>
+                            </#if>
+                        </#list>
+                    </#if>
+                </div>
+                <div class="M-box" id="art_page" style="margin-top: 20px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共底-->
+<#include "../include/web_footer.html" />
+<script type="text/javascript" src="${ctxPath}/static/web/js/subInfo.js"></script>
+</body>
+</html>

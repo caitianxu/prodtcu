@@ -1,0 +1,14 @@
+{
+  "code": "0",
+  "message": "成功",
+  "data": {
+    "package_name": "包名1",
+    "version_code": "版本号",
+    "publish_url": "APK发布地址",
+    "package_url": "APK上传到服务器地址",
+    "remark": "版本描述",
+    "device_num": "使用设备",
+    "create_time": "2012-12-12 22:11:33",
+    "update_time": "2016-12-12 12:11:33"
+  }
+}

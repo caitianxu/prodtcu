@@ -1,0 +1,27 @@
+#dataTab{
+    float: left;
+    width: 100%;
+}
+#tab_add_book{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+#tab_book_list{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+#comTree .tree-title s{
+    color: #999;
+    text-decoration: none;
+}
+#dataTab .content_page_left {
+    width: 30%;
+}
+#dataTab .content_page_right {
+    float: right;
+    width: calc(70% - 15px);
+    width: -moz-calc(70% - 15px);
+    width: -webkit-calc(70% - 15px);
+}

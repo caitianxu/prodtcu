@@ -1,0 +1,86 @@
+<div id="mail">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="btn btn-primary" ng-click="addRow()" ng-show="getBtnToken('mail_add')">新增</button>
+                <button class="btn btn-link" ng-click="row_update()" ng-show="getBtnToken('mail_update')">修改</button>
+                <button class="btn btn-link" ng-click="delRow()" ng-show="getBtnToken('mail_del')">删除</button>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="btn btn-primary" ng-click="_mail_test()">发送测试</button>
+                <button class="btn btn-primary" ng-click="_form_submit(true)">保存</button>
+                <button class="btn btn-primary" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="form_row">
+                    <label class="form_label col-xs-3"><em>*</em>账号名称:</label>
+                    <div class="form_group col-xs-9">
+                        <input type="text" class="form_control" ng-model="selRow.account_name"/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label class="form_label col-xs-3"><em>*</em>SMTP地址:</label>
+
+                    <div class="form_group col-xs-9">
+                        <input type="text" class="form_control" ng-model="selRow.smtp_url"/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label class="form_label col-xs-3"><em>*</em>账号:</label>
+                    <div class="form_group col-xs-9">
+                        <input type="text" class="form_control" ng-model="selRow.account"/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label class="form_label col-xs-3"><em>*</em>密码:</label>
+
+                    <div class="form_group col-xs-9">
+                        <input type="password" class="form_control" ng-model="selRow.pwd"/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label class="form_label col-xs-3">端口号:</label>
+
+                    <div class="form_group col-xs-9">
+                        <input type="text" class="form_control" ng-model="selRow.port"/>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <label class="form_label col-xs-3">状态:</label>
+
+                    <div class="box col-xs-9" style="line-height: 34px">
+                        <label ng-click="selRow.status=1" class="check"><i
+                                ng-class="{'active':selRow.status==1}"></i><span>有效</span></label>
+                        <label ng-click="selRow.status=2" class="check"><i
+                                ng-class="{'active':selRow.status==2}"></i><span>无效</span></label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="layerOpen" style="display:none">
+        <div class="form_row" style="margin-top: 20px;">
+            <label class="form_label col-xs-2">邮箱:</label>
+
+            <div class="box col-xs-10" style="line-height: 34px">
+                <input class="form_control" ng-model="selRow.email"/>
+            </div>
+        </div>
+        <div class="form_row" style="margin-top: 20px;text-align: center">
+            <button class="btn btn-primary" ng-click="closeLayer()">取消</button>
+            <button class="btn btn-primary" ng-click="_mail_test_submit()">发送</button>
+        </div>
+    </div>
+</div>

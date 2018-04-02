@@ -1,0 +1,65 @@
+{
+  "code":0,
+  "message":"",
+  "data":[{
+    "facility_id":"1",
+    "facility_name":"设备0011",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备0012",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备0013",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"313G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备0014",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备0051",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"23443G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备001234",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"231233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备00231",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"23213G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备002341",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"2233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备032401",
+    "facility_state": "在线",
+    "facility_book":"23本",
+    "facility_storage":"233G"
+  },{
+    "facility_id":"1",
+    "facility_name":"设备55001",
+    "facility_state": "在线",
+    "facility_book":"2213本",
+    "facility_storage":"2333G"
+  }]
+}

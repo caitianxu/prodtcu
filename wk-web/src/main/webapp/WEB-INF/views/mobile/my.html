@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>个人中心</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/my.css" rel="stylesheet">
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+    <!-- 头 -->
+    <div class="header">
+        <div class="setting"><a href="${ctxPath}/mobile/mySetting" style="color: #fff">设置</a></div>
+        <div class="msg">
+            <div class="tx">
+                <#if member.icon?? && member.icon != "">
+                    <img src="${ctxPath}${member.icon}">
+                    <#else>
+                        <img src="${ctxPath}/static/mobile/img/touxiang.png">
+                </#if>
+            </div>
+            <div class="nameId" style="padding: 5% 0;">
+                <p style="margin-bottom: 10%;" id="member_name">
+                    ${member.nick_name}
+                    <#if member.sex?? && member.sex == 2>
+                        <i class="icon iconfont icon-nv">女</i>
+                        <#else>
+                            <i class="icon iconfont icon-male">男</i>
+                    </#if>
+                </p>
+
+                <p style="font-size: 14px;font-weight: 100;"><label id="member_id">账号ID:<span>${member.member_id}</span></label></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 中 -->
+    <div class="content">
+        <div class="card">
+            <div class="col wire">
+                <span style="color: #88c003">
+                    <#if member_count.todayTime ??>
+                        ${member_count.todayTime}min
+                    <#else>
+                        0min
+                </#if>
+                    </span>
+                <p>今日已读</p>
+            </div>
+            <div class="col wire">
+                <span style="color: #ff9600">
+                    <#if member_count.time ?? >
+                        ${member_count.time}h
+                    <#else>
+                        0h
+                </#if>
+                    </span>
+                <p>累计时长</p>
+            </div>
+            <div class="col wire">
+                <span style="color: #ff5e5e">
+                    <#if member_count.bookNums ?? >
+                        ${member_count.bookNums}本
+                    <#else>
+                        0本
+                </#if>
+                    </span>
+                <p>已读图书</p>
+            </div>
+            <div class="col">
+                <span style="color: #5a92ff">
+                    <#if member_count.rank ??>
+                        ${member_count.rank}
+                    <#else>
+                        暂无排名
+                    </#if>
+                </span>
+                <p>阅读排名</p>
+            </div>
+        </div>
+        <div class="from-cells">
+            <a class="from-cell-row" href="${ctxPath}/mobile/myBookReview">
+                <div class="from-cell-label">
+                    <label>我的书评</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span>
+                       ${member_count.sum}条
+                    </span>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+            <a class="from-cell-row wire" href="${ctxPath}/mobile/readRecord">
+                <div class="from-cell-label">
+                    <label>阅读记录</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span></span>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="from-cells">
+            <div class="from-cell-row">
+                <div class="from-cell-label">
+                    <label></label>
+                </div>
+                <div class="from-cell-cont" style="text-align: center;color: #000">
+                    <a href="${ctxPath}/mobile/login">切换账号</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底 -->
+    <div class="footer" >
+        <a href="${ctxPath}/mobile/shelf" class="footer-col">
+            <div class="icon-box"><i class="icon iconfont icon-bookshelf1"></i></div>
+            <p class="text"><span>书架</span></p></a>
+        <a href="${ctxPath}/mobile" class="footer-col">
+            <div class="icon-box"><i class="icon iconfont icon-tushu1"></i></div>
+            <p class="text"><span>书城</span></p></a>
+        <a href="${ctxPath}/mobile/my" class="footer-col active">
+            <div class="icon-box"><i class="icon iconfont icon-gerenzhongxin"></i></div>
+            <p class="text"><span>我的</span></p></a>
+    </div>
+
+
+</div>
+</body>
+</html>

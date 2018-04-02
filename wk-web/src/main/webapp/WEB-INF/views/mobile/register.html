@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>用户注册</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/register.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/reg.js"></script>
+
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+
+    <!-- 中 -->
+    <div class="content" style="padding-bottom:0">
+
+            <div class="from-cells">
+                <div class="from-cell-row">
+                    <div class="from-cell-cont">
+                        <input type="text" placeholder="请输入手机号" id="member_phone">
+                    </div>
+                </div>
+                <div class="from-cell-row wire">
+                    <div class="from-cell-cont">
+                        <input type="text" placeholder="请输入验证码" id="send_code" maxlength="6">
+                    </div>
+                    <div class="from-cell-ft">
+                        <a style="color:#6aa4ff;cursor: pointer;font-weight: 200;" class="getCode" onclick="sendCode(this)">获取验证码</a>
+                    </div>
+                </div>
+                <div class="from-cell-row wire">
+                    <div class="from-cell-cont">
+                        <input type="password" placeholder="请设置密码(6-20位数字或字母)" id="member_pwd" maxlength="20">
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;text-align: center;margin-top: 20px">
+                <a class="btn btn-primary" onclick="singIn()">注册</a>
+            </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

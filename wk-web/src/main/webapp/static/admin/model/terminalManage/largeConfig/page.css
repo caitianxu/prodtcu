@@ -1,0 +1,219 @@
+#largeConfig .form_content .form_html{
+    margin: 0px auto 0 auto !important;
+}
+#largeConfig .cl li:hover {
+    background: none
+}
+#largeConfig .tree-checkbox0 {
+    background-position: -208px -27px !important;
+}
+
+#largeConfig .tree-checkbox1 {
+    background-position: -224px -27px !important;
+}
+
+#largeConfig .tree-checkbox2 {
+    background-position: -240px -27px !important;
+}
+
+#largeConfig .tree-title {
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    padding: 0 2px;
+    height: 24px;
+    line-height: 27px;
+}
+#largeConfig .cl li {
+    padding: 0;
+}
+#largeConfig .content_page_left{
+    padding: 0;
+}
+#largeConfig #col_comTree {
+    float: left;
+    width: 220px;
+    padding: 15px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#largeConfig #col_comTree:hover{
+    overflow-y: auto;
+}
+#largeConfig .note-editable {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke
+}
+
+#largeConfig .form_html .box label {
+    color: #333;
+    padding-right: 20px;
+}
+
+#largeConfig #temp {
+    width: 100%;
+}
+
+#largeConfig #temp:not(:first-child) {
+    margin-left: 16.6666666%;
+}
+
+#largeConfig #temp .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+
+#largeConfig #temp .box {
+    padding: 0 5px;
+}
+
+#largeConfig #temp .box:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+#largeConfig .image_text {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+#largeConfig .image_text .leftImg {
+    float: left;
+    height: 100%;
+    width: 250px;
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+#largeConfig .image_text .last {
+    background: url('add.png') no-repeat center #dcdcdc !important
+}
+
+#largeConfig .image_text .leftImg .center {
+    height: 100%;
+    padding: 60px 95px;
+}
+
+#largeConfig .image_text .leftImg i {
+    font-size: 60px;
+    color: #fff;
+}
+
+#largeConfig .image_text .leftImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#largeConfig .image_text textarea {
+    width: calc(100% - 250px);
+    border-left: none;
+    border-radius: 0px;
+    height: 100%;
+}
+
+#largeConfig .image_text .image_text_row .hih {
+    height: 100%;
+    padding: 0;
+}
+
+#largeConfig .image_text .image_text_row {
+    width: 100%;
+    float: left;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#largeConfig .image_text .right label {
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+}
+
+#largeConfig .leftImg div {
+    height: 100%;
+}
+
+#largeConfig .leftImg span {
+    display: none !important;
+}
+#largeConfig  td .box label,#largeConfig  td .box i{
+    width:100%;
+}
+
+#largeConfig .icon-x,.icon-xiugai{
+    font-size: 20px;
+}
+#largeConfig .icon-shangjiantou , .icon-shangjiantou-copy{
+    color: #3B8CFF;
+    font-size: 20px;
+}
+
+#largeConfig .form-left {
+    float: left;
+    width: 40%;
+    padding-left: 15px;
+}
+#largeConfig .form-right {
+    float: left;
+    width: 60%;
+}
+#largeConfig .right label:hover{
+    cursor: pointer;
+}
+#largeConfig .right .at{
+    color: #cccccc;
+}
+#largeConfig #img_cc {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #ddd solid;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#largeConfig .for_btns {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+#largeConfig .data_array_org {
+    float: left;
+    width: 100%;
+}
+
+#lofj_gorm .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#lofj_gorm .file-action .file-btn-ku{
+    display: none !important;
+}
+#upFx_row .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#upFx_row .file-action .file-btn-ku{
+    display: none !important;
+}
+#largeConfig #setScreen .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#largeConfig #setScreen .file-action .file-btn-ku{
+    display: none !important;
+}
+#largeConfig #setScreen .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+#largeConfig #setScreen {
+    text-align: -webkit-center;
+    text-align: -moz-center;
+}

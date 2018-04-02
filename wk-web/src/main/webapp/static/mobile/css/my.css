@@ -1,0 +1,101 @@
+.header {
+    width: 100%;
+    background: #5a92ff;
+    position: initial;
+}
+.header .setting {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.header .msg {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    padding: 10% 5%;
+    color: #fff;
+}
+
+.header .msg .tx {
+    width: 25%;
+    margin-right: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.header .msg .tx img{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+.header .msg .nameId .icon-nv {
+    background: #ff9eac;
+    font-size: 14px;
+    padding: 0 4px;
+    border-radius: 3px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+.header .msg .nameId .icon-male {
+    background: #62d7fd;
+    font-size: 14px;
+    padding: 0 4px;
+    border-radius: 3px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.header .msg .nameId .sex .iconfont {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header .msg .tx img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.content {
+    padding-top: 0;
+    height: auto;
+}
+
+.content .card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+    background: #ffffff;
+}
+
+.content .card .col {
+    width: 25%;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+    display: grid;
+}
+
+.content .card .col p {
+    color: #595959;
+}
+
+.content .card .col.wire:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #ddd;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>帮助中心</title>
+
+    <style rel="stylesheet">
+        body{
+            background:#eaeaea
+        }
+    </style>
+</head>
+<body>
+
+
+<div style="width:1200px;margin:40px auto;background:#fff;padding:40px" class="helpCenter">
+<div class="main">
+        <div class="helpContent" style="text-align:center">
+            <h1 class="n_title" >${help.title}</h1>
+            <a style="text-align:center" class="n_time" >${help.create_time?string('yyyy/MM/dd')}</a>
+            <div  class="html_text" style="margin:40px">
+                ${help.content}
+            </div>
+        </div>
+    </div>
+<div  class="lastHelp" style="width:100%;margin:40px auto;display:table">
+    <div class="left" style="float:left">
+        <div class="link_line">
+            <#if lastHelp ?? >
+            <a href="${ctxPath}/admin/help/${lastHelp.id}" class="l1">上一个：${lastHelp.title}</a>
+            </#if>
+        </div>
+    </div>
+    <div class="right" style="float:right">
+        <div class="link_line">
+            <#if nextHelp ?? >
+                <a href="${ctxPath}/admin/help/${nextHelp.id}" class="l1">下一个：${nextHelp.title}</a>
+            </#if>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

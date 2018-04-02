@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <#if nowRepo ??>
+        <title>${nowRepo.series_name}</title>
+        <#else>
+            <title>期刊系列</title>
+    </#if>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/perlist.css" rel="stylesheet"/>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">资讯</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+
+<div class="book_content">
+    <div class="main">
+        <div class="book_head">
+            <div class="b_head_left">
+                <div class="cover"><img src="${ctxPath}${nowRepo.periodical_cover_small}"></div>
+                <div class="detail">
+                    <h1>${nowRepo.series_name}<span style="font-size: 12px;color: #999;margin-left: 20px">最新 ${nowRepo.periodical_name?replace(nowRepo.series_name,"")}</span></h1>
+                    <div class="b_head_right">${nowRepo.periodical_remark}</div>
+                    <div class="link_line"><a href="${ctxPath}/web/perinfo/${nowRepo.periodical_id}" target="_blank" class="l1">开始阅读</a></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="book_mmessage">
+            <div class="per_list">
+                <#if PeriodicalList ?? && PeriodicalList?size != 0>
+                    <#list PeriodicalList as list>
+                        <a href="${ctxPath}/web/perinfo/${list.periodical_id}" target="_blank" class="per_item">
+                            <div class="cover">
+                                <img src="${ctxPath}${list.periodical_cover_small}">
+                                <label>${list.periodical_name?replace(list.series_name,"")}</label>
+                            </div>
+                            <p>${list.periodical_name}</p>
+                        </a>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共底-->
+<#include "../include/web_footer.html" />
+</body>
+</html>

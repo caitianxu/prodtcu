@@ -1,0 +1,32 @@
+.content{
+    padding: 0;
+}
+.content .card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding: 10px 0;
+    width: 100%;
+    background: #ffffff;
+}
+
+.content .card .col {
+    width: 25%;
+    text-align: center;
+    position: relative;
+    font-size: 14px;
+}
+
+.content .card .col p {
+    color: #595959;
+}
+
+.content .card .col.wire:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #ddd;
+}

@@ -1,0 +1,68 @@
+#user .cl li:hover{background:none}
+#user .cl li{
+    padding: 0;
+}
+#user .box .check{
+    width: 100%;
+}
+#user .box .check i{
+    width:100%;
+}
+#user select{
+    border: none;
+    background: none;
+}
+#user .form_sm .form_html{
+    height:800px
+}
+
+
+#user .form-left{
+    float: left;
+    width:40%;
+    margin-top: 100px;
+}
+#user .form-right{
+    float: left;
+    width:50%;
+}
+#user #img_cc {
+    margin: 0 auto 0 80px;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+    background: url("../../../img/df_touxiang.png") center center no-repeat;
+    border: 1px #ddd solid;
+    background-size: 80% 80%;
+    cursor: pointer;
+    padding: 10px;
+}
+#user .form-left-bottom{
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+
+#user table td img{
+    height: 100%;
+    display: block;
+    margin: 10px;
+}
+#user #img_cc img{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+#user #col_comTree{
+    float: left;
+    width: 100%;
+    height: calc(100% - 40px);
+    height: -moz-calc(100% - 40px);
+    height: -webkit-calc(100% - 40px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#user #col_comTree.maxHeight{
+    height: 100%!important;
+}

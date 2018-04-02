@@ -1,0 +1,420 @@
+html, body {
+    height: 100% !important;
+    overflow: hidden !important;
+    padding: 0!important;
+    margin: 0!important;
+}
+* {
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -khtml-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+body{
+    max-width: 800px;
+    margin: 0 auto !important;
+    display: block;
+    position: relative;
+    font-family: Microsoft YaHei,Verdana;
+    font-size: 18px;
+}
+#loaders{
+    display: none;
+}
+.epub-mask_transparent{
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+.epub-toast{
+    background: rgba(17, 17, 17, 0.7) none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #ffffff;
+    left: 50%;
+    margin-left: -3.3em;
+    min-height: 6.5em;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    margin-top: -3.3em;
+    width: 6.5em;
+    z-index: 5000;
+}
+
+.epub-loading {
+    animation: 1s steps(12, end) 0s normal none infinite running weuiLoading;
+    background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=") no-repeat scroll 0 0 / 100% auto;
+    display: inline-block;
+    height: 40px;
+    margin: 30px 0 0;
+    vertical-align: baseline;
+    width: 40px;
+}
+.epub-toast_content {
+    margin: 5px 0 15px;
+    font-size: 16px;
+}
+
+
+
+#read{
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    padding: 25px 15px 15px 15px;
+    opacity: 0;
+}
+#read .book_step_title{
+    position: absolute;
+    width: 100%;
+    top:0;
+    left: 0;
+    font-size: 10px!important;
+    box-sizing: border-box;
+    height: 21px;
+    line-height: 16px;
+    overflow: hidden;
+}
+#read .book_step_title .title_book_step_name{
+    float: right;
+}
+#read .book_content{
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#book_info{
+    position: absolute;
+    z-index: 999;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+
+#book_info .info_content{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#book_info .info_content .ml{
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    overflow: hidden;
+    background: #fbfcfa;
+    color: #565656;
+}
+#book_info .info_content .ml .ml_title{
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    line-height: 60px;
+    height: 60px;
+    background: #2d2d2d;
+    color: #fff;
+}
+#book_info .ml_content{
+    float: left;
+    width: 100%;
+    height: calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #3d3d3d;
+    font-size: 16px;
+    color: #AAA;
+}
+#book_info .ml_content ul{
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+#book_info .ml_content ul li{
+    float: left;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;     border-bottom: 1px #565656 solid;
+}
+#book_info .ml_content ul li.active{
+    color: #df6868;
+}
+.book_title{
+    position: absolute;
+    width: 100%;
+    top:0;
+    line-height: 60px;
+    font-size: 18px;
+    height: 60px;
+    text-align: center;
+    background: #2d2d2d;
+    color: #fff;
+}
+#book_action{
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    text-align: center;
+    background: #2d2d2d;
+    color: #fff;
+}
+#book_action .action_1{
+    position: relative;
+    height: 50px;
+    border-bottom: 1px #4d4d4d dashed;
+}
+.action_1 .action_last{
+    font-size: 12px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    top:0;
+    left: 0;
+}
+.action_1 .action_step{
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 70px;
+    position: absolute;
+}
+.action_1 input{
+    position: absolute;
+    width: calc(100% - 130px);
+    top: 15px;
+    left: 60px;
+    right: 60px;
+    z-index: 99;
+    filter:alpha(opacity=0); /* IE */
+    -moz-opacity:0; /* 老版Mozilla */
+    -khtml-opacity:0; /* 老版Safari */
+    opacity: 0; /* 支持opacity的浏览器*/
+}
+.action_step .step_bg{
+    float: left;
+    width: 100%;
+    background: #484848;
+    height: 3px;
+    margin-top: 25px;
+    border-radius: 3px;
+}
+.action_step .step_line{
+    float: left;
+    height: 3px;
+    background: #e8554d;
+    width: 0;
+    border-radius: 3px;
+    position: relative;
+}
+.action_step .step_line span{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /*background: rgba(200,200,200,0.3);*/
+    top:-23px;
+    right: -23px;
+}
+.action_step .step_line span i{
+    width: 8px;
+    height: 8px;
+    background: #2b2b2b;
+    border: 2px #e8554d solid;
+    border-radius: 10px;
+    float: left;
+    margin: 19px;
+}
+.action_1 .action_next{
+    font-size: 12px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    top:0;
+    right: 0;
+}
+#book_action .action_color{
+    height: 60px;
+}
+.action_color > span{
+    float: left;
+    width: 20%;
+    height: 60px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.action_color label{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 10px auto;
+}
+.col_1 label{
+    background: #dddddd;
+}
+.col_2 label{
+    background: #d5bc83;
+}
+.col_3 label{
+    background: #9acfa1;
+}
+.col_4 label{
+    background: #2e5073;
+}
+.col_5 label{
+    background: #644f47;
+}
+
+
+
+.book_title label{
+    max-width: 60%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.book_title i{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:0;
+    right: 0;
+    background: url("img/mulu_sink_1.png") no-repeat center center / 20px auto;
+}
+.book_title span{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top:0;
+    left: 0;
+    background: url("img/epub_return.png") no-repeat center center / 20px auto;
+}
+.book_title:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    color: #979797;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+#read h1, #read h2 {
+    display: none !important;
+}
+
+#read img {
+    max-width: 100%;
+    max-height: 100%;
+    /*display: block;*/
+    margin: 0 auto;
+}
+
+#read p {
+    text-align: justify;
+    line-height: 1.75;
+    clear: both;
+    margin-top: 0;
+    float: left;
+    width: 100%;
+}
+
+#read p.center {
+    text-align: center;
+}
+
+.tp-c {
+    text-indent: 0;
+    margin: 0 !important;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.skin_1{
+    background: url("img/logo.png") no-repeat center center / 100px auto #ddd;
+    color: #494949;
+}
+.skin_1 #read{
+    background: #ddd;
+}
+.skin_1 .book_step_title{
+    color: #7f7f7f;
+    padding: 5px 15px;
+}
+
+.skin_2{
+    background: url("img/logo.png") no-repeat center center / 100px auto #d8c4a0;
+    color: #3a3342;
+}
+.skin_2 #read{
+    background: #d8c4a0;
+}
+
+.skin_2 .book_step_title{
+    color: #aaa295;
+    padding: 5px 15px;
+}
+
+.skin_3{
+    background: url("img/logo.png") no-repeat center center / 100px auto #cce9ce;
+    color: #323232;
+}
+.skin_3 #read{
+    background: #cce9ce;
+}
+
+.skin_3 .book_step_title{
+    color: #778578;
+    padding: 5px 15px;
+}
+
+.skin_4{
+    background: url("img/logo.png") no-repeat center center / 100px auto #061d2d;
+    color: #637079;
+}
+.skin_4 #read{
+    background: #061d2d;
+}
+
+.skin_4 .book_step_title{
+    color: #445662;
+    padding: 5px 15px;
+}
+
+.skin_5{
+    background: url("img/logo.png") no-repeat center center / 100px auto #3b3537;
+    color: #637079;
+}
+.skin_5 #read{
+    background: #3b3537;
+}
+
+.skin_5 .book_step_title{
+    color: #6c6869;
+    padding: 5px 15px;
+}

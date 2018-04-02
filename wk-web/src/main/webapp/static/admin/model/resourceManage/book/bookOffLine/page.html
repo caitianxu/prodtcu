@@ -1,0 +1,64 @@
+<div id="bookOffLine">
+    <div class="content_main">
+        <div class="content_page_left">
+            <div id="class_comTree">
+                <ul id="comTree"></ul>
+            </div>
+        </div>
+
+        <div class="content_page_right">
+            <div class="list_bar_row">
+                <div class="bars">
+                    <button class="layui-btn" ng-click="updataState(true)" ng-show="getBtnToken('bookOffLine_add')">
+                        发送离线到设备
+                    </button>
+                    <button class="layui-btn layui-btn-warm" ng-click="updataState(false)"
+                            ng-show="getBtnToken('bookOffLine_del')">删除设备离线
+                    </button>
+                </div>
+                <div class="search_plan" style="width: 600px">
+                    <div class="dropdown" style="float: left;width: 220px">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="选择设备" ng-model="param.device_code"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in facilityArray" ng-click="setfacility(item)"
+                                    ng-class="{'layui-this':param.device_code == item.device_code}">{{item.device_code}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="dropdown" style="float: left;width: 160px;padding: 0 20px;">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="paramCol.status_text"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-click="reload('status',-1,'全部')">全部</dd>
+                                <dd ng-click="reload('status',2,'已离线')">已离线</dd>
+                                <dd ng-click="reload('status',1,'离线中')">离线中</dd>
+                                <dd ng-click="reload('status',0,'未离线')">未离线</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="input_group" style="float: right;width: 220px;">
+                        <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="paramCol.searchText">
+                        <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    </div>
+                </div>
+                <div class="search_text">
+                    <!--<label>网络状态:<em>{{param.facility_state}}</em></label>-->
+                    <label>已离线图书:<em>{{param.book_count}}</em></label>
+                    <!--<label>剩余内存:<em>{{param.memory}}</em></label>-->
+                </div>
+            </div>
+
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+    </div>
+</div>

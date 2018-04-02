@@ -1,0 +1,66 @@
+<div id="tbMemberSign">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div style="float: left;width: 200px;margin-right: 15px">
+                <label class="layui-form-label">月份:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="paramCol.monthText"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-click="setTime('01')">一月</dd>
+                            <dd ng-click="setTime('02')">二月</dd>
+                            <dd ng-click="setTime('03')">三月</dd>
+                            <dd ng-click="setTime('04')">四月</dd>
+                            <dd ng-click="setTime('05')" >五月</dd>
+                            <dd ng-click="setTime('06')">六月</dd>
+                            <dd ng-click="setTime('07')">七月</dd>
+                            <dd ng-click="setTime('08')">八月</dd>
+                            <dd ng-click="setTime('09')">九月</dd>
+                            <dd ng-click="setTime('10')">十月</dd>
+                            <dd ng-click="setTime('11')">十一月</dd>
+                            <dd ng-click="setTime('12')">十二月</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                </div>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div id="memberSign_month" style="display: none" >
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>昵称</th>
+                <th>账号</th>
+                <th>签到时间</th>
+                <th>签到奖励</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in memberSignArray">
+                <td align="center">{{row.nick_name}}</td>
+                <td align="center">{{row.account}}</td>
+                <td align="center">{{row.sign_time}}</td>
+                <td align="center">{{row.sign_gift}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--机构选择-->
+<sel-org></sel-org>

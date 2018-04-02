@@ -1,0 +1,132 @@
+.header .del {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3px 0;
+    background: #5a92ff;
+}
+
+.content {
+    background: #fff;
+}
+
+.comments {
+    padding: 0 15px;
+}
+
+.comments .row {
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+
+.comments .row.wire:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #efefef;
+
+}
+.row .text{
+    float: left;
+    width: 100%;
+}
+.comments #name {
+    padding: 0 10px 0 0;
+    font-weight: 200;
+    color: #aba8a8;
+    width: calc(100% - 100px);
+    width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float: left;
+}
+
+.comments #time {
+    font-weight: 200;
+    color: #aba8a8;
+    float: right;
+}
+
+.comments p {
+    margin: 3% 0;
+    text-align: justify;
+    font-weight: 300;
+    color: #919191;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    text-indent: 10px;
+}
+
+.icon_box {
+    display: none;
+    background: rgba(136, 129, 129, 0.45);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 18px;
+    left: 0;
+    border: 2px solid #fff;
+}
+
+.icon_box.active {
+    background: #5a92ff;
+}
+
+.icon_gou {
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    border-left: 2px solid #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -6px;
+    margin-top: -6px;
+}
+
+body[status="del"] .comments .row .text {
+    padding-left: 30px;
+}
+
+body[status="del"] .comments .row .icon_box {
+    display: block;
+}
+
+body[status="del"] .footer, body[status="del"] .header .del {
+    display: block;
+}
+
+.footer ,.header .del{
+    display: none;
+}
+
+.footer .del {
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background: #fff;
+    color: #fff;
+}
+
+.footer .del a {
+    background: #5a92ff;
+    display: inline-block;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+}
+.content{
+    padding: 0;
+}

@@ -1,0 +1,48 @@
+<div id="dataPackage">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('dataPackage_add')">新增</button>
+                <button class="layui-btn layui-btn-link" ng-click="allocationPkg()" ng-show="getBtnToken('dataPackage_all')">分配</button>
+                <button class="layui-btn layui-btn-link" ng-click="editRow(true)" ng-show="getBtnToken('dataPackage_up')">修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="delRow(false)" ng-show="getBtnToken('dataPackage_del')">删除</button>
+                <button class="layui-btn layui-btn-link" ng-click="copyPkg(false)" ng-show="getBtnToken('dataPackage_copy')">复制数据包</button>
+                <button class="layui-btn layui-btn-link" ng-click="export_all_data()" ng-show="getBtnToken('dataPackage_exportBook')">导出图书</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+    <div id="allocationPkg" style="display: none">
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>机构编码</th>
+                <th>机构名称</th>
+                <th>上次分配</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in data_pkg_org_array">
+                <td align="center">{{row.org_code}}</td>
+                <td align="center">{{row.org_name}}</td>
+                <td align="center">{{row.create_time}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--机构选择-->
+    <sel-org></sel-org>
+</div>

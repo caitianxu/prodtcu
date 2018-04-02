@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta property="wb:webmaster" content="3daf413f5391d3bf" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="description" content="长江云全民阅读数字农家书屋云平台是湖北长江传媒数字出版有限公司打造的以互联网技术助推“全民阅读进村组”工作的创新发展项目，向广大农村居民提供数字阅读、农村党建、惠农政策、种植养殖、普工技能、就业创业、名师教学、生活服务等全面的数字化服务。" />
+    <meta name="keywords" content="长江云全民阅读,数字农家书屋,数字阅读,农村党建,惠农政策,种植养殖,普工技能,就业创业,名师教学" />
+    <link href="${ctxPath}/static/web/img/fav.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="${ctxPath}/static/web/plugin/layer/skin/default/layer.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/css/forget.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/skin/${serverName}.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/jquery-1.9/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/layer/layer.js"></script>
+    <script type="text/javascript">
+        var ctxPath = "${ctxPath}";
+        var pro_code = "${pro_code}";
+        var org_id = "${org_id}";
+        var serverName = "${serverName}";
+        var token_type = "pc";
+    </script>
+    <script type="text/javascript" src="${ctxPath}/static/web/js/forget.js"></script>
+</head>
+<body>
+<div id="login_content_plan">
+    <div class="logo"><img height="50" src="${ctxPath}${org_logo}"></div>
+    <!--<div class="logo"><img src="http://cjszyun.cn/uploads/20170526110521/97cf7bc860f943ffa59b8808e095b962.jpg"></div>-->
+    <div class="form-line">
+        <input type="text" name="login_name" id="login_name" placeholder="手机/邮箱"/>
+    </div>
+    <div class="form-line">
+        <input type="text" name="login_code" id="login_code" placeholder="验证码"/>
+        <span class="get-code getCode">获取验证码</span>
+    </div>
+    <div class="form-line">
+        <input type="password" name="login_pwd" id="login_pwd" placeholder="新密码"/>
+    </div>
+    <div class="sin-btn">登  录</div>
+    <a href="${ctxPath}/web/login" class="forget">已有帐号，立即登录</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<div id="authority">
+    <div class="content_main">
+        <div class="content_page_left">
+            <div class="layui-form-item" >
+                <div class="layui-unselect layui-form-select">
+                    <div class="layui-select-title">
+                        <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="角色" ng-model="selRow.role_name"/>
+                        <i class="layui-edge"></i>
+                    </div>
+                    <dl class="layui-anim layui-anim-upbit">
+                        <dd ng-repeat="item in roleData" ng-click="roleChange(item)" ng-hide="item.role_type == 1" ng-class="{'layui-this': selRow.role_name == item.role_name}">{{item.role_name}}</dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="col_comTree">
+                <ul id="comTree" style="margin-bottom: 20px"></ul>
+            </div>
+        </div>
+        <div class="content_page_right">
+            <grid-table data-control="tableControl" data-unpager="true"></grid-table>
+        </div>
+    </div>
+
+
+</div>

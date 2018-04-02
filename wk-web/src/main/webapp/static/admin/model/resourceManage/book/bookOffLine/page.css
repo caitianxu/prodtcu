@@ -1,0 +1,15 @@
+#bookOffLine .search_text{
+    float: right;
+    line-height: 38px;
+    margin-right: 10px;
+}
+#bookOffLine .search_text label{
+    margin-left: 10px;
+}
+#bookOffLine .search_text em{
+    color: #5be540;
+}
+#bookOffLine .content_page_left{
+    overflow-x: hidden;
+    overflow-y: auto;
+}

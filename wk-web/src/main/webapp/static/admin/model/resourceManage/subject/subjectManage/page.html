@@ -1,0 +1,314 @@
+<div id="subjectManage">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('subject_manage_add')">新增</button>
+                <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('subject_manage_update')">修改
+                </button>
+                <button class="layui-btn layui-btn-link" ng-click="delRow()" ng-show="getBtnToken('subject_manage_del')">删除</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated none ">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <!--<button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>-->
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="form-left">
+                    <div class="layui-form-item" id="img_cc">
+                        <div class="image_text">
+                            <div class="leftImg" style="height: 100%; width: 100%;">
+                                <div class="center" ng-show="!selRow.subject_cover" style="padding: 45px 81px;text-align: center">
+                                    <i class="iconfont icon-tianjiatupian"></i>
+                                </div>
+                                <img ng-src="{{ctxPath+selRow.subject_cover}}" ng-if="selRow.subject_cover">
+                                <div style="line-height: 148px;font-size: 20px;color: red;" ng-class="{'ccmm': !selRow.subject_cover}" class="cmcc">225*100</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="img_tt" style="display: none">225*100</div>
+                    <div class="form-left-bottom" style="float: left;width: 100%;display: none">
+                        <div class="form-inline img-file" id="header">
+                            <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                                <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" autocomplete="off" id="prj-log"
+                                       class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><em>*</em>专题名称:</label>
+
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.subject_name"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序:</label>
+                        <div class="layui-input-block">
+                            <div class="input_group sort-control">
+                                <input class="layui-input" type="text" readonly  ng-model="selRow.order_weight" maxlength="15" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <span class="group_addon layui-btn layui-btn-warm">自动生成</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">外链:</label>
+
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.subject_url"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item" style="float: left;width: 100%;">
+                    <iframe id="myIframe"
+                            ng-src="{{ctxPath+'/static/admin/plugin/ueditor/edit.html'}}"
+                            scrolling="no" style="border: 1px #ddd solid" width="100%" height="260"
+                            frameborder="0"></iframe>
+                </div>
+                <div style="float: left;width: 100%;">
+                    <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">关联图书</li>
+                            <li>关联资讯</li>
+                            <li>关联期刊</li>
+                            <li>关联报纸</li>
+                            <li>关联视频</li>
+                            <li>关联音频</li>
+                        </ul>
+                        <div class="layui-tab-content"  style="padding: 10px 0">
+                            <div class="layui-tab-item layui-show">
+                                <div style="display: inline-block;width: 100%;">
+                                    <div class="form-left-bottom" style="float: left;width: 100%;" ng-show="selRow.subject_id">
+                                        <button class="layui-btn btn-block" style="float: left;width: 100%" ng-click="searchBook_add()">添加图书</button>
+                                    </div>
+                                    <div class="addBookList" ng-show="selRow.subject_id">
+                                        <table class="layui-table">
+                                            <colgroup>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>封面</th>
+                                                <th>图书名称</th>
+                                                <th>作者</th>
+                                                <th>排序</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="row in ZtBookListArray">
+                                                <td align="center"  width="100">
+                                                    <img class="df_book" ng-src="{{ctxPath}}{{row.book_cover_small}}" ng-if="row.book_cover_small" style="display: block;margin: 0 auto">
+                                                </td>
+                                                <td align="center"  >{{row.book_name}}</td>
+                                                <td align="center"  >{{row.book_author}}</td>
+                                                <td align="center"  width="150">
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序置顶"  ng-if="$index > 0 && ZtBookListArray.length > 1" ng-click="order_top1(row.rel_id ,$index,'top',event)"><i class="iconfont icon-dingbu"></i></a>
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序上升" ng-if="$index > 0 && ZtBookListArray.length > 1" ng-click="order_top1(row.rel_id ,$index,'up', event)"><i class="iconfont icon-shangsheng1"></i></a>
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序下降" ng-if="$index < ZtBookListArray.length - 1" ng-click="order_top1(row.rel_id ,$index,'down', event)"><i class="iconfont icon-xiajiang"></i></a>
+                                                </td>
+                                                <td align="center" width="150">
+                                                    <div>
+                                                        <button class="btn btn-primary layui-btn"  ng-click="book_list_remove(row)">移除</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">
+                                <div style="display: inline-block;width: 100%;">
+                                    <div class="form-left-bottom" style="float: left;width: 100%;" ng-show="selRow.subject_id">
+                                        <button class="layui-btn btn-block" style="float: left;width: 100%" ng-click="searchNews_add()">添加资讯</button>
+                                    </div>
+                                    <div class="addNewsList" ng-show="selRow.subject_id">
+                                        <table class="layui-table">
+                                            <colgroup>
+                                                <col>
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>封面</th>
+                                                <th>标题</th>
+                                                <th>排序</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="row in ZtNewsListArray">
+                                                <td align="center"  width="100">
+                                                    <img class="df_book" ng-src="{{ctxPath}}{{row.cover_url_small}}" ng-if="row.cover_url_small" style="display: block;margin: 0 auto">
+                                                </td>
+                                                <td align="center"  >{{row.article_title}}</td>
+                                                <td align="center" width="150" >
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序置顶"  ng-if="$index > 0 && ZtNewsListArray.length > 1" ng-click="order_top2(row.rel_id ,$index,'top',event)"><i class="iconfont icon-dingbu"></i></a>
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序上升" ng-if="$index > 0 && ZtNewsListArray.length > 1" ng-click="order_top2(row.rel_id ,$index,'up', event)"><i class="iconfont icon-shangsheng1"></i></a>
+                                                    <a href="javascript:void(0)" class="btn-icon" title="排序下降" ng-if="$index < ZtNewsListArray.length - 1" ng-click="order_top2(row.rel_id ,$index,'down', event)"><i class="iconfont icon-xiajiang"></i></a>
+                                                </td>
+                                                <td align="center" width="150">
+                                                    <div>
+                                                        <button class="btn btn-primary layui-btn"  ng-click="news_list_remove(row)">移除</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">暂未开发</div>
+                            <div class="layui-tab-item">暂未开发</div>
+                            <div class="layui-tab-item">暂未开发</div>
+                            <div class="layui-tab-item">暂未开发</div>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!--单本加书-->
+    <div id="searchBook_add" style="display: none;height: 100%;" >
+        <div style="float: left;width: 100%;padding: 10px 0">
+            <div class="col-xs-10" style="padding-right: 0"><input type="text" class="layui-input" placeholder="作者、书名、isbn、文件名" ng-model="searchBooks.searchText"></div>
+            <div class="col-xs-2"><button class="block layui-btn" ng-click="searchData()">搜索</button></div>
+        </div>
+        <div style="float: left;width: 100%;padding: 0 10px;">
+            <table class="layui-table " style="margin:0">
+                <thead>
+                <tr>
+                    <th width="100">封面</th>
+                    <th width="150">图书名称</th>
+                    <th width="150">图书作者</th>
+                    <th width="150">ISBN</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in bookRepoArray">
+                    <td align="center"  width="100">
+                        <img class="df_book" ng-src="{{ctxPath}}{{row.book_cover_small}}" ng-if="row.book_cover_small" style="display: block;margin: 0 auto">
+                    </td>
+                    <td align="center"  width="150">{{row.book_name}}</td>
+                    <td align="center"  width="150">{{row.book_author}}</td>
+                    <td align="center"  width="150">{{row.book_isbn}}</td>
+                    <td align="center" >
+                        <div>
+                            <button class="btn btn-primary layui-btn"  ng-click="add_book(row)">添加</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--选择新闻-->
+    <div id="searchNews_add" style="display: none;height: 100%;" >
+        <div style="float: left;width: 100%;padding: 10px 0">
+            <div class="col-xs-10" style="padding-right: 0"><input type="text" class="layui-input" placeholder="标题" ng-model="searchNews.searchText"></div>
+            <div class="col-xs-2"><button class="block layui-btn" ng-click="searchNewsData()">搜索</button></div>
+        </div>
+        <div style="float: left;width: 100%;padding: 0 10px;">
+            <table class="layui-table " style="margin:0">
+                <thead>
+                <tr>
+                    <th width="100">封面</th>
+                    <th>标题</th>
+                    <th width="100">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in newsRepoArray">
+                    <td align="center"  width="100">
+                        <img class="df_book" ng-src="{{ctxPath}}{{row.cover_url_small}}" ng-if="row.cover_url_small" style="display: block;margin: 0 auto">
+                    </td>
+                    <td align="left"  width="150">{{row.article_title}}</td>
+                    <td align="center" >
+                        <div>
+                            <button class="btn btn-primary layui-btn"  ng-click="set_new(row)">添加</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="subject_org" style="display: none;padding: 10px;" >
+        <div style="float: left;width: 100%">
+            <div class="layui-unselect layui-form-select col-xs-3" style="padding: 0">
+                <div class="layui-select-title">
+                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="项目" ng-model="fenpeiParamCol.project_name"/>
+                    <i class="layui-edge"></i>
+                </div>
+                <dl class="layui-anim layui-anim-upbit">
+                    <dd ng-click="fenpeiParamCol.project_id = null;fenpeiParamCol.project_name = '所有项目'">所有项目</dd>
+                    <dd ng-repeat="prj in allProject" ng-click="fenpeiParamCol.project_id = prj.project_id;fenpeiParamCol.project_name = prj.project_name">{{prj.project_name}}</dd>
+                </dl>
+            </div>
+            <div class="col-xs-7"><input type="text" class="layui-input" placeholder="机构名称" ng-model="fenpeiParamCol.searchtext"></div>
+            <div class="col-xs-2" style="padding: 0"><button class="block layui-btn" ng-click="_fenpeiData()">搜索</button></div>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>项目名称</th>
+                <th>机构编码</th>
+                <th>机构名称</th>
+                <th>上次分配</th>
+                <th ng-show="getBtnToken('subject_class_fenpei')">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in fenpeiDataArray">
+                <td align="center">{{row.project_name}}</td>
+                <td align="center">{{row.org_code}}</td>
+                <td align="center">{{row.org_name}}</td>
+                <td align="center">{{row.update_time}}</td>
+                <td align="center" ng-show="getBtnToken('subject_class_fenpei')">
+                    <div ng-show="row.org_id != 1">
+                        <button class="btn btn-primary layui-btn-mini" ng-if="!row.subject_id || (row.subject_id && row.is_delete == 1)" ng-click="addOrg(row)">分配</button>
+                        <button class="btn btn-warn layui-btn-mini" ng-if="row.subject_id && row.is_delete != 1" ng-click="removeOrg(row)">移除</button>
+                    </div>
+                    <div ng-show="row.org_id == 1">
+                        <button class="btn btn-warn layui-btn-mini" disabled="disabled">默认</button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div style="float: left;width: 100%;text-align: center" ng-if="fenpeiParam.pages > 1">
+            <button class="btn" ng-click="_fenpeiData(fenpeiParam.pageNum - 1)" ng-if="fenpeiParam.pageNum > 1">上一页</button>
+            <button class="btn"  ng-click="_fenpeiData(fenpeiParam.pageNum + 1)" ng-if="fenpeiParam.pageNum < fenpeiParam.pages">下一页</button>
+        </div>
+    </div>
+</div>

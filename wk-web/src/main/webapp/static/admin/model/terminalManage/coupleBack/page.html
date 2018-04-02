@@ -1,0 +1,44 @@
+<div id="coupleBack">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="reply_button()" ng-show="getBtnToken('feedback_reply')">回复
+                </button>
+            </div>
+            <div style="float: left;width: 300px;margin-right: 15px">
+                <label class="layui-form-label">组织区域:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="param.org_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in deptData" ng-click="param.dept_id=item.org_id; param.org_name = item.org_name; reload();" ng-class="{'layui-this':param.org_name == item.org_name}">{{item.org_name}}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated" style="display: none" id="reply">
+        <div class="layui-form-item">
+            <div class="form_group col-xs-12">
+                <textarea placeholder="回复的内容..." class="layui-textarea" ng-model="selRow.reply"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item" style="text-align: center;">
+            <button class="layui-btn" ng-click="reply_submit()">回复</button>
+        </div>
+    </div>
+</div>

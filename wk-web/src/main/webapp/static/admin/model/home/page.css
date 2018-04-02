@@ -1,0 +1,126 @@
+#home{
+    float: left;
+    width: 100%;
+    padding: 15px;
+    height: 100%;
+
+}
+#home .model_total{
+    float: left;
+    width: 100%;
+}
+#home .model_total table{
+    float: left;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+#home .model_total table tr.m1 td{
+    border-bottom: 1px #ddd solid;
+}
+#home .model_total table td label{
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    color: #525d75;
+    font-size: 20px;
+}
+#home .model_total table td em{
+    display: block;
+    padding: 0 0 10px 0;
+    text-align: center;
+    font-size: 42px;
+    color: #3b8cff;
+    height: 70px;
+}
+#home .model_total table td{
+    border-right: 1px #ddd solid;
+}
+#home .model_total table td:last-child{
+    border-right: none !important;
+}
+#home .model_dianji{
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+    border-top: 1px #ddd solid;
+    border-bottom: 1px #ddd solid;
+    height: 350px;
+}
+#home .model_list{
+    float: left;
+    width: 100%;
+    padding: 15px 30px;
+}
+#home .model_list .list{
+    float: left;
+    width: 100%;
+}
+#home .model_left{
+    float: left;
+    width: 50%;
+    padding: 15px 50px;
+    border-right: 1px #ddd solid;
+}
+#home .model_right{
+    float: left;
+    width: 50%;
+    padding: 15px 50px;
+}
+#home .model_list h1{
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#home .model_list .list li{
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+}
+#home .model_list .list .text{
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    width: 100%;
+    margin-bottom: 5px;
+}
+#home .model_list .list .text em{
+    float: right;
+    color: #3b8cff;
+}
+#home .model_list .list .line{
+    height: 12px;
+    background: #f3f3f3;
+    border-radius: 10px;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+#home .model_list .list .line p{
+    float: left;
+    height: 12px;
+    background: #eb7070;
+    margin: 0;
+}
+#home .model_list .list li:nth-child(1) p{
+    background: #6fd96f;
+}
+#home .model_list .list li:nth-child(2) p{
+    background: #3b8cff;
+}
+#home .model_list .list li:nth-child(3) p{
+    background: #f1dc2e;
+}
+#chart_dianji > p{
+    height: 350px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #999;
+    font-size: 22px;
+    line-height: 350px;
+    display: none;
+}

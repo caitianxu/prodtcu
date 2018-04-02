@@ -1,0 +1,32 @@
+/*404*/
+#unauo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-size: 100% auto
+}
+
+#unauo .inner {
+    width: 278px;
+    height: 358px;
+    position: relative;
+    margin: 100px auto;
+}
+
+#unauo .back_img{
+    width:100%;
+    height: 100%;
+    background: url('un.png') no-repeat
+}
+#unauo .button{
+    width: 94px;
+    position: absolute;
+    bottom: 110px;
+    left: 93px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}

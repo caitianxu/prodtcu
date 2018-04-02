@@ -1,0 +1,13 @@
+#orgResourceCount .tree-node {
+    overflow: hidden;
+}
+#orgResourceCount #col_comTree{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#orgResourceCount #col_comTree{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}

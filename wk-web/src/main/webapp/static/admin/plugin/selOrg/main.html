@@ -1,0 +1,54 @@
+<div id="Select_Org" style="display: none">
+    <div class="input_group">
+        <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="orgTableControl.org_searchText">
+        <span class="group_addon layui-btn" ng-click="orgTableControl.reload_org()"> 搜  索 </span>
+    </div>
+    <div class="data_array_org">
+        <div class="table_control">
+            <table class="layui-table" lay-even="" lay-skin="row" ng-class="{'un-check': !orgTableControl.config.check}">
+                <colgroup>
+                    <col width="50" ng-if="orgTableControl.config.check">
+                    <col ng-repeat="t in orgTableControl.config.columns" width="{{t.width}}">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th style="min-width:50px;width: 50px;text-align: left" ng-if="orgTableControl.config.check">
+                        <div class="box" ng-click="orgTableControl.unSelectAll()">
+                            <label class="check">
+                                <i ng-class="{'active': orgTableControl.config.selectAll}"></i>
+                            </label>
+                        </div>
+                    </th>
+                    <th ng-repeat="t in orgTableControl.config.columns" align="{{t.align}}"
+                        ng-click="orgTableControl.orderBy(t)">
+                        {{t.title}}
+                        <label ng-show="t.order && orgTableControl.config.param.orderField == t.field" ng-if="t.order">
+                            <i class="iconfont icon-jiantou3xia paixu" ng-class="{'tran_180': t.orderType == 'asc'}"></i>
+                        </label>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in orgTableControl.rows" ng-click="orgTableControl.unSelectRow(row)" ng-class="{'sel': row.select}">
+                    <td style="min-width:50px;width: 50px" ng-if="orgTableControl.config.check">
+                        <div class="box">
+                            <label class="check">
+                                <i ng-class="{'active': row.select}"></i>
+                            </label>
+                        </div>
+                    </td>
+                    <td ng-repeat="col in row.data" align="{{col.align}}" ng-bind-html="col.value"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="table_pager" id="org_table_pager" style="text-align: left"></div>
+
+            <div class="for_btns">
+                <button class="layui-btn" ng-click="orgTableControl.config_btn()">确定</button>
+                <button class="layui-btn layui-btn-primary" ng-click="orgTableControl.df_btn()">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>

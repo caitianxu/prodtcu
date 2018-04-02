@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/video.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript">
+        var all_pages = "${videoList.pages}";
+        var cid = "${cat_id}";
+        var c_cid = null;
+    </script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">推荐</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+<div class="videoContent">
+    <div class="main">
+        <div class="content_left">
+            <h1>${videoCatList.video_cat_name}</h1>
+            <ul class="left_menu">
+                <#if videoCatList.children ?? &&videoCatList.children?size!=0>
+                    <#list videoCatList.children as cl_item>
+                        <li><a href="javascript:void(0)" target="_blank" cid="${cl_item.video_cat_id}">${cl_item.video_cat_name}</a></li>
+                    </#list>
+                </#if>
+            </ul>
+            <div class="left_links">
+                <a href="${ctxPath}/web/booklist/?tag_name=农村党建" target="_blank"><img src="${ctxPath}/static/web/img/Le_1.jpg"></a>
+                <a href="${ctxPath}/web/inf/170509021002183" target="_blank"><img src="${ctxPath}/static/web/img/Le_2.jpg"></a>
+                <a href="${ctxPath}/web/booklist/?tag_name=种植养殖" target="_blank"><img src="${ctxPath}/static/web/img/Le_3.jpg"></a>
+                <a href="${ctxPath}/web/booklist/?tag_name=普工技能" ><img src="${ctxPath}/static/web/img/Le_4.jpg"></a>
+                <a href="${ctxPath}/web/booklist/?tag_name=就业创业"><img src="${ctxPath}/static/web/img/Le_5.jpg"></a>
+                <a href="${ctxPath}/web/booklist/?tag_name=名师教学"><img src="${ctxPath}/static/web/img/Le_6.jpg"></a>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="nav_bar">
+                <a href="${ctxPath}/web">首页</a>
+                <em>&gt;</em>
+                <a href="${ctxPath}/web/video/${cat_id}">${videoCatList.video_cat_name}</a>
+                <span style="display: none" id="ccml_path">
+                    <em>&gt;</em>
+                    <label></label>
+                </span>
+            </div>
+            <div class="inf_list">
+                <#if videoList ?? && videoList.rows?size != 0>
+                    <#list videoList.rows as list>
+                        <a href="${list.video_id}" class="cf_item" <#if (list_index+1)%3=0>style="margin-right:0"</#if> >
+                            <img src="${ctxPath}${list.cover_url_small}"/>
+                            <p>${list.video_title}</p>
+                        </a>
+                    </#list>
+                </#if>
+            </div>
+            <div class="M-box"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="${ctxPath}/static/web/js/video.js"></script>
+<!--公共底-->
+<#include "../firstModel/web_footer.html" />
+</body>
+</html>

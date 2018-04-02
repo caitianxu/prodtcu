@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>设置密码</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/mySetting.css" rel="stylesheet">
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+
+    <!-- 中 -->
+    <div class="content">
+        <div class="from-cells">
+            <!--<div class="from-cell-row">-->
+                <!--<div class="from-cell-cont">-->
+                    <!--<input type="password" id="member_pwd_old" placeholder="请输入旧密码" maxlength="20">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="from-cell-row wire">
+                <div class="from-cell-cont">
+                    <input type="password" id="member_pwd" placeholder="请输入6-20位数字或字母" maxlength="20">
+                </div>
+            </div>
+            <div class="from-cell-row wire">
+                <div class="from-cell-cont">
+                    <input type="password" id="member_pwd2" placeholder="请再次输入密码" maxlength="20">
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;text-align: center;margin-top: 20px">
+            <a class="btn btn-primary" onclick="submit()">保存</a>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    function  submit() {
+        var member_pwd = document.getElementById("member_pwd");
+        var member_pwd2 = document.getElementById("member_pwd2");
+        if (!member_pwd.value || member_pwd.value == "" || member_pwd.value.length < 6) {
+            layer.msg('请输入请输入6-20位数字或字母的新密码!')
+            return;
+        }
+        if (member_pwd2.value != member_pwd.value) {
+            layer.msg('两次密码输入不一致!')
+            return;
+        }
+        $.jsonAjax("/v2/api/mobile/changePwd", {
+            newPwd: member_pwd.value,
+            token: token
+        }, function (res) {
+            if (res.code == 0) {
+                alert('密码修改成功!');
+                window.location.href = ctxPath + "/mobile/login";
+            }
+            else {
+                layer.msg(res.message);
+            }
+        })
+    }
+</script>
+</body>
+</html>

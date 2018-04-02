@@ -1,0 +1,52 @@
+{
+  "code": 0,
+  "message": "加载成功",
+  "data": {
+    "pages": 0,
+    "pageSize": 10,
+    "total": 120,
+    "pageNum": 120,
+    "rows": [
+      {
+        "conf_id": 1,
+        "conf_name": "配置名称",
+        "logo_url": "logo_url",
+        "home_url": "home_url",
+        "list_url": "list_url",
+        "detail_url": "detail_url",
+        "is_default": 1,
+        "create_time": 1,
+        "update_time": 1,
+        "device_num": 11,
+        "device_ids": [
+          {
+            "name": "asd",
+            "id": 53
+          },
+          {
+            "name": "111",
+            "id": 54
+          }
+        ],
+        "tabList": [
+          {
+            "conf_content_id": 1,
+            "conf_id": 1,
+            "content_name": "asd1",
+            "content_icon": "icon",
+            "content_type": "custom",
+            "content_url": "content_url"
+          },
+          {
+            "conf_content_id": 2,
+            "conf_id": 2,
+            "content_name": "asdasd11",
+            "content_icon": "icon",
+            "content_type": "custom",
+            "content_url": "content_url"
+          }
+        ]
+      }
+    ]
+  }
+}

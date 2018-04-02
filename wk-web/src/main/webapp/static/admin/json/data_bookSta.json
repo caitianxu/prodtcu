@@ -1,0 +1,36 @@
+{
+  "code": "0",
+  "message": "",
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "rows": [
+      {
+        "org_name": "九秋书馆",
+        "book_name": "衫国演义",
+        "read_type": "阅读",
+        "num": 122
+      },
+      {
+        "org_name": "九秋书馆",
+        "book_name": "衫国演义",
+        "read_type": "阅读",
+        "num": 122
+      },
+      {
+        "org_name": "九秋书馆",
+        "book_name": "衫国演义",
+        "read_type": "扫瞄",
+        "num": 122
+      },
+      {
+        "org_name": "九秋书馆",
+        "book_name": "衫国演义",
+        "read_type": "扫瞄",
+        "num": 122
+      }
+    ]
+  }
+}

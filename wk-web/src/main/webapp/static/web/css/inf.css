@@ -1,0 +1,134 @@
+.inf_list_content{
+    margin: 20px 0;
+    overflow: hidden;
+}
+.content_left{
+    float: left;
+    width: 190px;
+}
+.content_right{
+    float: right;
+    width: 770px;
+}
+.content_left h1{
+    float: left;
+    width: 100%;
+    background: #639e2a;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.content_left ul{
+    float: left;
+    width: 100%;
+    border: 1px #ddd solid;
+    background: #fff;
+}
+.content_left ul li{
+    float: left;
+    height: auto;
+    line-height: 42px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 1px #eee solid;
+}
+.content_left ul li:hover, .content_left ul li.active{
+    background: #f8f8f8;
+}
+.content_left ul li a{
+    display: block;
+    line-height: 42px;
+    font-size: 14px;
+}
+.left_links{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.left_links a{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px #eee solid;
+}
+.left_links a img{
+    float: left;
+    width: 188px;
+    height: 80px;
+}
+.nav_bar{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+}
+.nav_bar a:hover{
+    color: #f90;
+    text-decoration: underline;
+}
+
+.inf_list{
+    float: left;
+    width: 100%;
+    border-top: 1px #ddd solid;
+    margin-bottom: 50px;
+}
+
+.inf_item{
+    float: left;
+    width: 100%;
+    border-bottom: 1px #ddd solid;
+    line-height: 50px;
+    padding: 0 10px;
+}
+.inf_item img{
+    width:260px;
+    height:100%;
+    padding: 10px 0;
+}
+.inf_item span{
+    font-size: 16px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: bold;
+    display:block;
+    text-overflow: ellipsis;
+}
+.inf_item p{
+    font-size:14px;
+    line-height:1.6em;
+    height: 5em;
+    color: #666;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+    -webkit-box-pack: center;
+    margin:0;
+    display:block;
+    text-indent: 2em;
+}
+
+.inf_item label{
+    float: right;
+    font-size: 13px;
+}
+.inf_item:hover{
+    background: #f7f7f7;
+    color: #639e2a;
+}
+.M-box{
+    float: left;
+    width: 100%;
+}
+html, body{
+    background: #fff;
+}

@@ -1,0 +1,231 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+}
+.da-app-content,.qy-app-content{
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #fffef9;
+}
+.main{
+    width: 1000px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -500px;
+}
+.con-left{
+    float: left;
+    width: 500px;
+    padding: 100px 0;
+}
+.left-logo{
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.left-logo img{
+    float: left;
+    width: 80px;
+}
+.left-logo p.p1{
+    float: left;
+    width: calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    width: -webkit-calc(100% - 80px);
+    padding-left: 15px;
+    margin-top: 0;
+    line-height: 50px;
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+.left-logo p.p2{
+    float: left;
+    width: calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    width: -webkit-calc(100% - 80px);
+    padding-left: 15px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    color: #999;
+}
+.left-bnts{
+    float: left;
+    width: 220px;
+}
+.dz-android{
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    margin-top: 10px;
+    text-decoration: none;
+    background: url("dz-android.png?v=1") no-repeat 20px center / 26px auto #ff3c58;
+}
+.dz-ios{
+    margin-top: 30px;
+    float: left;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: #ff3c58;
+    text-align: center;
+    border-radius: 3px;
+    text-decoration: none;
+    border: 1px #ff3c58 solid;
+    background: url("dz-ios.png?v=1") no-repeat 20px center / 26px auto;
+}
+.left-code{
+    float: left;
+    width: 125px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 0 3px #ddd;
+}
+.img-code{
+    float: left;
+    width: 100%;
+}
+.left-code p{
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    margin: 5px 0 0 0;
+}
+.con-right{
+    float: right;
+    width: 500px;
+}
+.con-right img{
+    width: 380px;
+    display: block;
+    margin: 0 auto;
+}
+.wap-content{
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: #fff;
+    padding-top: 15vh;
+}
+.qy-app-content .left-logo p.p1{
+    color: #fff;
+}
+.qy-app-content .left-logo p.p2{
+    color: #efefef;
+}
+.qy-app-content .dz-android{
+    background-color: #00da81;
+}
+.qy-app-content .dz-ios{
+    background: url("qy-ios.png?v=1") no-repeat 20px center / 26px auto #00ceff;
+    border: none;
+    color: #fff;
+}
+@media screen and (max-width: 1000px) {
+    .main{
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        margin: 0;
+    }
+    .main .con-left, .main .con-right{
+        display: none;
+    }
+    .wap-content{
+        display: block;
+    }
+    .dz-m-logo{
+        float: left;
+        width: 100%;
+    }
+    .dz-m-logo img{
+        display: block;
+        width: 80px;
+        margin: 0 auto;
+    }
+    .dz-m-t{
+        float: left;
+        width: 100%;
+        margin-top: 5vh;
+    }
+    .dz-m-t img{
+        display: block;
+        width: 150px;
+        margin: 0 auto;
+    }
+    .m-btnss-ii{
+        float: left;
+        width: 100%;
+        margin-top: 15vh;
+    }
+    .m-btnss-ii a{
+        display: block;
+        width: 230px;
+        margin: 0 auto;
+        text-align: center;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 3px;
+    }
+    .btn-android-m{
+        margin-top: 25px !important;
+        color: #fff;
+        text-decoration: none;
+        background: url("dz-android.png?v=1") no-repeat 20px center / 26px auto #ff3c58;
+    }
+    .btn-ios-m{
+        color: #ff3c58;
+        border:1px #ff3c58 solid;
+        text-decoration: none;
+        background: url("dz-ios.png?v=1") no-repeat 20px center / 26px auto;
+    }
+
+    .qy-app-content .dz-m-logo img{
+        width: 150px;
+    }
+
+    .qy-app-content .btn-android-m{
+        margin-top: 25px !important;
+        color: #fff;
+        text-decoration: none;
+        background: url("dz-android.png?v=1") no-repeat 20px center / 26px auto #00ceff;
+    }
+    .qy-app-content .btn-ios-m{
+        color: #fff;
+        border: none;
+        text-decoration: none;
+        background: url("qy-ios.png?v=1") no-repeat 20px center / 26px auto #00da81;
+    }
+    #weixin_fix{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 99999;
+        top:0;
+        left: 0;
+        background: url("yindao.png?v=1");
+        background-repeat: no-repeat;
+        background-position: right 0;
+        background-size: 70% auto;
+        background-color: rgba(0,0,0,0.7);
+        display: none;
+    }
+}

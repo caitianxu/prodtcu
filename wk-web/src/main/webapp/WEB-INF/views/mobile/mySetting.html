@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>设置</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/mySetting.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/mySetting.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+    <!-- 中 -->
+    <div class="content">
+        <div class="from-cells">
+            <div class="from-cell-row" id="update_head">
+                <div class="from-cell-label">
+                    <label>头像</label>
+                </div>
+                <div class="from-cell-cont">
+                    <#if member.icon?? && member.icon != "">
+                        <span><img src="${ctxPath}${member.icon}" class="member_head"></span>
+                        <#else>
+                            <span><img src="${ctxPath}/static/mobile/img/touxiang.png" class="member_head"></span>
+                    </#if>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </div>
+            <div class="from-cell-row wire" style="padding: 17px 15px">
+                <div class="from-cell-label">
+                    <label>账号ID</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span>${member.member_id}</span>
+                </div>
+            </div>
+
+            <a class="from-cell-row wire" href="${ctxPath}/mobile/mySetting_name">
+                <div class="from-cell-label">
+                    <label>昵称</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span>${member.nick_name}</span>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+            <a class="from-cell-row wire" href="${ctxPath}/mobile/mySetting_sex">
+                <div class="from-cell-label">
+                    <label>性别</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span>
+                        <#if member.sex?? && member.sex == 2>
+                            女
+                        <#else>
+                            男
+                        </#if>
+                    </span>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+            <a class="from-cell-row wire" href="${ctxPath}/mobile/mySetting_pwd">
+                <div class="from-cell-label">
+                    <label>设置密码</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span></span>
+                </div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+        </div>
+        <div class="from-cells">
+            <a class="from-cell-row" onclick="javaScript:alert('微信不支持绑定企业，更多功能请下载APP体验!')">
+                <div class="from-cell-label">
+                    <label>企业</label>
+                </div>
+                <div class="from-cell-cont">
+                    <span>${member.org_name}</span>
+                </div>
+            </a>
+            <a class="from-cell-row wire" onclick="javaScript:alert('微信不支持绑定手机，更多功能请下载APP体验!')">
+                <div class="from-cell-label">
+                    <label>手机</label>
+                </div>
+                <div class="from-cell-cont">
+                    <#if member.phone?? && member.phone != "">
+                        <span>${member.phone}</span>
+                        <#else>
+                            <span>未绑定</span>
+                    </#if>
+                </div>
+            </a>
+
+            <a class="from-cell-row wire" onclick="javaScript:alert('微信不支持绑定邮箱，更多功能请下载APP体验!')">
+                <div class="from-cell-label">
+                    <label>邮箱</label>
+                </div>
+                <div class="from-cell-cont">
+                    <#if member.email?? && member.email != "">
+                        <span>${member.email}</span>
+                        <#else>
+                            <span>未绑定</span>
+                    </#if>
+                </div>
+            </a>
+
+            <a class="from-cell-row wire" href="${ctxPath}/pkgApp">
+                <div class="from-cell-label">
+                    <label>APP下载</label>
+                </div>
+                <div class="from-cell-cont"></div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon-ShapeCopy"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+<!--头像上传-->
+<div style="display: none">
+    <input type="file" multiple="multiple" accept="image/jpeg,image/png,image/jpg" autocomplete="off" id="head-log"
+           class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+</div>
+</body>
+</html>

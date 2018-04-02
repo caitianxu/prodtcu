@@ -1,0 +1,96 @@
+#bookManage {
+    float: left;
+    width: 100%;
+}
+
+#bookManage .content_page_left {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#bookManage .book_item {
+    float: left;
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    border-top: 1px #ccc solid;
+    position: relative;
+}
+
+#bookManage .book_item .book_cover {
+    float: left;
+    margin-right: 15px;
+    width: 100px;
+    height: 140px;
+    background: #f9f9f9;
+}
+
+#bookManage .book_item .book_cover img {
+    width: 100px;
+    height: 140px;
+    float: left;
+}
+
+#bookManage .book_item .book_detail {
+    float: left;
+}
+
+#bookManage .book_item .book_detail label {
+    color: #525d75;
+    line-height: 32px;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#bookManage .book_item .book_detail em {
+    line-height: 32px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#bookManage .book_item .book_active {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#bookManage .book_item .book_active .check {
+    margin-left: 15px;
+    line-height: 32px;
+}
+
+#bookManage .book_item .book_active .ms {
+    color: #525d75;
+    line-height: 32px;
+    font-weight: 600;
+    text-align: right;
+}
+
+#bookManage .book_item .book_active .ms em {
+    color: #999;
+    font-weight: normal;
+    display: inline-block;
+}
+
+#bookManage .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#bookManage .layui-form-switch {
+    margin-top: -3px;
+}
+
+#bookManage .pager_total {
+    float: right;
+    margin: 10px 0;
+}
+
+#bookManage .pager_total span {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}

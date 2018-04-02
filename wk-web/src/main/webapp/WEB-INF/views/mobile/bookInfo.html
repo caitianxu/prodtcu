@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>图书详情</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/bookDetail.css" rel="stylesheet">
+
+    <style rel="stylesheet">
+        .footer .footer-col.start {
+            background: #5a92ff;
+            border-radius: 0;
+            width: 50%;
+        }
+
+        .footer .footer-col.start .text {
+            color: #fff;
+            height: 46px;
+            line-height: 43px;
+        }
+
+        .footer a {
+            width: 25%;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<!-- 中 -->
+<div class="content">
+    <!--图书-->
+    <div class="from-cells" style="margin-top: 0;">
+        <div class="from-cell-row" style="padding: 15px 10%;">
+            <div class="from-cell-label">
+                <img src="${ctxPath}${bookInfo.book_cover}">
+            </div>
+            <div class="from-cell-cont">
+                <h3>${bookInfo.book_name}</h3>
+
+                <p><span>${bookInfo.book_author}</span></p>
+
+                <p><span>${bookInfo.book_publisher}</span></p>
+            </div>
+        </div>
+        <div class="from-cell-row" style="padding: 10px 0">
+            <div class="from-cell-cont" style="letter-spacing: 1px;">
+                <span>${bookInfo.book_remark}</span>
+            </div>
+        </div>
+    </div>
+    <!--书评-->
+    <div class="from-cells">
+        <p style="padding: 10px;">最新书评</p>
+        <#if bookReviewList ?? && bookReviewList?size != 0>
+            <div class="comments">
+                <#list bookReviewList as bookReview>
+                    <a href="${ctxPath}/mobile/commentDetail/${bookReview.review_id}" class="row wire">
+                        <div class="top">
+                            <div class="touxiang">
+                                <#if bookReview.icon?? && bookReview.icon != "">
+                                    <img src="${ctxPath}${bookReview.icon}">
+                                    <#else>
+                                        <img src="${ctxPath}/static/mobile/img/touxiang.png">
+                                </#if>
+                            </div>
+                            <span class="name">${bookReview.nick_name}</span><span class="time">${bookReview.create_time?string('MM月dd日 HH:mm')}</span>
+                            <i class="icon iconfont icon-message">
+                                <span>${bookReview.review_nums}</span>
+                            </i>
+                        </div>
+                        <p>${bookReview.review_content}</p>
+                    </a>
+                </#list>
+            </div>
+            <#else>
+                <!--没有书评-->
+                <div class="noContent" style="padding: 10% 0;width: 70%;margin: 0 auto;">
+                    <img src="${ctxPath}/static/mobile/img/book_no_comment.png">
+                    <span>还没有书评,快来抢沙发吧~</span>
+                </div>
+        </#if>
+        <#if bookReviewList ?? && bookReviewList?size == 3>
+            <!--查看目录-->
+            <div id="seeComment">
+                <a href="${ctxPath}/mobile/commentAll/${bookInfo.book_id}">查看全部评论</a>
+            </div>
+        </#if>
+    </div>
+    <!--相关推荐-->
+    <div class="from-cells bookAll" style="margin-top: 0">
+        <p style="padding:10px;">相关推荐</p>
+        <#if recommendList ?? && recommendList?size != 0>
+            <#list recommendList as list>
+                <a href="${ctxPath}/mobile/bookInfo/${list.book_id}" class="col">
+                    <div class="img-box">
+                        <img src="${ctxPath}${list.book_cover}">
+                    </div>
+                    <span>${list.book_name}</span>
+                </a>
+            </#list>
+        </#if>
+
+    </div>
+</div>
+<!--底-->
+<div class="footer">
+    <a href="${ctxPath}/mobile/publishComment/${bookInfo.book_id}" class="footer-col active">
+        <div class="icon-box"><i class="icon iconfont icon-xiaoxi"></i></div>
+        <p class="text"><span>评论</span></p></a>
+    <a href="${ctxPath}/mobile/book/${bookInfo.book_id}" class="footer-col start">
+        <p class="text"><span style="font-size: 14px">开始阅读</span></p></a>
+    <#if bookInfo.shelf_id ??>
+        <a href="javaScript:void(0)" class="footer-col active" style="color: #999">
+            <div class="icon-box" style="color: #999"><i class="icon iconfont icon-icon02" style="color: #999"></i></div>
+            <p class="text" style="color: #999"><span>已在书架</span></p></a>
+        <#else>
+            <a href="javaScript:void(0)"  class="footer-col active" onclick="addBookShle()">
+                <div class="icon-box"><i class="icon iconfont icon-icon02"></i></div>
+                <p class="text"><span>加入书架</span></p></a>
+    </#if>
+
+</div>
+    <script type="text/javascript">
+        var bookId = "${bookInfo.book_id}";
+        function  addBookShle() {
+            $.jsonAjax("/v2/api/bookShelf/addBook",{
+                member_token: token,
+                book_id: bookId,
+                org_id: org_id
+            },function (res) {
+                alert("已加入书架! 快去畅快阅读吧~");
+                window.location.href = ctxPath+"/mobile/shelf";
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+#dataEntrepot{
+    float: left;
+    width: 100%;
+}
+#dataEntrepot .book_up{
+    float: left;
+    width: 150px;
+}
+#dataEntrepot .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+#export_plan{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+#export_plan .check{
+    min-width: 190px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#up_book_info{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}
+#up_book_info .info_left{
+    float: left;
+    width: 40%;
+}
+#up_book_info .info_right{
+    float: left;
+    width: 60%;
+    padding-top: 50px;
+}
+#up_book_info .bInfo{
+    width: 200px;
+    display: block;
+    margin: 50px auto 0;
+    float: right;
+}
+#up_book_info .bCover{
+    float: left;
+    width: 100%;
+    height: 275px;
+    overflow: hidden;
+    border: 1px #ddd solid;
+    margin-bottom: 15px;
+}
+#up_book_info .cInfo{
+    float: left;
+    width: 400px;
+}
+#up_book_info .bCover img{
+    height: 100%;
+    min-width: 100%;
+}
+#up_book_info .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#dataEntrepot .table_control td > span{
+    word-break:keep-all;
+}

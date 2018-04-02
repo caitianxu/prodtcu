@@ -1,0 +1,69 @@
+<div id="largeVersion">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('edition__manage_add')">新增</button>
+                <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('edition__manage_update')">修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="delRow()" ng-show="getBtnToken('edition__manage_del')">删除</button>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>包名:</label>
+
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" maxlength="255" ng-model="selRow.package_name"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>版本号:</label>
+
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" maxlength="50" ng-model="selRow.version_code"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>版本名称:</label>
+
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" maxlength="50" ng-model="selRow.version_name"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>APK文件:</label>
+
+                <div class="layui-input-block" id="table_file">
+                    <div class="input-file " style="padding: 0;margin: 0;width: 100%;">
+                        <input type="file" multiple="multiple"  autocomplete="off" id="prj-log"
+                               class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>描述:</label>
+
+                <div class="layui-input-block">
+                <textarea class="layui-textarea" style="height: 100px;"
+                          ng-model="selRow.remark"></textarea>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <!--设备列表-->
+    <!--<sel-device check="false"></sel-device>-->
+</div>

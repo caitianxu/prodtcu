@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS数据双向绑定机制及实现原理</title>
+
+    <script type="text/javascript" src="angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="angular-1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("myApp",["ngRoute"]);
+        app.run(["$rootScope", function ($rootScope) {
+            console.log('run')
+        }])
+        app.factory('userObject', function () {
+            console.log('factory')
+            var user = {};//定义一个Object对象'
+            user.name = "张三";
+            var age;//定义一个私有化的变量
+            //对私有属性写getter和setter方法
+            user.setAge = function(newAge){
+                age = newAge;
+            }
+            user.getAge = function(){
+                return age;
+            }
+            return user;//返回这个Object对象
+        })
+        app.controller("mainController", function ($rootScope, $scope, userObject) {
+            console.log('controller')
+            console.log(userObject.name)
+            userObject.setAge(20);
+            console.log(userObject.getAge())
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="mainController">
+    <p>名字 : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+</div>
+</body>
+</html>

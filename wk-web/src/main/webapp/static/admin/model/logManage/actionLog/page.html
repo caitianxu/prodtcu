@@ -1,0 +1,56 @@
+<div id="actionLog">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="content_search">
+                <div class="list_bar_row">
+                   <div class="col-xs-2">
+                       <label class="layui-form-label">开始日期:</label>
+                       <div class="layui-input-block">
+                           <input class="date-time-picker layui-input" readonly ng-model="selRow.begin_time" type="text" plugintype="datetime"/>
+                       </div>
+                   </div>
+                    <div class="col-xs-2">
+                        <label class="layui-form-label">结束日期:</label>
+                        <div class="layui-input-block">
+                            <input class="date-time-picker layui-input" readonly ng-model="selRow.end_time" type="text" plugintype="datetime"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="layui-form-label">功能模块:</label>
+                        <div class="layui-input-block">
+                            <input class=" layui-input"  ng-model="selRow.searchText" type="text" />
+                        </div>
+                    </div>
+                    <div class="col-xs-3" style="display:none">
+                        <label class="layui-form-label">操作类型:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="selRow.action_type"/>
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <dd ng-click="selRow.action_type='全部'" ng-class="{'layui-this':selRow.action_type == '全部'}">全部</dd>
+                                    <dd ng-click="selRow.action_type='增加'" ng-class="{'layui-this':selRow.action_type == '增加'}">增加</dd>
+                                    <dd ng-click="selRow.action_type='修改'" ng-class="{'layui-this':selRow.action_type == '修改'}">修改</dd>
+                                    <dd ng-click="selRow.action_type='删除'" ng-class="{'layui-this':selRow.action_type == '删除'}">删除</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="col-xs-3">-->
+                        <!--<label class="layui-form-label">日志内容:</label>-->
+                        <!--<div class="layui-input-block">-->
+                            <!--<input class="layui-input" ng-model="selRow.action_log_content" type="text"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <button class="layui-btn" ng-click="reload()">查询</button>
+                    <button class="layui-btn" ng-click="form_empty()">清空</button>
+                </div>
+
+            </div>
+        </div>
+
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+</div>

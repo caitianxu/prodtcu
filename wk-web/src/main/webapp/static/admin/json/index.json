@@ -1,0 +1,152 @@
+{
+  "code":0,
+  "message":"",
+  "data":{
+    "member_num": 0,
+    "dev_num": 0,
+    "book_num":0,
+    "cms_num":0,
+    "newspaper_num": 0,
+    "periodical_num":0,
+    "video_num":0,
+    "audio_num": 0,
+    "book_ranking":[{
+      "date":"12/12",
+      "books":[{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      }]
+    },{
+      "date":"12/13",
+      "books":[{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      },{
+        "book_id":1,
+        "book_name":"叁国志",
+        "count":100
+      }]
+    }],
+    "member_ranking":[{
+      "member_id":"111",
+      "member_name":"张三",
+      "read_data":[{
+        "date":"12/12",
+        "count": 99
+      },{
+        "date":"12/13",
+        "count": 99
+      },{
+        "date":"12/14",
+        "count": 99
+      },{
+        "date":"12/15",
+        "count": 99
+      },{
+        "date":"12/16",
+        "count": 99
+      },{
+        "date":"12/17",
+        "count": 99
+      },{
+        "date":"12/18",
+        "count": 99
+      }]
+    },{
+      "member_id":"2222",
+      "member_name":"李四",
+      "read_data":[{
+        "date":"12/12",
+        "count": 99
+      },{
+        "date":"12/13",
+        "count": 99
+      },{
+        "date":"12/14",
+        "count": 99
+      },{
+        "date":"12/15",
+        "count": 99
+      },{
+        "date":"12/16",
+        "count": 99
+      },{
+        "date":"12/17",
+        "count": 99
+      },{
+        "date":"12/18",
+        "count": 99
+      }]
+    }]
+  }
+}

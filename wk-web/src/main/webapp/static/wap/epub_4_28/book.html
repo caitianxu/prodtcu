@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8">
+    <meta content="always" name="referrer"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>全民悦读器</title>
+    <link rel="stylesheet" href="Reader.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="Reader.js"></script>
+</head>
+<!--book_display_two-->
+<body class="skin_2">
+
+    <div id="doc">
+        <div id="factory">
+            <div class="content">
+                <div class="book_html"></div>
+                <div class="book_factory"></div>
+            </div>
+        </div>
+        <div id="market">
+            <div class="content"></div>
+        </div>
+        <div class="slide-next"></div>
+        <div class="slide-prev"></div>
+        <div class="slide-center"></div>
+    </div>
+    <div id="loaders" style="display: none">
+        <div class="epub-mask_transparent"></div>
+        <div class="epub-toast">
+            <i class="epub-loading epub-icon_toast"></i>
+            <div class="epub-toast_content">数据加载中</div>
+        </div>
+    </div>
+    <div id="book_info_parent" class="">
+        <div class="book_title">
+            <span></span>
+            <label></label>
+            <i></i>
+        </div>
+        <div id="book_info" class="" style="display: none">
+            <div class="info_content">
+                <div class="ml">
+                    <div class="ml_title">目录</div>
+                    <div class="ml_content">
+                        <ul id="copers"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="book_action">
+            <div class="action_1">
+                <label class="action_last">上一章</label>
+                <div class="action_step">
+                    <div class="step_bg">
+                        <div class="step_line">
+                            <span><i></i></span>
+                        </div>
+                    </div>
+                </div>
+                <input type="range" value="1" id="book_step" step="0.01">
+                <label class="action_next">下一章</label>
+            </div>
+            <div class="action_color">
+                <span class="col_1" data-skin="skin_1"><label></label></span>
+                <span class="col_2" data-skin="skin_2"><label></label></span>
+                <span class="col_3" data-skin="skin_3"><label></label></span>
+                <span class="col_4" data-skin="skin_4"><label></label></span>
+                <span class="col_5" data-skin="skin_5"><label></label></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 排行榜</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/order.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">资讯</a>
+        <a href="${ctxPath}/web/order" class="active">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+
+<div class="order_content">
+    <div class="main">
+        <div class="order_left">
+            <div class="order_title">
+                <span class="active" no-target="book_order">图书排行榜</span>
+                <span no-target="user_order">个人排行榜</span>
+            </div>
+            <div class="order_list">
+                <div class="book_order">
+                    <div class="order_group" id="book_group">
+                        <a href="javascript:void(0)" class="active" did="week">周</a>
+                        <a href="javascript:void(0)" did="month">月</a>
+                        <a href="javascript:void(0)" did="year">年</a>
+                    </div>
+                    <div class="book_order_items"></div>
+                    <div class="book_page">
+                        <div class="M-box" id="book_M"></div>
+                    </div>
+                </div>
+                <div class="user_order" style="display: none">
+                    <div class="order_group" id="user_group">
+                        <a href="javascript:void(0)" class="active" did="week">周</a>
+                        <a href="javascript:void(0)" did="month">月</a>
+                        <a href="javascript:void(0)" did="year">年</a>
+                    </div>
+                    <div class="user_items"></div>
+                    <div class="book_page">
+                        <div class="M-box" id="book_E"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="order_right">
+            <div class="left_links">
+                <#if advModuleList ?? && advModuleList?size !=0>
+                    <#list advModuleList as adv>
+                        <#if adv_index lt 6>
+                            <#if adv.adv_url ??>
+                                <a href="${ctxPath}${adv.adv_url}" class="r_item" target="_blank">
+                                    <div class="cover"><img src="${ctxPath}${adv.adv_img}"></div>
+                                </a>
+                            </#if>
+                        </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type="text/javascript" src="${ctxPath}/static/web/js/order.js"></script>
+<!--公共底-->
+<#include "../include/web_footer.html" />
+</body>
+</html>

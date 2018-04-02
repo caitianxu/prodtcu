@@ -1,0 +1,14 @@
+#androidVersion #table_file .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#androidVersion #table_file .file-action .file-btn-ku{
+    display: none !important;
+}
+#androidVersion .table_control td{
+    white-space: normal !important;
+}
+#androidVersion .table_control td > span{
+    max-width: 100% !important;
+    overflow: auto;
+}

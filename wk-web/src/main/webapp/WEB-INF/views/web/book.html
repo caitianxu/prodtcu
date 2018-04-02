@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="skin_2">
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <#if book ?? && book != "">
+        <title>${book.book_name}</title>
+        <else>
+            <title>图书阅读器</title>
+        </else>
+    </#if>
+    <meta name="description" content="长江云全民阅读数字农家书屋云平台是湖北长江传媒数字出版有限公司打造的以互联网技术助推“全民阅读进村组”工作的创新发展项目，向广大农村居民提供数字阅读、农村党建、惠农政策、种植养殖、普工技能、就业创业、名师教学、生活服务等全面的数字化服务。" />
+    <meta name="keywords" content="长江云全民阅读,数字农家书屋,数字阅读,农村党建,惠农政策,种植养殖,普工技能,就业创业,名师教学" />
+    <link href="${ctxPath}/static/web/img/fav.ico" rel="shortcut icon" type="image/x-icon"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/jquery-1.9/jquery.min.js"></script>
+    <script type="text/javascript">
+        var memberInfo = ${memberInfo};
+        $("html")[0].className = memberInfo.read_skin || 'skin_2';
+        var ctxPath = "${ctxPath}";
+        var pro_code = "${pro_code}";
+        var org_id = "${org_id}";
+        var serverName = "${serverName}";
+        var _token = "${member_token}";
+        var book_id = "${book_id}";
+        var chapterid = "${chapterid}";
+        if (!_token || _token == "") {
+            window.location.href = "${ctxPath}/web?key=login";
+        }
+        else if("${book}" == ""){
+            window.location.href = "${ctxPath}/web/err";
+        }
+    </script>
+    <link href="${ctxPath}/static/web/css/book/font/iconfont.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/css/book.css" rel="stylesheet"/>
+</head>
+<body>
+    <#if member_token != "" && book != "">
+    <div class="main" style="width: 1000px">
+        <div class="all_content">
+            <div class="book_title">
+                <h1>${book.book_name} - ${book.book_author}</h1>
+                <div class="title_bar">
+                    <div class="remark_bar" title="添加书签" id="addBookMark"><label class="iconfont icon-17"></label></div>
+                    <div class="skin_bar">
+                        <label class="iconfont icon-skin" title="设置皮肤"></label>
+                        <div class="skin_list">
+                            <i class="iconfont icon-shangjiantou"></i>
+                            <div>
+                                <span class="m_skin_1" onclick="set_skin('skin_1')"></span>
+                                <span class="m_skin_2" onclick="set_skin('skin_2')"></span>
+                                <span class="m_skin_3" onclick="set_skin('skin_3')"></span>
+                                <span class="m_skin_4" onclick="set_skin('skin_4')"></span>
+                                <span class="m_skin_5" onclick="set_skin('skin_5')"></span>
+                                <span class="m_skin_6" onclick="set_skin('skin_6')"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="font_bar">
+                        <label class="iconfont icon-fontm" id="min_size" title="缩小字体大小"></label>
+                        <em id="fontSize">16</em>
+                        <label class="iconfont icon-a1" id="max_size" title="增加字体大小"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="book_html">
+                <div class="book_txt" style="min-height: 500px">
+                    <textarea style="display: none">${content}</textarea>
+                </div>
+                <div class="book_footer">
+                    <span id="content_last_page">( 快捷键<i class="iconfont icon-zuojiantou"></i>)上一章</span>
+                    <span id="content_mulu"><i class="iconfont icon-mulu"></i>目录( 快捷键 Enter)</span>
+                    <span id="content_next_page">下一章( 快捷键<i class="iconfont icon-zuojiantou-right"></i>)</span>
+                </div>
+            </div>
+        </div>
+        <div class="right_bar mm_bar" style="display: none">
+            <span id="prve_page">
+                <i class="iconfont icon-jiantoushang"></i>
+                <label>上一章</label>
+            </span>
+                    <span id="next_page">
+                <i class="iconfont icon-jiantouxia"></i>
+                <label>下一章</label>
+            </span>
+                    <span id="top_page">
+                <i class="iconfont icon-huidaodingbu"></i>
+                <label>回顶部</label>
+            </span>
+        </div>
+        <div class="left_bar mm_bar" style="display: none">
+            <span id="book_menu">
+                <i class="iconfont icon-mulu"></i>
+                <label>目录</label>
+                <div class="book_menu_plan">
+                    <div class="book_ls_content">
+                        <div class="book_ls_title">
+                            目录
+                            <span></span>
+                        </div>
+                        <div class="book_ls_list">
+                            <dl id="copers">
+                                <#if chapterList ?? && chapterList ? size != 0>
+                                    <#list chapterList as chapter>
+                                        <dd>
+                                            <a href="${ctxPath}/web/book/${book_id}/${chapter.id}" chapterid="${chapter.id}" code="${chapter.code}" <#if chapter.id?string = chapterid> class="active" </#if>><em>※</em>${chapter.name}</a>
+                                            <#if chapter.child ?? && chapter.child ? size != 0>
+                                                <ul>
+                                                    <#list chapter.child as chapter_node>
+                                                    <a href="${ctxPath}/web/book/${book_id}/${chapter_node.id}" chapterid="${chapter_node.id}" code="${chapter_node.code}" <#if chapter_node.id?string = chapterid> class="active" </#if>><em>※</em>${chapter_node.name}</a>
+                                                    </#list>
+                                                </ul>
+                                            </#if>
+                                        </dd>
+                                    </#list>
+                                </#if>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <span id="book_mark">
+                <i class="iconfont icon-08shuqian"></i>
+                <label>书签</label>
+                <div class="book_mark_plan">
+                    <div class="book_ls_content">
+                        <div class="book_ls_title">
+                            书签
+                            <span></span>
+                        </div>
+                        <div class="book_ls_list" style="padding-top: 20px;">
+                            <div class="bookmark_list"></div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <span id="book_view">
+                <i class="iconfont icon-pingjia"></i>
+                <label>评论</label>
+            </span>
+
+            <span id="book_del" <#if !book.shelf_id?? >style="display:none"</#if> ><i class="iconfont icon-shujia"></i><label>移除书架</label></span>
+            <span id="book_add" <#if book.shelf_id?? >style="display:none"</#if> ><i class="iconfont icon-shujia"></i><label>加入书架</label></span>
+
+            <span id="book_back">
+                <i class="iconfont icon-zuojiantou"></i>
+                <label>返回</label>
+            </span>
+        </div>
+    </div>
+    <script type="text/javascript" src="${ctxPath}/static/web/js/book.js"></script>
+    </#if>
+</body>
+</html>

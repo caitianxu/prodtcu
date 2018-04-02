@@ -1,0 +1,48 @@
+{
+  "code": 0,
+  "message": "",
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "rows": [
+      {
+        "book_id": 122,
+        "book_cover": "http://www.xiyouwenhuacn.com/uploads/20161214165042/37ea3c092f3d439c88bc1f959bb96b1c.jpg",
+        "book_name": "屠苏",
+        "book_isbn": 4567890,
+        "book_author": "屠苏",
+        "book_tag": "屠苏|漫画|科技",
+        "tag_whether": false
+      },
+      {
+        "book_id": 122,
+        "book_cover": "http://www.xiyouwenhuacn.com/uploads/20161214165042/37ea3c092f3d439c88bc1f959bb96b1c.jpg",
+        "book_name": "屠苏",
+        "book_isbn": 4567890,
+        "book_author": "屠苏",
+        "book_tag": "屠苏|漫画|科技",
+        "tag_whether": true
+      },
+      {
+        "book_id": 122,
+        "book_cover": "http://www.xiyouwenhuacn.com/uploads/20161214165042/37ea3c092f3d439c88bc1f959bb96b1c.jpg",
+        "book_name": "屠苏",
+        "book_isbn": 4567890,
+        "book_author": "屠苏",
+        "book_tag": "屠苏|漫画|科技",
+        "tag_whether": false
+      },
+      {
+        "book_id": 122,
+        "book_cover": "http://www.xiyouwenhuacn.com/uploads/20161214165042/37ea3c092f3d439c88bc1f959bb96b1c.jpg",
+        "book_name": "屠苏",
+        "book_isbn": 4567890,
+        "book_author": "屠苏",
+        "book_tag": "屠苏|漫画|科技",
+        "tag_whether": true
+      }
+    ]
+  }
+}

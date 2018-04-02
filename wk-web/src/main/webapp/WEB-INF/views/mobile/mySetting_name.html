@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>昵称</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/mySetting.css" rel="stylesheet">
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+
+    <!-- 中 -->
+    <div class="content">
+        <div class="from-cells">
+            <div class="from-cell-row">
+                <div class="from-cell-cont" style="padding:0">
+                    <input type="text" id="member_name" placeholder="请输入昵称, 长度2~8位" maxlength="8"/>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center;margin-top: 30px">
+            <button class="btn btn-primary" onclick="upNick()">提交</button>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript">
+    function upNick() {
+        var member_name = document.getElementById("member_name");
+        if(!member_name.value || member_name.value == ""){
+            layer.msg("请填写昵称！");
+            return false;
+        }
+        $.jsonAjax("/v2/api/mobile/modifyUserInfo",{
+            token: token,
+            sex: memberInfo.sex,
+            nickName: member_name.value
+        }, function (res) {
+            if(res.code == 0){
+                window.location.href = ctxPath+"/mobile/mySetting";
+            }
+            else{
+                layer.msg(res.message)
+            }
+        })
+    }
+</script>
+</body>
+</html>

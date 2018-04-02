@@ -1,0 +1,269 @@
+.center_content {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 30px 0 10px 0;
+}
+
+.center_top {
+    float: left;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    padding: 20px;
+    border: 1px #eee solid;
+    box-shadow: 0 0 3px #ddd;
+    margin-top: 50px;
+    height: 140px;
+}
+
+.u_head {
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    left: 20px;
+    top: -49px;
+    position: absolute;
+    background: url("../img/center_tt.png") 0 0 no-repeat;
+}
+
+.u_head .u_img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.u_head .u_img img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.u_head .u_name {
+    float: left;
+    text-align: center;
+    width: 100%;
+    line-height: 35px;
+    color: #949494;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.u_head .u_step {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+
+.u_head .u_step span {
+    display: inline-block;
+    background: #ed5642;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    width: 60px;
+    font-style: italic;
+}
+
+.u_menu {
+    float: right;
+    width: 800px;
+}
+
+.u_menu .m_link {
+    float: left;
+    width: 33.33%;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.u_menu .m_link a {
+    display: inline-block;
+    line-height: 30px;
+    font-size: 16px;
+    padding-left: 30px;
+}
+
+.u_menu .m_link a.b1 {
+    background: url("../img/center_2.png") 0 2px no-repeat;
+}
+
+.u_menu .m_link a.b2 {
+    background: url("../img/center_1.png") 0 5px no-repeat;
+}
+
+.u_menu .m_link a.b3 {
+    background: url("../img/center_3.png") 0 4px no-repeat;
+}
+
+.center_list {
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 20px 40px;
+    margin-top: 40px;
+    border: 1px #eee solid;
+    box-shadow: 0 0 3px #ddd;
+}
+
+.book_page {
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.send_list {
+    float: left;
+    width: 100%;
+}
+
+.send_list .send_item {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.send_list .send_item .cover {
+    float: left;
+    width: 60px;
+    border: 1px #eee solid;
+}
+
+.send_list .send_item .cover img {
+    float: left;
+    width: 100%;
+}
+
+.send_list .send_detail {
+    float: right;
+    width: 840px;
+    border-bottom: 1px #eee solid;
+    padding-bottom: 20px;
+}
+
+.send_item .line_1 {
+    float: left;
+    width: 100%;
+}
+
+.send_item .line_1 h1 {
+    float: left;
+    font-size: 16px;
+}
+
+.send_item .line_1 .send_ico {
+    float: right;
+    padding-left: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #878787;
+    font-size: 14px;
+    background: url("../img/m_close.png") 0 3px no-repeat;
+}
+
+.send_item .ling_content {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    color: #787878;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.send_item .ling_time {
+    float: right;
+    color: #639e2a ;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.back_list {
+    float: left;
+    width: 100%;
+    padding: 10px 20px 0 20px;
+    background: #f1f1f1;
+    margin-top: 10px;
+}
+
+.back_item {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px #ddd dashed;
+}
+
+.back_item:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+
+.back_item .back_name {
+    float: left;
+    min-width: 70px;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.back_item .back_name p {
+    margin: 0;
+    font-size: 14px;
+    color: #639e2a;
+    float: left;
+}
+
+.back_item .back_name .time {
+    line-height: 24px;
+    color: #949494;
+    float: left;
+}
+
+.back_item .back_text {
+    float: left;
+    width: 700px;
+    margin-bottom: 10px;
+}
+
+.send_bottom {
+    float: left;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.send_bottom a {
+    display: inline-block;
+    padding: 8px 30px;
+    border: 1px #ccc solid;
+    font-size: 14px;
+    color: #888;
+    border-radius: 20px;
+}
+
+.send_bottom a:hover {
+    background: #f9f9f9;
+}
+.cmm{
+    min-height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #949494;
+}
+#send_conn{
+    float: left;
+    width: 100%;
+}
+.send_total{
+    float: left;
+    width: 100%;
+    line-height: 30px;
+}
+.send_bottom_end{
+    float: left;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+    color: #999;
+}

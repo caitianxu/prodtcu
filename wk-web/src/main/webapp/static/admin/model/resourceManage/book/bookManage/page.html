@@ -1,0 +1,119 @@
+<div id="bookManage">
+    <div class="content_main">
+        <div class="content_page_left">
+            <div id="class_comTree">
+                <ul id="comTree"></ul>
+            </div>
+        </div>
+
+        <div class="content_page_right">
+            <div class="list_bar_row" style="margin-bottom: 15px">
+                <div class="bars">
+                    <div style="float: left;width: 200px;margin-right: 15px">
+                        <label class="layui-form-label">是否启用:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="paramCol.enabled_text"/>
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <dd ng-click="reload('enabled',-1,'全部')">全部</dd>
+                                    <dd ng-click="reload('enabled',1,'启用')">启用</dd>
+                                    <dd ng-click="reload('enabled',2,'停用')">停用</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: left;width: 200px;margin-right: 15px">
+                        <label class="layui-form-label">是否热门:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="paramCol.is_hot_text"/>
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <dd ng-click="reload('is_hot',-1,'全部')">全部</dd>
+                                    <dd ng-click="reload('is_hot',1,'是')">是</dd>
+                                    <dd ng-click="reload('is_hot',2,'否')">否</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="float: left;width: 200px;">
+                        <label class="layui-form-label">是否推荐:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="paramCol.is_recommend_text"/>
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <dd ng-click="reload('is_recommend',-1,'全部')">全部</dd>
+                                    <dd ng-click="reload('is_recommend',1,'是')">是</dd>
+                                    <dd ng-click="reload('is_recommend',2,'否')">否</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_plan">
+                    <div class="input_group">
+                        <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="paramCol.searchText">
+                        <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    </div>
+                </div>
+            </div>
+            <!--图书列表-->
+            <div id="bookListTable">
+                <div class="book_item" ng-repeat="book in tableBook">
+                    <div class="book_cover">
+                        <img ng-src="{{ctxPath+book.book_cover_small}}"  ng-if="book.book_cover" class="df_book">
+                    </div>
+                    <div class="book_detail">
+                        <div>
+                            <label>{{book.book_name}}</label><em> - {{book.book_author}}</em>
+                        </div>
+                        <div>
+                            <label>ISBN</label><em>{{book.book_isbn}}</em>
+                        </div>
+                        <div>
+                            <label>排序</label><em>{{book.order_weight}}</em>
+                            <button class="btn layui-btn-mini" ng-click="order_top(book,$index,'top')" ng-if="$index > 0 && tableBook.length > 1"><i class="iconfont icon-dingbu"></i></button>
+                            <button class="btn layui-btn-mini" ng-click="order_top(book,$index,'up')" ng-if="$index > 0 && tableBook.length > 1"><i class="iconfont icon-shangsheng1"></i></button>
+                            <button class="btn layui-btn-mini" ng-click="order_top(book,$index,'down')" ng-if="$index < tableBook.length - 1"><i class="iconfont icon-xiajiang"></i></button>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <span style="margin-right: 30px">
+                                <label>状态</label>
+                                <div class="layui-unselect layui-form-switch layui-form-onswitch" ng-if="book.enabled == 1"  ng-click="up_book_state(book,2)"><i></i></div>
+                                <div class="layui-unselect layui-form-switch" ng-if="book.enabled == 2"  ng-click="up_book_state(book,1)"><i></i></div>
+                            </span>
+
+                            <span style="margin-right: 30px">
+                                <label>热门</label>
+                                <div class="layui-unselect layui-form-switch"  ng-class="{'layui-form-onswitch':book.is_hot == 1 }"  ng-click="upBookHot(book)"><i></i></div>
+                            </span>
+
+                            <span style="margin-right: 30px">
+                                <label>推荐</label>
+                                <div class="layui-unselect layui-form-switch"  ng-class="{'layui-form-onswitch':book.is_recommend == 1 }"  ng-click="upBookRecommend(book)"><i></i></div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="book_active">
+                        <div class="ms">&nbsp;</div>
+                        <div class="ms">点击量 - <em>{{book.click_count}}</em></div>
+                        <div class="ms">分享数 - <em>{{book.share_count}}</em></div>
+                        <div class="ms">收藏量 - <em>{{book.collect_count}}</em></div>
+                    </div>
+                </div>
+
+                <div class="table_pager" id="bookManagePager">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

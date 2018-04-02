@@ -1,0 +1,490 @@
+.book_content {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.book-html{
+    float: left;
+    width: 100%;
+    background: #fff;
+    border:1px #eee solid;
+    box-shadow: 0 0 3px #ddd;
+    padding: 40px 20px 40px 40px;
+}
+.html-left{
+    float: left;
+    width: 600px;
+}
+.html-right{
+    float: right;
+    width: 280px;
+}
+
+
+
+
+.book_head {
+    background: #fff;
+    float: left;
+    width: 100%;
+}
+
+.b_head_left {
+    float: left;
+    width: 430px;
+}
+
+.b_head_left .cover {
+    float: left;
+    width: 160px;
+    border: 1px #ccc solid;
+    box-shadow: 0 0 5px #ccc;
+}
+
+.b_head_left .cover img {
+    float: left;
+    width: 100%;
+    height: 200px;
+}
+
+.detail {
+    float: right;
+    width: 250px;
+    position: relative;
+}
+
+.detail h1 {
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+
+.detail h2, .detail h3 {
+    font-size: 14px;
+    color: #949494;
+    white-space: nowrap;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 30px;
+}
+
+.detail .link_line {
+    float: left;
+    margin-top: 20px;
+}
+
+.detail .link_line a ,.detail .link_line button{
+    float: left;
+    width: 100px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+.detail .link_line .l1 {
+    background: #639e2a;
+    color: #fff;
+    height: 37px;
+}
+
+.detail .link_line .l2 {
+    background: #fff;
+    color: #639e2a;
+    border: 1px #639e2a solid;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.book_remark_line{
+    float: left;
+    border-bottom: 1px #ccc solid;
+    padding: 20px 0;
+    font-size: 14px;
+    line-height: 24px;
+    text-indent: 2em;
+    text-align: justify;
+}
+.b_head_right {
+    float: right;
+    width: 122px;
+    font-size: 14px;
+    color: #595959;
+    overflow: hidden;
+    text-align: center;
+}
+.b_head_right p{
+    margin: 5px 0;
+    font-size: 12px;
+    color: #787878;
+}
+#mm_img_code{
+    border: 1px #ddd solid;
+    padding: 5px;
+    height: 122px;
+}
+#mm_img_code * {
+    float: left;
+}
+
+.m_more {
+    float: right;
+    line-height: 30px;
+    cursor: pointer;
+    padding-right: 15px;
+    color: #9e9e9e;
+    font-size: 12px;
+    background: url(../img/more_ico.png) no-repeat right center / 10px 10px;
+}
+.book-tjs{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    border-bottom: 1px #ccc solid;
+    padding-bottom: 10px;
+    overflow-x: hidden;
+}
+.book-tj-items{
+    float: left;
+    width: 625px;
+}
+.book-tj-item{
+    float: left;
+    width: 124px;
+    padding-right: 22px;
+    margin:10px 0;
+}
+.book-tj-item .b-cover{
+    float: left;
+    width: 100%;
+    box-shadow: 1px 1px 3px #bbb;
+}
+.book-tj-item img{
+    float: left;
+    width: 100%;
+    height: 135px;
+}
+.book-tj-item p{
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 5px 0 0 0;
+}
+.book-tj-item p.cm1{
+    font-size: 12px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0;
+    color: #999;
+}
+.book-cm-right{
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.book-cm-right .cm-header{
+    float: left;
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 1px #ccc solid;
+}
+.cm-list{
+    float: left;
+    width: 100%;
+    padding-top: 15px;
+}
+.cm-l-book{
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cm-l-book .b-cover{
+    float: left;
+    width: 103px;
+    box-shadow: 1px 1px 3px #bbb;
+}
+.cm-l-book .b-cover img{
+    float: left;
+    width: 100%;
+    height: 135px;
+}
+.cm-l-book .cm-detail-l{
+    float: right;
+    width: 165px;
+}
+.cm-l-book .cm-detail-l h1{
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cm-l-book .cm-detail-l p{
+    font-size: 12px;
+    line-height: 22px;
+    color: #999;
+    float: left;
+    margin:  10px 0 0 0;
+    text-align: justify;
+    height: 88px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow: hidden;
+    -webkit-box-pack: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.book_mmessage {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.send_top {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.send_top span {
+    font-size: 20px;
+    float: left;
+}
+
+.send_top label {
+    font-size: 14px;
+    color: #949494;
+    float: left;
+    margin: 3px 10px 0 10px;
+}
+
+.send_title {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.send_top textarea {
+    float: left;
+    width: 100%;
+    border: 1px #ccc solid;
+    height: 120px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.send_top .send_btn {
+    float: right;
+    margin-top: 20px;
+    width: 100px;
+    border-radius: 3px;
+    background: #73a5ef;
+    color: #fff;
+    border: none;
+    line-height: 36px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.send_bottom {
+    float: left;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.send_bottom a {
+    display: inline-block;
+    padding: 8px 30px;
+    border: 1px #ccc solid;
+    font-size: 14px;
+    color: #888;
+    border-radius: 20px;
+}
+
+.send_bottom a:hover {
+    background: #f9f9f9;
+}
+
+.send_list {
+    float: left;
+    width: 100%;
+}
+
+.send_list .send_item {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.send_list .send_item .cover {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.send_list .send_item .cover img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+}
+
+.send_list .send_detail {
+    float: right;
+    width: 525px;
+    border-bottom: 1px #eee solid;
+    padding-bottom: 20px;
+}
+
+.send_item .line_1 {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.send_item .line_1 h1 {
+    float: left;
+    font-size: 16px;
+}
+
+.send_item .line_1 .send_ico {
+    float: right;
+    padding-left: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    color: #878787;
+    font-size: 14px;
+    background: url("../img/send_ico.png") 0 2px no-repeat;
+}
+
+.send_item .ling_content {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    color: #787878;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.send_item .ling_time {
+    float: right;
+    margin-right: 20px;
+    color: #949494;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.back_list {
+    float: left;
+    width: 100%;
+    padding: 10px 20px 0 20px;
+    background: #f1f1f1;
+    margin-top: 10px;
+}
+
+.back_item {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px #ddd dashed;
+}
+
+.back_item:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+
+.back_item .back_name {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding-right: 10px;
+}
+
+.back_item .back_name p {
+    margin: 0;
+    font-size: 14px;
+    color: #639e2a;
+    float: left;
+}
+
+.back_item .back_name .time {
+    line-height: 24px;
+    color: #949494;
+    float: left;
+}
+
+.back_item .back_text {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.send_back_txt {
+    float: left;
+    width: 100%;
+    display: none;
+}
+
+.send_back_txt textarea {
+    float: left;
+    width: 100%;
+    border: 1px #ddd solid;
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 12px;
+    height: 50px;
+}
+
+.send_back_btn {
+    float: right;
+    margin-top: 10px;
+    width: 60px;
+    border-radius: 3px;
+    background: #73a5ef;
+    color: #fff;
+    border: none;
+    line-height: 26px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+textarea:focus {
+    border-color: #73a5ef;
+}

@@ -1,0 +1,179 @@
+<div id="discount_boos">
+    <div class="content_main">
+        <div class="list_bar_row" style="position: relative">
+            <div class="bars">
+                <button class="layui-btn layui-btn-link" ng-click="addBookRow()" ng-show="getBtnToken('discountBook_add')">添加图书</button>
+                <button class="layui-btn layui-btn-link" ng-click="editBookRow()" ng-show="getBtnToken('discountBook_edit')">修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="delBookRow()" ng-show="getBtnToken('discountBook_del')">删除</button>
+            </div>
+            <div class="layui-btn-group" style="position: absolute;left: 50%;margin-left: -100px">
+                <button class="layui-btn layui-btn-primary" ng-class="{'warm-1':param.channel_type == 1}" ng-click="reload(1)" style="width: 100px;">男频</button>
+                <button class="layui-btn layui-btn-primary" ng-class="{'warm-1':param.channel_type == 2}"  ng-click="reload(2)" style="width: 100px;">女频</button>
+                <button class="layui-btn layui-btn-primary" ng-class="{'warm-1':param.channel_type == 3}"  ng-click="reload(3)" style="width: 100px;">出版</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload(null, true)" ng-model="param.searchText">搜索</span>
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated none ">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="form-left">
+                    <div class="layui-form-item" id="img_cc">
+                        <div class="image_text">
+                            <div class="leftImg" style="height: 100%; width: 100%;">
+                                <div class="center" ng-show="!selRow.adv_img" style="padding: 115px 81px;text-align: center">
+                                    <i class="iconfont icon-tianjiatupian"></i>
+                                </div>
+                                <img ng-src="{{ctxPath+selRow.adv_img}}" ng-if="selRow.adv_img">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="img_tt"></div>
+                    <div class="form-left-bottom">
+                        <div class="form-inline img-file" id="header">
+                            <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                                <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" autocomplete="off" id="prj-log"
+                                       class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-right">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><em>*</em>广告名称:</label>
+
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.adv_name"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label"><em>*</em>所属分类:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="selRow.parent_name"/>
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <ul  id="resTree"></ul>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">链接地址:</label>
+
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.adv_url" placeholder="http://"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">排序:</label>
+                        <div class="layui-input-block">
+                            <div class="input_group sort-control">
+                                <input class="layui-input" type="text" readonly  ng-model="selRow.order_weight" maxlength="15" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                <span class="group_addon layui-btn layui-btn-warm">自动生成</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">描述:</label>
+
+                        <div class="layui-input-block">
+                            <textarea class="layui-textarea" style="height: 135px;" ng-model="selRow.remark"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+    <div id="addBookRow" style="display: none;padding: 15px;">
+        <div class="input_group" style="width: 100%">
+            <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param1.searchText">
+            <span class="group_addon layui-btn layui-btn-warm" style="width: 80px" ng-click="searchBook1()" ng-show="param.channel_type == 1">搜索网文</span>
+            <span class="group_addon layui-btn layui-btn-warm" style="width: 80px" ng-click="searchBook2()" ng-show="param.channel_type == 2">搜索网文</span>
+            <span class="group_addon layui-btn layui-btn-danger" ng-click="searchBook3()" style="width: 80px"  ng-show="param.channel_type == 3">搜索出版</span>
+        </div>
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>封面</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in data_book_array">
+                <td align="center"><div class="cover"><img ng-src="{{row.book_cover}}" ng-if="row.book_cover" style="width: 80px;"></div></td>
+                <td align="center">{{row.book_name}}</td>
+                <td align="center">{{row.book_author}}</td>
+                <td align="center"><button class="layui-btn btn-sm" ng-click="addBookToClass(row)">添加</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="editBookForm" style="display: none;padding: 15px 25px 0 0">
+        <div class="layui-form-item" style="margin-bottom: 0;">
+            <label class="layui-form-label">图书:</label>
+            <div class="layui-input-block" style="line-height: 38px;color: #009688">
+               {{selRow.book_name}}
+            </div>
+        </div>
+        <div class="layui-form-item" style="margin-bottom: 0" ng-if = "selRow.channel_type == 3">
+            <label class="layui-form-label">原价:</label>
+            <div class="layui-input-block">
+                <s style="color: #999;line-height: 38px;">￥{{selRow.price}}</s>
+            </div>
+        </div>
+        <div class="layui-form-item " ng-if = "selRow.channel_type == 3">
+            <label class="layui-form-label"><em>*</em>折扣价:</label>
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" ng-model="selRow.discount_price" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>开始时间:</label>
+            <div class="layui-input-block">
+                <input class="date-time-picker layui-input" readonly ng-model="selRow.start_time" type="text" plugintype="date"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>截至时间:</label>
+            <div class="layui-input-block">
+                <input class="date-time-picker layui-input" readonly ng-model="selRow.end_time" type="text" plugintype="date"/>
+            </div>
+        </div>
+        <div class="layui-form-item text-center">
+            <button class="layui-btn" style="width: 150px" ng-click="saveBook()">确定</button>
+        </div>
+    </div>
+
+
+</div>

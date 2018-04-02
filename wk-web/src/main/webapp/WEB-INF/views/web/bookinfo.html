@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <#if bookInfo ?? && bookInfo != "">
+        <title>${bookInfo.book_name}</title>
+        <#else>
+            <title>图书详情</title>
+    </#if>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/bookinfo.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/web/js/jquery.timeago.js"></script>
+    <script type="text/javascript">
+        var book_id = "${book_id}";
+    </script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">资讯</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+
+<div class="book_content">
+    <div class="main" style="overflow: visible">
+        <div class="book-html">
+            <div class="html-left">
+                <div class="book_head">
+                    <div class="b_head_left">
+                        <#if bookInfo.book_cover_small ??>
+                            <div class="cover"><img src="${ctxPath}${bookInfo.book_cover_small}"></div>
+                            <#else>
+                                <div class="cover"><img src="${ctxPath}/static/web/img/book_cover.png"></div>
+                        </#if>
+                        <div class="detail">
+                            <h1>${bookInfo.book_name}</h1>
+                            <h2>作者：${bookInfo.book_author}</h2>
+                            <#if bookInfo.book_publisher ??>
+                                <h3>出版社：${bookInfo.book_publisher}</h3>
+                            </#if>
+                            <#if bookInfo.publish_time ??>
+                            <h3>出版日期：${bookInfo.publish_time?string("yyyy年MM月dd日")}</h3>
+                            </#if>
+                            <div class="link_line">
+                                <#if bookInfo.shelf_id??>
+                                    <a href="javascript:void(0)" class="l2">已加入书架</a>
+                                    <#else>
+                                        <button onclick="_addBookShelf_tag(${bookInfo.book_id},this, event)" class="l2">加入书架</button>
+                                </#if>
+                            </div>
+                            <div class="link_line">
+                                <a href="javascript:void(0)" onclick="_toBookRead_public('${ctxPath}/web/book/${book_id}',event)" class="l1">开始阅读</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="b_head_right">
+                        <div class="mm_img" id="mm_img_code"></div>
+                        <p>扫码手机阅读</p>
+                    </div>
+                </div>
+                <div class="book_remark_line">${bookInfo.book_remark}</div>
+
+                <div class="book-tjs">
+                    <div class="book-tj-title">
+                        相关推荐  <a href="${ctxPath}/web/booklist" class="m_more">更多</a>
+                    </div>
+                    <div class="book-tj-items">
+                        <#if bookRecommendList??>
+                            <#list bookRecommendList as book>
+                                <a href="${ctxPath}/web/bookinfo/${book.book_id}" class="book-tj-item">
+                                    <div class="b-cover">
+                                        <#if book.book_cover_small ??>
+                                            <div class="cover"><img src="${ctxPath}${book.book_cover_small}"></div>
+                                            <#else>
+                                                <div class="cover"><img src="${ctxPath}/static/web/img/book_cover.png"></div>
+                                        </#if>
+                                    </div>
+                                    <p>${book.book_name}</p>
+                                    <p class="cm1">${book.book_author}</p>
+                                </a>
+                            </#list>
+                        </#if>
+                    </div>
+                </div>
+
+                <div class="book_mmessage">
+                    <div class="send_top">
+                        <div class="send_title"><span>评论</span><label style="display: none">共0条</label></div>
+                        <textarea placeholder="我来说两句...." id="send_msg"></textarea>
+                        <button class="send_btn" id="send_msg_btn">发表</button>
+                    </div>
+                    <div class="send_list">
+                        <!--评论内容-->
+                    </div>
+                    <div class="send_bottom" style="display: none">
+                        <a href="javascript:void(0)">查看更多</a>
+                    </div>
+                </div>
+            </div>
+            <div class="html-right">
+                <div class="book-cm-right">
+                    <div class="cm-header">热门图书
+                        <a href="${ctxPath}/web/order" class="m_more">更多</a>
+                    </div>
+                    <div class="cm-list">
+                        <#if hotList??>
+                            <#list hotList as book>
+                                <a href="${ctxPath}/web/bookinfo/${book.book_id}" class="cm-l-book">
+                                    <div class="b-cover">
+                                        <#if book.book_cover_small ??>
+                                            <div class="cover"><img src="${ctxPath}${book.book_cover_small}"></div>
+                                            <#else>
+                                                <div class="cover"><img src="${ctxPath}/static/web/img/book_cover.png"></div>
+                                        </#if>
+                                    </div>
+                                    <div class="cm-detail-l">
+                                        <h1>${book.book_name}</h1>
+                                        <p>${book.book_remark}</p>
+                                    </div>
+                                </a>
+                            </#list>
+                        </#if>
+                    </div>
+                </div>
+
+                <div class="book-cm-right">
+                    <div class="cm-header">精彩推荐
+                        <a href="${ctxPath}/web/booklist" class="m_more">更多</a>
+                    </div>
+                    <div class="cm-list">
+                        <#if recommendList??>
+                            <#list recommendList as book>
+                                <a href="${ctxPath}/web/bookinfo/${book.book_id}" class="cm-l-book">
+                                    <div class="b-cover">
+                                        <#if book.book_cover_small ??>
+                                            <div class="cover"><img src="${ctxPath}${book.book_cover_small}"></div>
+                                            <#else>
+                                                <div class="cover"><img src="${ctxPath}/static/web/img/book_cover.png"></div>
+                                        </#if>
+                                    </div>
+                                    <div class="cm-detail-l">
+                                        <h1>${book.book_name}</h1>
+                                        <p>${book.book_remark}</p>
+                                    </div>
+                                </a>
+                            </#list>
+                        </#if>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="${ctxPath}/static/web/js/bookinfo.js"></script>
+<!--公共底-->
+<#include "../include/web_footer.html" />
+</body>
+</html>

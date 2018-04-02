@@ -1,0 +1,136 @@
+<div id="dataEntrepot">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <!--<div class="book_up" ng-show="getBtnToken('bookEntrepot_upload')" style="margin-right: 15px">-->
+                    <!--<div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">-->
+                        <!--<input type="file" multiple="multiple" autocomplete="off" id="book_upload"-->
+                               <!--style="z-index: 10000"-->
+                               <!--class="form-control file-pretty" name="file" data-id="file"-->
+                               <!--data-ajax="true"/>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="book_up" ng-show="getBtnToken('bookEntrepot_import')" style="margin-right: 15px">
+                    <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                        <input type="file" multiple="multiple" autocomplete="off" id="excel_upload"
+                               style="z-index: 10000"
+                               class="form-control file-pretty" name="file" data-id="file"
+                               data-ajax="true"/>
+                    </div>
+                </div>
+
+                <button class="layui-btn layui-btn-link" ng-click="editRow()" ng-show="getBtnToken('bookEntrepot_edit')">单本修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="upState(true)" ng-show="getBtnToken('bookEntrepot_up')">批量上架</button>
+                <button class="layui-btn layui-btn-link" ng-click="upState(false)" ng-show="getBtnToken('bookEntrepot_dowm')">批量下架</button>
+                <button class="layui-btn layui-btn-link" ng-click="export_data()" ng-show="getBtnToken('bookEntrepot_data')">导出选中数据</button>
+                <button class="layui-btn layui-btn-link" ng-click="data_export()" ng-show="getBtnToken('bookEntrepot_export')">导出待补全信息到Excel</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+            <div class="search_plan" style="padding-top: 5px;width: 150px;" >
+                <div lay-skin="" class="layui-unselect layui-form-checkbox" ng-click="reload('book_status')" ng-class="{'layui-form-checked':param.book_status == 1}">
+                    <span ng-if="param.book_status == 1">显示上架</span>
+                    <span ng-if="param.book_status == 2">显示下架</span>
+                    <i class="layui-icon"></i></div>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+    <!--导出过滤-->
+    <div id="export_plan" style="display: none">
+        <div class="box">
+            <label class="check" ng-repeat="item in exDataArray" ng-click="item.select = !item.select"><i ng-class="{'active': item.select}"></i>{{item.text}}<em style="color: #999">({{item.count}}本待处理)</em></label>
+        </div>
+        <div class="layui-form-item text-center" style="margin: 15px 0 0 0;float: left;width: 100%">
+            <button class="layui-btn" style="width: 100%;" id="exportBtn" ng-click="centerExport()">导出</button>
+        </div>
+    </div>
+
+    <!--图书信息-->
+    <div class="form_content animated none">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+            </div>
+        </div>
+        <div id="up_book_info">
+            <div class="info_left">
+                <div class="bInfo">
+                    <div class="bCover">
+                        <img ng-src="{{ctxPath+selRow.book_cover}}" ng-if="selRow.book_cover"/>
+                    </div>
+                    <div class="up_file">
+                        <div class="form-inline img-file" id="header">
+                            <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                                <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" autocomplete="off" id="bookCover"
+                                       class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info_right">
+                <div class="cInfo">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">书名</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.book_name"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">作者</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.book_author"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">出版社</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.book_publisher"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">出版时间</label>
+                        <div class="layui-input-block">
+                            <input class="date-time-picker layui-input" readonly ng-model="selRow.publish_time" type="text"  plugintype="datetime"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">版权日期</label>
+                        <div class="layui-input-block">
+                            <input class="date-time-picker layui-input" readonly ng-model="selRow.end_time" type="text"  plugintype="datetime"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">ISBN</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.book_isbn"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">价格</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-model="selRow.price"/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">简介</label>
+                        <div class="layui-input-block">
+                            <textarea ng-model="selRow.book_remark" class="layui-textarea" maxlength="300"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+#authority.form_row {
+    height: 34px;
+    position: relative;
+    float: none;
+}
+
+#authority.form_label {
+    padding: 0;
+}
+
+#authority.col-xs-9 {
+    padding: 0 5px;
+    width: 75%;
+}
+
+#authority #col_comTree{
+    float: left;
+    width: 100%;
+    height: calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#authority #col_comTree:hover{
+    overflow-y: auto;
+}
+#authority .box .check {
+    width: 100%;
+}
+
+#authority .box .check i {
+    width: 100%;
+}
+
+
+
+#authority .box #sel i {
+    float: none;
+    margin: 0;
+}
+
+#authority .box .check span {
+    float: left;
+    width: 33.3333%;
+    color: #666;
+}
+#authority select {
+    border: none;
+    background: none;
+}
+
+#authority .dropdown.col-xs-9 {
+    padding: 0;
+}

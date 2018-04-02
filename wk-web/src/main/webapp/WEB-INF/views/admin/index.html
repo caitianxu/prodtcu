@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>长江云数字阅读公共管理平台</title>
+
+    <script type="text/javascript">
+        var ctxPath = "${ctxPath}";
+        //IP
+        var returnCitySN = {"cip": "255.255.255.255", "cid": "000000", "cname": "IP获取失败"};
+        //天气
+        var  remote_ip_info = null;
+    </script>
+    <link href="${ctxPath}/static/admin/img/fav.ico" rel="shortcut icon" type="image/x-icon"/>
+    <!--layui-->
+    <link rel="stylesheet" href="${ctxPath}/static/admin/plugin/layui/css/layui.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/admin/css/basic.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/admin/font/iconfont.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/admin/css/animate.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/admin/plugin/easyui/easyui.css"/>
+    <!-- 自定义列表 -->
+    <link rel="stylesheet" href="${ctxPath}/static/admin/plugin/gridtable/main.css"/>
+    <!--时间 -->
+    <link rel="stylesheet" href="${ctxPath}/static/admin/plugin/datetimepicker/jquery.datetimepicker.css"/>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/layui/layui.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/js/layui_public.js"></script>
+
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/angular/angular.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/angular/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/angular/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/datetime/moment.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/js/app_public.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/js/app_directives.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/js/app_services.js"></script>
+
+    <!--chart-->
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/chart/echarts-all.js"></script>
+    <!-- 时间转换 -->
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/jquery/xdate.js"></script>
+    <!-- 日历 -->
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/datetimepicker/jquery.datetimepicker.js"></script>
+    <!-- 上传 -->
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/prettyfile/bootstrap-prettyfile.js"></script>
+    <!-- 滚动条 -->
+    <link rel="stylesheet" href="${ctxPath}/static/admin/plugin/scrollbar/jquery.mCustomScrollbar.css"/>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/scrollbar/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/admin/plugin/scrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="mainController" class="un-login">
+    <div class="top_header">
+        <a href="#/home" class="logo"><img src="${ctxPath}/static/admin/img/logo2.png"></a>
+        <ul class="layui-nav top_menu">
+            <li class="layui-nav-item" ng-repeat="item in _ALLMENU" ng-show="$index < 8"  ng-class="{'layui-this': item.res_id == selectTopMenu.res_id}">
+                <a  ng-href="{{item.res_url}}" ng-bind="item.res_name"></a>
+            </li>
+        </ul>
+
+
+        <div class="top_right">
+            <div class="weather_inc_today"></div>
+            <div class="u_info" style="margin-top: 0">
+                <ul class="layui-nav">
+                    <li class="layui-nav-item">
+                        <a>
+                            <div class="cover">
+                                <i class="iconfont icon-touxiang" ng-hide="_USERINFO.icon"></i>
+                                <img ng-src="${ctxPath}{{_USERINFO.icon}}" ng-if="_USERINFO.icon"/>
+                            </div>
+                            <span class="u_text" ng-bind="_USERINFO.user_name"></span>
+                        </a>
+
+                        <dl class="layui-nav-child">
+                            <dd><a ng-click="upPassword()">修改密码</a></dd>
+                            <dd><a ng-click="loginup()">退出</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <label class="sys_time" ng-bind="sys_dateTime"></label>
+        </div>
+    </div>
+    <div class="left_main_menu">
+        <div class="all_menu" id="publicMenu">
+            <div style="display: inline-block;width: 100%;margin-bottom: 50px;">
+                <ul class="layui-nav layui-nav-tree" lay-filter="dis_menu" ng-repeat="mmm in _ALLMENU" ng-show="selectTopMenu.res_id == mmm.res_id">
+                    <li class="layui-nav-item layui-nav-itemed"  ng-repeat="item in mmm.children"  ng-class="{'layui-this': item.res_id == selectFirstMenu.res_id && item.res_url}">
+                        <a ng-href="{{item.res_url}}" ng-if="item.res_url">
+                            <i class="iconfont {{item.res_icon}}"></i>{{item.res_name}}
+                        </a>
+                        <a ng-if="!item.res_url">
+                            <i class="iconfont {{item.res_icon}}"></i>{{item.res_name}}
+                        </a>
+                        <dl class="layui-nav-child" ng-if="item.children && item.children.length > 0">
+                            <dd ng-repeat="model in item.children"  ng-class="{'layui-this': model.res_id == selectSecondMenu.res_id}">
+                                <a ng-href="{{model.res_url}}" ng-show="model.res_type == 1">{{model.res_name}}</a>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="center_main_content">
+        <div class="parent_view" ui-view=""></div>
+    </div>
+
+    <!--修改密码-->
+    <div id="upPassword" style="display: none;">
+        <div class="layui-form-item">
+            <label class="layui-form-label text-right"><em>*</em>旧密码:</label>
+            <div class="layui-input-block">
+                <input type="password" class="col-xs-10 layui-input" ng-model="updatePassParam.oldpwd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label text-right"><em>*</em>新密码:</label>
+            <div class="layui-input-block">
+                <input type="password" class="col-xs-10 layui-input" ng-model="updatePassParam.newpwd">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label text-right"><em>*</em>确认密码:</label>
+            <div class="layui-input-block">
+                <input type="password" class="col-xs-10 layui-input" ng-model="updatePassParam.newpwd_1">
+            </div>
+        </div>
+        <div class="layui-form-item text-center"><button class="layui-btn" ng-click="cen_upPassword()">确&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定</button></div>
+    </div>
+
+    <!--<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>-->
+    <!--<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>-->
+    <script type="text/javascript">
+        //天气初始化
+        if(remote_ip_info && remote_ip_info.city) {
+//            $.getJSON("http://api.map.baidu.com/telematics/v3/weather?callback=?", {
+//                "location": remote_ip_info.city,
+//                "output": "json",
+//                "ak": "WoqlXloEuWpO86SkpxL3LMSfBMqS67gp"
+//            }, function (result) {
+//                if (result.results && result.results.length > 0) {
+//                    var datas = result.results[0].weather_data;
+//                    if (datas && datas.length > 0) {
+//                        var data = datas[0];
+//                        var weather_inc_today = $(".weather_inc_today").empty();
+//                        $("<span></span>").html(remote_ip_info.city).appendTo(weather_inc_today);
+//                        $("<span></span>").html(data.temperature).appendTo(weather_inc_today);
+//                        $('<img src="' + data.dayPictureUrl + '">').appendTo(weather_inc_today);
+//                        $("<span></span>").html(data.weather).appendTo(weather_inc_today);
+//                        $("<span></span>").html(data.wind).appendTo(weather_inc_today);
+//                    }
+//                }
+//            });
+        }
+    </script>
+</body>
+</html>

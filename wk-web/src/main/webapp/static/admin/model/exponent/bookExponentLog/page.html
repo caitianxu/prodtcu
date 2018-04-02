@@ -1,0 +1,24 @@
+<div id="bookExponentLog">
+    <div class="content_main">
+        <div class="content_page_left" style="padding: 0" ng-show="_USERINFO.org_id == 1">
+            <div id="col_comTree">
+                <ul id="comTree"></ul>
+            </div>
+        </div>
+
+        <div ng-class="{'content_page_right':_USERINFO.org_id == 1}">
+            <div class="list_bar_row">
+                <div class="col-xs-3">
+                    <label class="layui-form-label">查询日期:</label>
+                    <div class="layui-input-block">
+                        <input class="date-time-picker layui-input" readonly ng-model="selRow.create_time" type="text" plugintype="datetime"/>
+                    </div>
+                </div>
+                <button class="layui-btn" ng-click="reload()">查询</button>
+                <button class="layui-btn" ng-click="rest()">重置</button>
+            </div>
+            <!-- 列表 -->
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+    </div>
+</div>

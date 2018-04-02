@@ -1,0 +1,13 @@
+#userHotExponent .tree-node {
+    overflow: hidden;
+}
+#userHotExponent #col_comTree{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#userHotExponent #col_comTree{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}

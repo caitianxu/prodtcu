@@ -1,0 +1,48 @@
+{
+  "code": "0",
+  "message": "",
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "rows": [
+      {
+        "res_id": 111,
+        "res_key": "bookmg1",
+        "pid": null,
+        "order_weight": 1,
+        "res_name": "资源管理",
+        "res_url": "#resource",
+        "res_icon": null,
+        "res_type": 1,
+        "enabled": true,
+        "create_time": "2012-12-12 22:11:33"
+      },
+      {
+        "res_id": 112,
+        "res_key": "bookmg2",
+        "pid": null,
+        "order_weight": 1,
+        "res_name": "图书分类2",
+        "res_url": "#m2",
+        "res_icon": null,
+        "res_type": 1,
+        "enabled": true,
+        "create_time": "2012-12-12 22:11:33"
+      },
+      {
+        "res_id": 113,
+        "res_key": "bookmg3",
+        "pid": null,
+        "order_weight": 1,
+        "res_name": "图书分类3",
+        "res_url": "#m3",
+        "res_icon": null,
+        "res_type": 1,
+        "enabled": true,
+        "create_time": "2012-12-12 22:11:33"
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+<div id="org">
+    <div class="content_main">
+        <div class="content_page_left">
+            <div class="layui-form-item" style="border-bottom:1px solid #E2E7EB;background: #eff4f8 "
+                 ng-show="_USERINFO.role_id == 1">
+                <div class="dropdown col-xs-12">
+                    <div class="input_group" style="display: block;text-align: center">
+                        <a class="title text-overflow" ng-click="org_list()">{{orgTest.org_name}}</a>
+                    </div>
+                </div>
+            </div>
+            <div id="col_comTree" ng-class="{'maxHeight': _USERINFO.role_id != 1}">
+                <ul id="comTree" style="margin-bottom: 50px"></ul>
+            </div>
+        </div>
+
+        <div class="content_page_right">
+            <div class="list_bar_row">
+                <div class="bars">
+                    <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('org_add')">新增</button>
+                    <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('org_update')">修改</button>
+                    <button class="layui-btn layui-btn-link" ng-click="delRow()" ng-show="getBtnToken('org_del')">删除</button>
+                </div>
+            </div>
+
+
+            <grid-table data-control="tableControl"  data-unpager="true"></grid-table>
+        </div>
+    </div>
+
+
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>组织名称:</label>
+                <div class="layui-input-block">
+                    <input class="layui-input"  ng-model="selRow.org_name" type="text" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">组织编号:</label>
+                <div class="layui-input-block">
+                    <input class="layui-input"  ng-model="selRow.org_code" type="text" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>上级组织:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="selRow.parent_orgName"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <ul id="orgTree"></ul>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注:</label>
+                <div class="layui-input-block">
+                    <textarea class="layui-textarea" ng-model="selRow.remark"/>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    <!--机构选择-->
+    <sel-org></sel-org>
+</div>
+</div>

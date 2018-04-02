@@ -1,0 +1,13 @@
+#bookExponentLog .tree-node {
+    overflow: hidden;
+}
+#bookExponentLog #col_comTree{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#bookExponentLog #col_comTree{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}

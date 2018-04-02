@@ -1,0 +1,43 @@
+<div id="mailTemp">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="btn btn-primary" ng-click="row_update()" ng-show="getBtnToken('mailTemp_update')">修改
+                </button>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="btn btn-primary" ng-click="_form_submit(true)">保存</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+            <div class="form_row">
+                <label class="form_label col-xs-2">模板名称:</label>
+
+                <div class=" col-xs-10">
+                    <input class="form_control" type="text"  ng-model="selRow.mail_template_name">
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">内容:</label>
+
+                <div class="form_group col-xs-10">
+                    <iframe id="myIframe"
+                            ng-src="{{ctxPath+'/static/admin/plugin/ueditor/edit.html'}}"
+                            scrolling="no" style="border: 1px #ddd solid ;width: 99.9%"  height="800"
+                            frameborder="0"></iframe>
+                </div>
+            </div>
+
+        </form>
+        </div>
+    </div>
+</div>

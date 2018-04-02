@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS数据双向绑定机制及实现原理</title>
+
+    <script type="text/javascript" src="angular-1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="angular-1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("myApp",["ngRoute"]);
+        app.run(["$rootScope", function ($rootScope) {
+            console.log('run')
+        }])
+        app.config(['$httpProvider', function($httpProvider) {
+            console.log('config')
+            $httpProvider.interceptors.push('httpIntercept');
+        }])
+        app.factory('httpIntercept', function ($rootScope, $q, $window) {
+            console.log('factory')
+            return {
+                request: function (config) {
+                    console.log('request')
+                    //为http添加默认请求头参数
+                    config.headers = config.headers || {};
+                    config.headers.token = "HHHHH99999HHHHH";
+                    return config;
+                },
+                responseError: function (rejection) {
+                    console.log('responseError',rejection.status )
+                    //拦截http错误时的结果， 如果状态是401 就调用内部的用户注销方法
+                    if (rejection.status === 401) {
+                        $rootScope.sessionOut();
+                    }
+                    return $q.reject(rejection);
+                },
+                response: function (response) {
+                    console.log('response')
+                    //拦截请求正常时的返回结果， 比如我服务端认为会话已经介绍 返回code == 600， 那么这时我们一样执行内部的用户注销方法
+                    if (response.code == 600) {
+                        $rootScope.sessionOut();
+                    }
+                    return response;
+                }
+            };
+        })
+        app.controller("mainController", function ($rootScope, $scope, $http) {
+            console.log('controller')
+            $http({
+                method: 'GET',
+                url: 'www.baidu.com'
+            })
+        })
+    </script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="mainController">
+    <p>名字 : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+</div>
+</body>
+</html>

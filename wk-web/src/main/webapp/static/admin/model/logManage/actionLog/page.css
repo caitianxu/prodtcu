@@ -1,0 +1,19 @@
+#actionLog .cl li:hover{background:none}
+#actionLog .cl li{
+    padding: 0;
+}
+#actionLog .col-xs-4{
+    padding:0 5px;
+    width:40%
+}
+
+#actionLog .table_control td{
+    white-space: normal !important;
+}
+#actionLog .table_control td > span{
+    max-width: 100% !important;
+    overflow: auto;
+}
+#actionLog .open .dropdown_menu{
+    min-width:89%;
+}

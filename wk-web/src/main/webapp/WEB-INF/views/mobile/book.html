@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta content="always" name="referrer"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="author" content=""/>
+    <meta name="copyright" content=""/>
+    <meta name='keywords' content=""/>
+    <meta name=viewport content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <title>${bookInfo.book_name}</title>
+    <link rel="stylesheet" href="${ctxPath}/static/mobile/css/book.css">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/plugin/jquery/jquery.wap.js"></script>
+    <script type="text/javascript">
+        var ctxPath = "${ctxPath}";
+        var org_id = "${org_id}";
+        var serverName = "${serverName}";
+        var token = '${member_token}';
+        var book_id = "${bookInfo.book_id}";
+        var book_name = "${bookInfo.book_name}";
+        var member_id = "${member.member_id}";
+    </script>
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/book.js"></script>
+</head>
+<body style="background: #f0f1f2">
+    <div class="book_cover" style="background-image: url('${ctxPath}${bookInfo.book_cover_small}')"></div>
+    <div id="book" style="opacity: 0">
+        <div class="book-header">
+            <label class="b-left" id="chName"></label>
+            <label class="b-right" id="chTime"></label>
+        </div>
+        <div class="book-html">
+            <div id="readBookHtml"></div>
+        </div>
+        <div class="book-footer">
+            <label class="b-left" id="footer_bai"></label>
+            <label class="b-right" id="footer_pages"></label>
+        </div>
+
+        <div class="book-left"></div>
+        <div class="book-center"></div>
+        <div class="book-right"></div>
+    </div>
+    <div id="leftBookMenu">
+        <div class="menuContent">
+            <div class="menu-title">目录</div>
+            <div class="menu-list"></div>
+        </div>
+    </div>
+    <div id="loading_MM" style="display: none">正在加载...</div>
+
+
+    <div class="app_down">
+        <div class="m-close-cc" onclick="close_mm()"></div>
+        <span class="sp1"></span>
+        <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+        <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+        <a href="/pkgApp" class="sp3"></a>
+    </div>
+<script type="text/javascript">
+    function close_mm() {
+        $('.app_down').hide();
+    }
+</script>
+</body>
+</html>

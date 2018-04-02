@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>绑定手机</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/mySetting.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/mySetting_pwd.js"></script>
+
+    <style type="text/css">
+        div[no-binding], div[yes-binding] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+    <!-- 头 -->
+    <div class="header">
+        <a class="header-left" href="${ctxPath}/mobile/mySetting" style="transform: rotate(-180deg);"><i
+                class="icon iconfont icon-ShapeCopy"></i></a>
+
+        <h3 class="header-title">绑定手机</h3>
+    </div>
+
+    <!-- 中 -->
+    <div class="content" style="padding-bottom:0">
+        <!--未绑定-->
+        <div no-binding>
+            <div class="from-cells">
+                <div class="from-cell-row">
+                    <div class="from-cell-cont">
+                        <input type="text" placeholder="请输入手机号" id="member_phone" maxlength="11">
+                    </div>
+                </div>
+                <div class="from-cell-row wire">
+                    <div class="from-cell-cont">
+                        <input type="text" placeholder="请输入验证码" id="send_code" maxlength="6">
+                    </div>
+                    <div class="from-cell-ft">
+                        <a style="color:#6aa4ff;cursor: pointer;font-weight: 200;" onclick="sendCode(this)">获取验证码</a>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;text-align: center;margin-top: 20px">
+                <a class="btn btn-primary" onclick="submit()">绑定</a>
+            </div>
+        </div>
+        <!--已绑定-->
+        <div yes-binding style="background: #fff;height: 100%;">
+            <div style="width: 100%;padding: 20% 0;text-align: center;background: #fff;font-size: 20px;font-weight: 200;letter-spacing: 1px;">
+                <em>已绑定</em><span>176*****042</span>
+            </div>
+            <div style="width: 100%;text-align: center;">
+                <a class="btn btn-primary" onclick="submit()">更换手机号</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

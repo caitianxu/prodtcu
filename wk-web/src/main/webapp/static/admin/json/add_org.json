@@ -1,0 +1,13 @@
+{
+  "code": 1,
+  "message": "新增成功！",
+  "data": {
+    "create_time": 1478777125000,
+    "is_delete": 2,
+    "org_code": "XJBM",
+    "org_id": 10,
+    "org_name": "下级部门",
+    "pid": 4,
+    "remark": ""
+  }
+}

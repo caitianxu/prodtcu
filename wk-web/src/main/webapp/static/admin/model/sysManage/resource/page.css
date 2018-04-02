@@ -1,0 +1,75 @@
+#resource .cl li:hover {
+    background: none
+}
+
+#resource .cl li {
+    padding: 0;
+}
+
+#resource .form_label {
+    padding: 0;
+}
+
+#resource .col-xs-9 {
+    padding: 0 5px;
+    width: 75%;
+}
+
+#resource #col_comTree {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#resource #col_comTree:hover {
+    overflow-y: auto;
+}
+
+#resource .input_group a {
+    text-decoration: underline;
+}
+
+#resource .input_group {
+    margin: 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#resource .title {
+    float: left;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+}
+
+#resource .form_sm .form_html {
+    height: 800px;
+}
+
+#resource #col_comTree {
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% - 30px);
+    height: -moz-calc(100% - 30px);
+    height: -webkit-calc(100% - 30px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#resource #col_comTree.maxHeight {
+    height: calc(100% + 30px) !important;
+    height: -moz-calc(100% + 30px) !important;
+    height: -webkit-calc(100% + 30px) !important;
+    margin: -15px -15px -15px -15px !important;
+}
+
+#resource .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}

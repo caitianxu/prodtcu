@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<meta name="keywords" content="jquery，CSS，时钟" />
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例" />
+<title>演示：使用moment.js轻松管理日期和时间</title>
+<link rel="stylesheet" href="http://www.helloweba.com/demo/css/main.css">
+<style>
+.demo{width:400px; margin:40px auto 20px auto}
+.demo p{line-height:26px; padding-top:20px; font-size:14px}
+.demo p span{color:#999}
+</style>
+<script src="moment.min.js"></script>
+
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.helloweba.com" title="返回helloweba首页">helloweba</a></h1></div>
+</div>
+<div id="main">
+   	<h2 class="top_title"><a href="http://www.helloweba.com/view-blog-271.html">使用moment.js轻松管理日期和时间</a></h2>
+   	<div class="demo">
+    	<p>当前时间：<span>moment().format('YYYY-MM-DD HH:mm:ss');</span></p>
+        <script>
+		var datetime = moment().format('YYYY-MM-DD HH:mm:ss'); 
+		document.write(datetime);
+		</script>
+        <p>今天是星期几：<span>moment().format('d');</span></p>
+        <script>
+		var weekday = moment().format('d'); 
+		document.write(weekday);
+		</script>
+        <p>Unix时间戳：<span>moment().format('X');</span></p>
+        <script>
+		var timestamp = moment().format('X'); 
+		document.write(timestamp);
+		</script>
+        <p></p>
+        <hr/>
+        <p>相对时间：<span>moment("20130101", "YYYYMMDD").fromNow();</span></p>
+        <script>
+		var d1 = moment("20130101", "YYYYMMDD").fromNow();
+		document.write(d1);
+		</script>
+        <p>相对时间：<span>moment("20151010", "YYYYMMDD").fromNow();</span></p>
+        <script>
+		var d2 = moment("20151010", "YYYYMMDD").fromNow();
+		document.write(d2);
+		</script>  
+        <p>7天后的日期：<span>moment().add('days',7).format('YYYY年MM月DD日');</span></p>
+        <script>
+		var d3 = moment().add('days',7).format('YYYY年MM月DD日');
+		document.write(d3);
+		</script>
+        <p>9小时后：<span>moment().add('hours',9).format('HH:mm:ss');</span></p>
+        <script>
+		var d4 = moment().add('hours',9).format('HH:mm:ss');
+		document.write(d4);
+		</script>
+        <p>明天<span>moment().add(1, 'days').calendar();</span></p>
+        <script>
+		var d5 = moment().add(1, 'days').calendar();
+		document.write(d5);
+		</script>
+	</div>
+
+        
+     <br/>
+</div>
+<div id="footer">
+    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com">www.helloweba.com</a></p>
+</div>
+</body>
+</html>

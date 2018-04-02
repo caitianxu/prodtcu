@@ -1,0 +1,25 @@
+.content{width: 1000px;margin: 0 auto}
+.nav_bar{  width: 100%;  font-size: 14px;  line-height: 22px;  margin-bottom: 20px;  margin-top: 40px;  }
+.nav_bar a:hover{  color: #f90;  text-decoration: underline;  }
+.msg{  width:100%;  height: auto;  border: 1px solid #eff2f4;background-color: #fff;box-shadow:1px 3px 10px #cbc9c9}
+.msg .title { margin: 30px 50px;display: flex;font-size: 16px; height: 40px;border-bottom: 1px solid #e0e0e0}
+.msg .title li{ margin-right: 60px; }
+.msg .title li:hover{ color: #639e2a;border-bottom: 2px solid #639e2a;cursor:pointer;}
+.msg .active{ color: #639e2a;border-bottom: 2px solid #639e2a }
+.msg .sendMsg{margin: 20px 50px;height: 300px;}
+.msg .submit{margin: 10px 50px 50px 50px;}
+.msg .submit button{width: 70px;height: 35px;border: 0 ;background-color: #91c361;color: #fff;font-size: 15px;border-radius: 2px;cursor:pointer; }
+.msg .submit button:hover{width: 70px;height: 35px;border: 0 ;background-color: #91c361;color: #fff;font-size: 15px;border-radius: 2px;cursor:pointer;box-shadow:3px 3px 10px #cbc9c9 }
+.msg .sendMsg textarea{width: 100%;height: 100%; border: 1px #ddd solid;padding: 10px;line-height: 30px;font-size: 16px;}
+.msg .myMsg{margin: 20px 50px;height: auto;display: flex;min-height: 300px}
+.msg .myMsg .cont{display: block;border-bottom: 0;width: 100%}
+.msg .myMsg .cont li{display:flex;height: auto; margin: 0 0 30px 0;}
+.msg .myMsg .cont .icon{margin-right: 20px;}
+.msg .myMsg .cont .txt{width: 100%;height: auto;border-bottom: 1px solid #F3F3F3;padding-bottom: 10px;padding-top: 5px; }
+.msg .myMsg .cont .txt i{color: #a0a6ac}
+.msg .myMsg .cont img{border-radius: 50%;width: 50px;height: 50px;}
+.msg .myMsg .cont p{margin: 10px 0;color: #7d7979;font-size: 13px;}
+.msg .myMsg .cont li .reply{background-color: #f8f8f8;padding: 10px 20px;border-radius: 5px;}
+.msg .myMsg .reply .row{display: flex}
+.msg .myMsg .reply .row span{display: block}
+#shanchu img{width: 100%;height: 100%;border-radius: 0;cursor: pointer}

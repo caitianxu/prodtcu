@@ -1,0 +1,22 @@
+#mailTemp .cl li:hover{background:none}
+#mailTemp  .cl li{
+    padding: 0;
+}
+
+#mailTemp .form_html .box label{
+    color: #333;
+    padding-right: 20px;
+}
+#mailTemp .form_html .box label i{
+    padding: 0;
+    margin: 0;
+}
+#mailTemp .form_html .box label span{
+    height: 100%;
+    display: block;
+    float: left;
+    line-height: 36px;
+}
+#mailTemp .form_sm{
+    width: 600px;
+}

@@ -1,0 +1,15 @@
+<div id="facilityMonitor">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+</div>

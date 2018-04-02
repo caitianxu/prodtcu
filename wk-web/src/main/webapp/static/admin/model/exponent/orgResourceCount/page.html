@@ -1,0 +1,15 @@
+<div id="orgResourceCount">
+    <div class="content_main">
+
+        <div class="content_page_left" ng-show="_USERINFO.org_id == 1" style="padding: 0">
+            <div id="col_comTree">
+                <ul id="comTree"></ul>
+            </div>
+        </div>
+
+        <div ng-class="{'content_page_right': _USERINFO.org_id == 1, 'content_page': _USERINFO.org_id != 1}">
+            <!-- 列表 -->
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+    </div>
+</div>

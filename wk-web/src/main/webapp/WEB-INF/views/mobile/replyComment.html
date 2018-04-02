@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>回复评论</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/publishComment.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/publishComment.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<!-- 头 -->
+<div class="header">
+    <a class="header-left" href="javascript:history.back(-1)" style="transform: rotate(-180deg);"><i
+            class="icon iconfont icon-ShapeCopy"></i></a>
+
+    <h3 class="header-title">回复评论</h3>
+    <a class="header-right">发布</a>
+</div>
+
+<!-- 中 -->
+<div class="content">
+    <div class="textarea">
+        <textarea placeholder="回复此评论..."></textarea>
+        <div class="length"><span>0</span>/500</div>
+    </div>
+</div>
+</body>
+</html>

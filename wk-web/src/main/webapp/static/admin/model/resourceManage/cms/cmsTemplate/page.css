@@ -1,0 +1,7 @@
+#table_file .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#table_file .file-action .file-btn-ku{
+    display: none !important;
+}

@@ -1,0 +1,163 @@
+#activityManage .cl li:hover {
+    background: none
+}
+
+#activityManage .cl li {
+    padding: 0;
+}
+#activityManage .content_page_left{
+    padding: 0;
+}
+#activityManage #col_comTree {
+    float: left;
+    width: 220px;
+    padding: 15px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#activityManage #col_comTree:hover{
+    overflow-y: auto;
+}
+#activityManage .note-editable {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke
+}
+
+#activityManage .box {
+    line-height: 34px;
+}
+
+#activityManage .form_html .box label {
+    color: #333;
+    padding-right: 20px;
+}
+
+#activityManage #temp {
+    width: 100%;
+}
+
+#activityManage #temp:not(:first-child) {
+    margin-left: 16.6666666%;
+}
+
+#activityManage #temp .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+
+#activityManage #temp .box {
+    padding: 0 5px;
+}
+
+#activityManage #temp .box:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+#activityManage .image_text {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+#activityManage .image_text .leftImg {
+    float: left;
+    height: 100%;
+    width: 250px;
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+#activityManage .image_text .last {
+    background: url('add.png') no-repeat center #dcdcdc !important
+}
+
+#activityManage .image_text .leftImg .center {
+    height: 100%;
+    padding: 60px 95px;
+}
+
+#activityManage .image_text .leftImg i {
+    font-size: 60px;
+    color: #fff;
+}
+
+#activityManage .image_text .leftImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#activityManage .image_text textarea {
+    width: calc(100% - 250px);
+    border-left: none;
+    border-radius: 0px;
+    height: 100%;
+}
+
+#activityManage .image_text .image_text_row .hih {
+    height: 100%;
+    padding: 0;
+}
+
+#activityManage .image_text .image_text_row {
+    width: 100%;
+    float: left;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#activityManage .image_text .right label {
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+}
+
+#activityManage .leftImg div {
+    height: 100%;
+}
+
+#activityManage .leftImg span {
+    display: none !important;
+}
+#activityManage  td .box label,#activityManage  td .box i{
+    width:100%;
+}
+
+#activityManage .icon-x{
+    font-size: 20px;
+}
+#activityManage .icon-shangjiantou , .icon-shangjiantou-copy{
+    color: #3B8CFF;
+    font-size: 20px;
+}
+
+#activityManage .form-left {
+    float: left;
+    width: 40%;
+    padding-left: 15px;
+}
+#activityManage .form-right {
+    float: left;
+    width: 60%;
+    padding-right: 15px;
+}
+#activityManage #img_cc {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #ddd solid;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#activityManage .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#activityManage .table_control td > span{
+    word-break:keep-all;
+}

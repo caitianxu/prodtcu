@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>图书列表</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/search.css" rel="stylesheet">
+    <script type="text/javascript">
+        var searchText = "${searchText}";
+    </script>
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/search.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<!-- 头 -->
+<div class="header">
+
+    <form method="get" action="search">
+    <div class="search_input">
+            <i class="icon iconfont icon-sousuo" style="padding: 0 8px;color:#ccc;font-size: 17px"></i>
+            <input type="search" name="searchText" value="${searchText}" placeholder="搜索热门图书"/>
+    </div>
+    </form>
+    <a class="header-right" onclick="openScreen()">筛选</a>
+</div>
+
+<!-- 中 -->
+<div class="content" style="min-height: 100vh">
+    <!--没有内容-->
+    <div class="noContent" style="padding-top: 20%;display: none">
+        <img src="${ctxPath}/static/mobile/img/search_magnifying.png">
+        <span>没有搜索到相关书籍, 换个词试试吧~</span>
+    </div>
+    <div class="from-cells" id="searchValue" style="margin: 0;">
+
+
+    </div>
+</div>
+
+<!--筛选列表-->
+<div class="animated fadeInRightBig" id="screen" style="display: none">
+    <p>分类</p>
+
+    <div class="colAll" id="classify">
+
+    </div>
+
+    <div class="button">
+        <a class="btn" onclick="reset()">重置</a>
+        <a class="btn btn-primary" onclick="screen_submit()">确认</a>
+    </div>
+</div>
+<!--遮罩-->
+<div class="shade animated fadeIn" style="display: none"></div>
+</body>
+</html>

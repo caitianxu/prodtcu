@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>性别</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/mySetting.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/mySetting.js"></script>
+    <style>
+        .from-cell-row.active .icon_gou{
+            border-bottom: 3px solid #5a92ff;
+            display: inline-block;
+            width: 16px;
+            height: 10px;
+            border-left: 3px solid #5a92ff;
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -16px;
+            margin-top: -7px;
+        }
+    </style>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+
+    <!-- 中 -->
+    <div class="content">
+        <div class="from-cells" id="member_sexs">
+            <div class="from-cell-row active" style="padding: 20px 15px;" did="1">
+                <div class="from-cell-label">
+                    <label>男</label>
+                </div>
+                <div class="from-cell-cont"></div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon_gou"></i>
+                </div>
+            </div>
+            <div class="from-cell-row wire" style="padding: 20px 15px;" did="2">
+                <div class="from-cell-label">
+                    <label>女</label>
+                </div>
+                <div class="from-cell-cont"></div>
+                <div class="from-cell-ft">
+                    <i class="icon iconfont icon_gou"></i>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center;margin-top: 30px">
+            <button class="btn btn-primary" onclick="upSex()">确定</button>
+        </div>
+    </div>
+        
+    <script type="text/javascript">
+        $('.from-cell-row').click(function () {
+            $('.from-cell-row').removeClass('active');
+            $(this).addClass("active")
+        })
+        function upSex() {
+            var sex = $('.from-cell-row.active').attr('did')
+            $.jsonAjax("/v2/api/mobile/modifyUserInfo",{
+                token: token,
+                sex: sex,
+                nickName: memberInfo.nick_name
+            }, function (res) {
+                if(res.code == 0){
+                    window.location.href = ctxPath+"/mobile/mySetting";
+                }
+                else{
+                    layer.msg(res.message)
+                }
+            })
+        }
+    </script>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+#cmsManage .cl li:hover {
+    background: none
+}
+
+#cmsManage .cl li {
+    padding: 0;
+}
+#cmsManage .content_page_left{
+    padding: 0;
+}
+#cmsManage #col_comTree {
+    float: left;
+    width: 220px;
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+}
+#cmsManage #col_comTree:hover{
+    overflow-y: auto;
+}
+#cmsManage .note-editable {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke
+}
+
+#cmsManage .box {
+    line-height: 34px;
+}
+
+#cmsManage .form_html .box label {
+    color: #333;
+    padding-right: 20px;
+}
+
+#cmsManage #temp {
+    width: 100%;
+}
+
+#cmsManage #temp:not(:first-child) {
+    margin-left: 16.6666666%;
+}
+
+#cmsManage #temp .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+
+#cmsManage #temp .box {
+    padding: 0 5px;
+}
+
+#cmsManage #temp .box:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+#cmsManage .image_text {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+#cmsManage .image_text .leftImg {
+    float: left;
+    height: 100%;
+    width: 250px;
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+#cmsManage .image_text .last {
+    background: url('add.png') no-repeat center #dcdcdc !important
+}
+
+#cmsManage .image_text .leftImg .center {
+    height: 100%;
+    padding: 60px 95px;
+}
+
+#cmsManage .image_text .leftImg i {
+    font-size: 60px;
+    color: #fff;
+}
+
+#cmsManage .image_text .leftImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#cmsManage .image_text textarea {
+    width: calc(100% - 250px);
+    border-left: none;
+    border-radius: 0px;
+    height: 100%;
+}
+
+#cmsManage .image_text .image_text_row .hih {
+    height: 100%;
+    padding: 0;
+}
+
+#cmsManage .image_text .image_text_row {
+    width: 100%;
+    float: left;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#cmsManage .image_text .right label {
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+}
+
+#cmsManage .leftImg div {
+    height: 100%;
+}
+
+#cmsManage .leftImg span {
+    display: none !important;
+}
+#cmsManage  td .box label,#cmsManage  td .box i{
+    width:100%;
+}
+
+#cmsManage .icon-x{
+    font-size: 20px;
+}
+#cmsManage .icon-shangjiantou , .icon-shangjiantou-copy{
+    color: #3B8CFF;
+    font-size: 20px;
+}
+
+#cmsManage .form-left {
+    float: left;
+    width: 40%;
+    padding-left: 15px;
+}
+#cmsManage .form-right {
+    float: left;
+    width: 60%;
+    padding-right: 15px;
+}
+#cmsManage #img_cc {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #ddd solid;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#cmsManage .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#cmsManage .table_control td > span{
+    word-break:keep-all;
+}

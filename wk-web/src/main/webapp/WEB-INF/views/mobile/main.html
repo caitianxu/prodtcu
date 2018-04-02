@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>${org_name}</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/main.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/main.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+    <!-- 中 -->
+    <div class="content">
+        <div class="top-search">
+            <a href="${ctxPath}/mobile/search" class="search-input"><i class="icon iconfont icon-sousuo"></i> 搜索热门图书</a>
+        </div>
+        <div class="content-title">
+            <div class="swiper-container" id="sw_title_1">
+                <div class="swiper-wrapper" id="titleList"></div>
+            </div>
+        </div>
+        <div class="bookAll" id="book_list">
+            <div class="swiper-container swiper-container-horizontal" id="sw_title_2">
+                <div class="swiper-wrapper"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 底 -->
+    <div class="footer">
+        <a href="${ctxPath}/mobile/shelf" class="footer-col">
+            <div class="icon-box"><i class="icon iconfont icon-bookshelf1"></i></div>
+            <p class="text"><span>书架</span></p></a>
+        <a href="${ctxPath}/mobile" class="footer-col active">
+            <div class="icon-box"><i class="icon iconfont icon-tushu1"></i></div>
+            <p class="text"><span>书城</span></p></a>
+        <a href="${ctxPath}/mobile/my" class="footer-col">
+            <div class="icon-box"><i class="icon iconfont icon-gerenzhongxin"></i></div>
+            <p class="text"><span>我的</span></p></a>
+    </div>
+
+
+</div>
+</body>
+</html>

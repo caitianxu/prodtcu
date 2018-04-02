@@ -1,0 +1,231 @@
+.order_content {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.order_title {
+    display: block;
+    width: 100%;
+    height: 49px;
+    border-bottom: 1px #eee solid;
+}
+
+.order_title span {
+    float: left;
+    width: 160px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+    color: #787878;
+    cursor: pointer;
+}
+
+.order_title span.active {
+    background: #fff;
+    border-left: 1px #eee solid;
+    border-top: 1px #eee solid;
+    border-right: 1px #eee solid;
+}
+
+.order_left {
+    float: left;
+    width: 770px;
+}
+
+.order_right {
+    float: right;
+    width: 190px;
+}
+
+.left_links {
+    float: left;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.left_links a {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px #eee solid;
+}
+
+.left_links a img {
+    float: left;
+    width: 188px;
+    height: 80px;
+}
+
+.order_list {
+    float: left;
+    width: 100%;
+    background: #fff;
+    padding: 20px 40px 20px 40px;
+    border-left: 1px #eee solid;
+    border-bottom: 1px #eee solid;
+    border-right: 1px #eee solid;
+}
+
+.book_order_items {
+    float: left;
+    width: 100%;
+}
+
+.order_group {
+    float: left;
+    width: 100%;
+}
+
+.order_group a {
+    float: left;
+    margin-right: 100px;
+}
+
+.order_group a.active {
+    color: #639e2a;
+    text-decoration: underline;
+}
+
+.book_item {
+    float: left;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.book_item .cover {
+    width: 110px;
+    float: left;
+}
+
+.book_item .cover img {
+    float: left;
+    width: 100%;
+    height: 145px;
+}
+
+.book_item .detail {
+    float: right;
+    width: 550px;
+}
+
+.book_item .detail h1 {
+    float: left;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5px;
+}
+
+.book_item .detail h2 {
+    font-size: 12px;
+    color: #949494;
+    float: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book_item .detail p {
+    float: left;
+    width: 100%;
+    line-height: 18px;
+    color: #949494;
+    height: 54px;
+    overflow: hidden;
+    margin: 5px 0;
+}
+
+.book_item .detail a {
+    margin-top: 7px;
+    float: left;
+    line-height: 24px;
+    padding: 0 15px;
+    background: #639e2a;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.book_item .detail a:hover {
+    background: #79b63e;
+}
+
+.book_page {
+    float: left;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.M-box {
+    float: left;
+    width: 100%;
+}
+.user_order{
+    float: left;
+    width: 100%;
+}
+.user_items{
+    float: left;
+    width: 100%;
+}
+.user_item{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px #eee solid;
+}
+.user_item .cover{
+    float: left;
+    width: 60px;
+    height: 60px;
+    border: 1px #eee solid;
+    overflow: hidden;
+    border-radius: 30px;
+}
+.user_item .cover img{
+    float: left;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+.user_item .detail{
+    float: right;
+    width: 615px;
+    position: relative;
+}
+.user_item .detail h1{
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+.user_item .detail label{
+    float: left;
+    background: #ed5642;
+    color: #fff;
+    width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    font-style: italic;
+    margin-right: 10px;
+    line-height: 18px;
+}
+.user_item .detail em{
+    color: #6c12f3;
+    font-weight: bold;
+    line-height: 18px;
+}
+.code_m{
+    position: absolute;
+    line-height: 60px;
+    right: 0;
+    top:0;
+    font-size: 14px;
+}

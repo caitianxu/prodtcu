@@ -1,0 +1,63 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "org_id": 1,
+      "org_name": "长江科技",
+      "orgDevices": [
+        {
+          "address": "",
+          "area": "东城区",
+          "area_id": "110101",
+          "city": "北京市",
+          "city_id": "110101",
+          "create_time": "2016-12-22",
+          "device_code": "ass543645",
+          "device_id": 4,
+          "enabled": 1,
+          "location": "",
+          "memory": "",
+          "off_line": null,
+          "org_id": 1,
+          "org_name": "",
+          "province": "北京市",
+          "province_id": "110000",
+          "street": "asdad1231",
+          "update_time": "2016-12-22",
+          "user_id": 1,
+          "user_name": "",
+          "version": ""
+        }
+      ]
+    },
+    {
+      "org_id": 2,
+      "org_name": "黄河科技",
+      "orgDevices": [
+        {
+          "address": "",
+          "area": "东城区",
+          "area_id": "110101",
+          "city": "北京市",
+          "city_id": "110101",
+          "create_time": "2016-12-22",
+          "device_code": "ass543645",
+          "device_id": 4,
+          "enabled": 1,
+          "location": "",
+          "memory": "",
+          "off_line": null,
+          "org_id": 2,
+          "org_name": "",
+          "province": "北京市",
+          "province_id": "110000",
+          "street": "asdad1231",
+          "update_time": "2016-12-22",
+          "user_id": 1,
+          "user_name": "",
+          "version": ""
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>我的书评</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/myBookReview.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/myBookReview.js"></script>
+</head>
+<body >
+<!-- 头 -->
+<!-- 中 -->
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div class="content">
+    <div class="from-cells" style="margin: 0;float: left;width: 100%">
+        <!--没有书评-->
+        <div class="noContent" style="padding: 50% 0;margin: 0 auto;display: none">
+            <img src="${ctxPath}/static/mobile/img/book_no_comment.png">
+            <span>哎呀, 这里什么都没有~</span>
+        </div>
+        <div class="comments">
+
+        </div>
+    </div>
+</div>
+
+
+<div id="clone" style="display: none">
+    <div class="row wire">
+        <span class="icon_box"><i class="icon_gou"></i></span>
+        <div class="text">
+            <span id="name"></span><span id="time"></span>
+            <p id="content"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<div id="facilityAudit">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="updateType(true)" ng-show="getBtnToken('facilityAudit_agree')">同意</button>
+                <button class="layui-btn layui-btn-link" ng-click="updateType()" ng-show="getBtnToken('facilityAudit_disagree')">驳回</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+    <div id="facilityAuditForm" style="display: none">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>区域:</label>
+            <div class="layui-input-block">
+                <div class="layui-unselect layui-form-select" style="margin-bottom: 5px">
+                    <div class="layui-select-title">
+                        <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="省" ng-model="selRow.province"/>
+                        <i class="layui-edge"></i>
+                    </div>
+                    <dl class="layui-anim layui-anim-upbit">
+                        <dd ng-repeat="item in provinceList" ng-click="set_province(item)" ng-class="{'layui-this':selRow.province == item.text}">{{item.text}}</dd>
+                    </dl>
+                </div>
+
+                <div class="layui-unselect layui-form-select" style="margin-bottom: 5px">
+                    <div class="layui-select-title">
+                        <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="市" ng-model="selRow.city"/>
+                        <i class="layui-edge"></i>
+                    </div>
+                    <dl class="layui-anim layui-anim-upbit">
+                        <dd ng-repeat="item in cityList" ng-click="set_city(item)" ng-class="{'layui-this':selRow.city == item.text}">{{item.text}}</dd>
+                    </dl>
+                </div>
+
+                <div class="layui-unselect layui-form-select">
+                    <div class="layui-select-title">
+                        <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="区" ng-model="selRow.area"/>
+                        <i class="layui-edge"></i>
+                    </div>
+                    <dl class="layui-anim layui-anim-upbit">
+                        <dd ng-repeat="item in areaList" ng-click="set_area(item)" ng-class="{'layui-this':selRow.area == item.text}">{{item.text}}</dd>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>街道:</label>
+
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" ng-model="selRow.street"/>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>位置:</label>
+
+            <div class="layui-input-block">
+                <input type="text" class="layui-input" ng-model="selRow.location"/>
+            </div>
+        </div>
+        <div class="layui-form-item" style="padding-left: 90px">
+            <button class="block layui-btn layui-btn-success layui-btn-big" ng-click="_form_submit()">确定</button>
+        </div>
+    </div>
+</div>

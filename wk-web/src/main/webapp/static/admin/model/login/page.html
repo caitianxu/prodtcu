@@ -1,0 +1,29 @@
+<div id="login_page" class="animated bounceInDown">
+    <div class="m_bg">
+        <div class="m_center">
+            <div class="m_logo"></div>
+            <form ng-submit="_singIn()">
+                <div class="form_group">
+                    <div class="layui-form-item">
+                        <span><i class="iconfont icon-username"></i></span>
+                        <input type="text" name="uNae" ng-model="loginInfo.user_name" class="layui-input layui-input-lg" style="padding-left: 50px" placeholder="请输入用户名"/>
+                    </div>
+                    <div class="layui-form-item">
+                        <span><i class="iconfont icon-mima"></i></span>
+                        <input type="password" name="uNae" ng-model="loginInfo.user_pwd" class="layui-input layui-input-lg" style="padding-left: 50px" placeholder="请输入密码"/>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="box">
+                            <label class="check" ng-click="loginInfo.cheched = !loginInfo.cheched">
+                                <i ng-class="{'active': loginInfo.cheched}"></i>记住密码
+                            </label>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <button class="block layui-btn layui-btn-normal layui-btn-big" type="submit" id="sysLogin">登录</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

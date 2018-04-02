@@ -1,0 +1,217 @@
+<div class="public_footer">
+    <div class="main">
+        <a href="${ctxPath}/web/introduction" target="_blank">产品介绍</a><em>|</em>
+        <a href="${ctxPath}/web/productservice" target="_blank">产品与平台</a><em>|</em>
+        <a href="${ctxPath}/web/tosoft" target="_blank">技术支持</a><em>|</em>
+        <a href="${ctxPath}/web/linkme" target="_blank">联系我们</a>
+    </div>
+</div>
+<div class="fotter_text">
+    <div class="main">
+        <div style="margin-bottom: 20px;display: none">
+            <a href="http://www.cjszcb.com" target="_blank">湖北长江数字</a>
+            <a href="http://www.cjszcb.com" target="_blank">湖北长江数字科技</a>
+            <a href="http://www.cjzww.com" target="_blank">长江中文网</a>
+        </div>
+        <p>网络文化经营许可证  鄂网文【2013】0715-020号     互联网出版许可证  鄂字5号     增值电信业务许可证  鄂B2-20120044</p>
+        <p>联系地址：湖北省武汉市雄楚大街268号湖北出版文化城B座5楼    联系电话：027-87679599   邮箱：hbshdfjb@163.com</p>
+        <p>Copyright @ 2010-2015 Cjszcb.com Inc. All Rights Reserved. 鄂ICP备17006451号-1</p>
+    </div>
+</div>
+<div class="fiex_plan">
+    <ul>
+        <li class="c4 message" style="padding: 10px 0">
+            <a href="${ctxPath}/web/message" target="_blank">
+                <span style="height: 30px;"></span>
+                <label style="margin: 0">留言咨询</label>
+            </a>
+        </li>
+        <li class="c1">
+            <span></span>
+            <label>客户端</label>
+            <div class="fx-code-m">
+                <s></s>
+                <div class="m-cover"><div id="public_img_code"></div></div>
+                <p>扫码下载，长江阅读</p>
+            </div>
+        </li>
+        <#if org_weixin?? && org_weixin != "">
+        <li class="c2">
+            <span></span>
+            <label>官方微信</label>
+            <div class="fx-code-m">
+                <s></s>
+                <div class="m-cover">
+                    <img src="${ctxPath}${org_weixin}">
+                </div>
+                <p>扫码微信阅读</p>
+            </div>
+        </li>
+        </#if>
+        <li class="c3 fiex_back" style="border: none;margin-top: 5px;">
+            <span style="height: 30px;"></span>
+            <label style="margin: 0">返回顶部</label>
+        </li>
+    </ul>
+    <!--<div class="fiex_back"></div>-->
+</div>
+<div class="login_plan">
+    <div class="login_content">
+        <div class="login_content_pri">
+            <div class="logo" style="text-align: center"><img height="60" src="${ctxPath}${org_logo}"></div>
+            <h2><span>使用帐号/手机/邮箱登录</span><i></i></h2>
+            <span class="submit_cel"></span>
+            <!--<h2><span>使用第三方账号登录</span><i></i></h2>-->
+            <!--<div class="login_type">-->
+                <!--<a href="https://graph.qq.com/oauth/show?which=Login&display=pc&response_type=code&client_id=101393808&redirect_uri=http://product-test.cjszyun.cn/oauth/qzone?name=${serverName}"><img src="${ctxPath}/static/web/img/qq.jpg"/></a>-->
+                <!--<a href="https://api.weibo.com/oauth2/authorize?client_id=235391541&redirect_uri=http://product-test.cjszyun.cn/oauth/weibo&name=${serverName}"><img src="${ctxPath}/static/web/img/weibo.jpg"/></a>-->
+                <!--<a href="https://open.weixin.qq.com/connect/qrconnect?appid=wxdc28927e61c738c0&scope=snsapi_login&redirect_uri=http://product-test.cjszyun.cn/oauth/weixin?name=${serverName}"><img src="${ctxPath}/static/web/img/weixin.jpg"/></a>-->
+            <!--</div>-->
+            <div class="login_form">
+                <dl>
+                    <dt>账户</dt>
+                    <dd><input type="text" placeholder="手机/邮箱" class="con_text" id="login_name_txt"/></dd>
+                </dl>
+                <dl style="margin-bottom: 10px">
+                    <dt>密码</dt>
+                    <dd><input type="password" class="con_text" placeholder="密码" id="password_txt"/></dd>
+                </dl>
+                <dl style="margin-bottom: 10px">
+                    <dt style="height: 10px;line-height: 10px">&nbsp;</dt>
+                    <dd>
+                        <label class="form_box"><input type="checkbox" id="tokenMessage">记住密码</label>
+                        <a href="javascript:void(0)" class="form_link back_pass">忘记密码？</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <button class="submit" type="submit" id="user_login">立即登录</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <a href="javascript:void(0)" class="form_link to_sing" style="margin-right: 140px">没有账号？ 立即注册</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sing_plan">
+    <div class="sing_content">
+        <div class="sing_content_pri">
+            <div class="logo" style="text-align: center"><img height="60" src="${ctxPath}${org_logo}"></div>
+            <span class="submit_cel"></span>
+            <h2><span>使用手机号或者邮箱注册</span><i></i></h2>
+            <div class="sing_form">
+                <dl class="getregiste" id="area">
+                    <dt>区域乡镇</dt>
+
+                    <dd >
+                        <select class="org" id="sing_org_id" style="display: none">
+                            <option value="">-请选择-</option>
+                        </select>
+                        <!--layui-form-selected-->
+                        <div class="layui-unselect layui-form-select " id="sing_org_id_sel" style="width: 290px;position: relative;float: left">
+                            <div class="layui-select-title" style="float: left;width: 100%;">
+                                <input type="text" class="layui-input layui-unselect" style="width: 100%;padding-left: 10px;"
+                                       readonly="" value="" placeholder="请选择">
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit" style="" id="sing_org_id_parent">
+                            </dl>
+                        </div>
+
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>账号</dt>
+                    <dd><input type="text" placeholder="手机号或者邮箱" class="con_text" maxlength="60" id="sing_user_name"/></dd>
+                </dl>
+                <dl>
+                    <dt>验证码</dt>
+                    <dd>
+                        <input type="text" placeholder="验证码" class="con_text" style="width: 150px" maxlength="6" id="sing_user_code"/>
+                        <button class="getCode">获取验证码</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>密码</dt>
+                    <dd><input type="password" placeholder="设定登录密码" class="con_text" maxlength="16" id="sing_pass"/></dd>
+                </dl>
+                <dl>
+                    <dt>确认密码</dt>
+                    <dd><input type="password" placeholder="确认登录密码" class="con_text" maxlength="16" id="sing_pass_clo"/></dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <button class="submit" id="sing_in">立即注册</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <a href="javascript:void(0)" class="form_link" style="margin-right: 140px">已经有账号？ 马上登录</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back_pass_plan">
+    <div class="back_pass_content">
+        <div class="back_pass_content_pri">
+            <div class="logo" style="text-align: center"><img height="60" src="${ctxPath}${org_logo}"></div>
+            <span class="submit_cel"></span>
+            <h2><span>找回密码</span><i></i></h2>
+            <div class="back_pass_form">
+                <dl>
+                    <dt>账号</dt>
+                    <dd><input type="text" placeholder="手机号或者邮箱" class="con_text" id="back_pass_user_name"/></dd>
+                </dl>
+                <dl>
+                    <dt>验证码</dt>
+                    <dd>
+                        <input type="text" placeholder="验证码" class="con_text" style="width: 150px" id="back_pass_user_code"/>
+                        <button class="getCode">获取验证码</button>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>新密码</dt>
+                    <dd><input type="password" placeholder="设定登录密码" class="con_text" id="back_pass_pass"/></dd>
+                </dl>
+                <dl>
+                    <dt>确认密码</dt>
+                    <dd><input type="password" placeholder="确认登录密码" class="con_text" id="back_pass_pass_clo"/></dd>
+                </dl>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <button class="submit" id="back_pass_in">修改密码</button>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fankui_pass_plan">
+    <div class="fankui_pass_content">
+        <div class="fankui_pass_content_pri">
+            <div class="logo" style="text-align: center"><img height="60" src="${ctxPath}${org_logo}"></div>
+            <span class="submit_cel"></span>
+            <h2><span>意见反馈</span><i></i></h2>
+            <div class="fankui_pass_form">
+                <textarea class="fankui_textarea" id="fankui_textarea" placeholder="任何产品中的问题，欢迎反馈给我们~"></textarea>
+                <dl>
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <button class="submit" id="fankui_pass_in">发送</button>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

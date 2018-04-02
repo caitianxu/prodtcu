@@ -1,0 +1,53 @@
+#table_file .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#table_file .file-action .file-btn-ku{
+    display: none !important;
+}
+
+#weixin_file .file-action input{
+    display: block !important;
+    border-right: none;
+}
+#weixin_file .file-action .file-btn-ku{
+    display: none !important;
+}
+#njswOrgExtend .form-line-add{
+    display: block;
+    margin-bottom: 15px;
+    background: #f4f4f4;
+    position: relative;
+    padding: 15px 15px 15px 0;
+    height: 256px;
+}
+#njswOrgExtend .form-line-add .por-icon{
+    position: absolute;
+    right: -30px;
+    top: 0;
+}
+#njswOrgExtend .form-line-add .por-icon i{
+    font-size: 20px;
+    cursor: pointer;
+}
+#njswOrgExtend .add-con{
+    width: 50%;
+    float: left;
+}
+#njswOrgExtend .layui-form-item:last-child{
+    margin-bottom: 0;
+}
+#njswOrgExtend .cover-min{
+   background: #fff;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    height: 80px;
+}
+#njswOrgExtend .cover-max{
+    background: #fff;
+    margin-left: 15px;
+    height: 120px;
+}
+#njswOrgExtend .table_control td > span{
+    max-width: 500px;
+}

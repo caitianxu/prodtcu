@@ -1,0 +1,75 @@
+#org .cl li:hover {
+    background: none
+}
+
+#org .cl li {
+    padding: 0;
+}
+
+#org .form_label {
+    padding: 0;
+}
+
+#org .col-xs-9 {
+    padding: 0 5px;
+    width: 75%;
+}
+
+#org #col_comTree {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#org #col_comTree:hover {
+    overflow-y: auto;
+}
+
+#resource .input_group a {
+    text-decoration: underline;
+}
+
+#org .input_group {
+    margin: 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#org .title {
+    float: left;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+}
+
+#org .form_sm .form_html {
+    height: 800px;
+}
+
+#org #col_comTree {
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% - 25px);
+    height: -moz-calc(100% - 25px);
+    height: -webkit-calc(100% - 25px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#org #col_comTree.maxHeight {
+    height: calc(100% + 30px) !important;
+    height: -moz-calc(100% + 30px) !important;
+    height: -webkit-calc(100% + 30px) !important;
+    margin: -15px -15px -15px -15px !important;
+}
+
+#org .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}

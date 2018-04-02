@@ -1,0 +1,31 @@
+<div id="sysLog">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="content_search">
+                <div class="list_bar_row">
+                    <div class="col-xs-3">
+                        <label class="layui-form-label">开始日期:</label>
+                        <div class="layui-input-block">
+                            <input class="date-time-picker layui-input" readonly ng-model="selRow.begin_time" type="text" plugintype="datetime"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="layui-form-label">结束日期:</label>
+                        <div class="layui-input-block">
+                            <input class="date-time-picker layui-input" readonly ng-model="selRow.end_time" type="text" plugintype="datetime"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="layui-form-label">日志内容:</label>
+                        <div class="layui-input-block">
+                            <input class="layui-input" ng-model="selRow.sys_log_content" type="text"/>
+                        </div>
+                    </div>
+                    <button class="layui-btn" ng-click="reload()">查询</button>
+                    <button class="layui-btn" ng-click="form_empty()">清空</button>
+                </div>
+            </div>
+        </div>
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+</div>

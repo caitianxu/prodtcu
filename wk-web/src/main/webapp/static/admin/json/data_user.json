@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "size": 1,
+    "rows": [
+      {
+        "address": "非洲",
+        "birth": 1478513295000,
+        "email": "3424",
+        "enabled": 1,
+        "icon": "32",
+        "is_delete": 2,
+        "org_id": 4,
+        "org_name": "",
+        "phone": "435",
+        "role_id": "",
+        "role_name": "",
+        "sex": "nv",
+        "user_id": 2,
+        "user_name": "test2",
+        "user_pwd": "222",
+        "user_real_name": "ceshi2"
+      }
+    ]
+  },
+  "message": "数据加载成功！"
+}

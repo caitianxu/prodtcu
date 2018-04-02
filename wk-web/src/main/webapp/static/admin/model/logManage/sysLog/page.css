@@ -1,0 +1,19 @@
+#sysLog .cl li:hover{background:none}
+#sysLog .cl li{
+    padding: 0;
+}
+#sysLog .col-xs-4{
+    padding:0 5px;
+    width:40%
+}
+
+#sysLog .table_control td{
+    white-space: normal !important;
+}
+#sysLog .table_control td > span{
+    max-width: 100% !important;
+    overflow: auto;
+}
+#sysLog .open .dropdown_menu{
+    min-width:89%;
+}

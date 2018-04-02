@@ -1,0 +1,73 @@
+<div id="cmsTemplate">
+    <div class="content_main">
+
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('cms_temp_add')">新增
+                </button>
+                <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('cms_temp_update')">修改
+                </button>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+            <div class="layui-form-item">
+                <label class="layui-form-label">模版名称:</label>
+
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" ng-model="selRow.temp_name"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">上传模版:</label>
+
+                <div class="layui-input-block">
+                    <div class="input-file " style="padding: 0;margin: 0;width: 100%;" id="table_file">
+                        <input type="file" multiple="multiple" accept=".zip" autocomplete="off" id="prj-log"
+                               class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" ng-show="status">
+                <label class="layui-form-label">机构:</label>
+
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="selRow.org_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in orgData"
+                                ng-click="selRow.org_id=item.org_id;selRow.org_name=item.org_name" ng-class="{'layui-this':selRow.org_name==item.org_name}">
+                                {{item.org_name}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">备注:</label>
+
+                <div class="layui-input-block">
+                    <textarea class="layui-textarea" ng-model="selRow.temp_remark"></textarea>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

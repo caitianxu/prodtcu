@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 活动列表</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/act.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript">
+        var all_pages = "${activityList.pages}";
+    </script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">推荐</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+
+<div class="act_list_content">
+    <div class="main">
+            <div class="nav_bar">
+                <a href="${ctxPath}/web" target="_blank">首页</a>
+                <em>&gt;</em>
+                <label>活动</label>
+            </div>
+            <div class="act_list">
+                <#if activityList ?? && activityList.rows?size != 0>
+                    <#list activityList.rows as list>
+                        <a href="${ctxPath}/web/act/${list.activity_id}" class="act_item" target="_blank">
+                            <div class="cover">
+                                <img src="${ctxPath}${list.cover_url_small}">
+                            </div>
+                            <div class="act_detail">
+                                <h1>${list.activity_title}</h1>
+                                <p>${list.activity_content}</p>
+                                <div class="p_time">${list.start_time?string('yyyy/MM/dd')} - ${list.end_time?string('yyyy/MM/dd')}</div>
+                            </div>
+                        </a>
+                    </#list>
+                </#if>
+            </div>
+            <div class="M-box"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="${ctxPath}/static/web/js/act.js"></script>
+<!--公共底-->
+<#include "../firstModel/web_footer.html" />
+</body>
+</html>

@@ -1,0 +1,111 @@
+html, body{
+    background: #fff;
+}
+.sub-plan-list{
+    float: left;
+    width: 1020px;
+}
+.sub-plan-list a.mlink{
+    float: left;
+    width: 230px;
+    margin-top: 25px;
+    margin-right: 25px;
+}
+.sub-plan-list a.mlink img{
+    float: left;
+    width: 100%;
+    height: 105px;
+    border: 1px #ddd solid;
+}
+.sub-plan-list a.mlink p{
+    float: left;
+    width: 100%;
+    margin: 0;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.nav-col-list{
+    float: left;
+    width: 100%;
+}
+
+.banner {
+    height: 320px;
+    margin-top: 20px;
+}
+
+.banner .Box {
+    width: 100%;
+    height: 315px;
+    position: relative;
+    box-shadow: 0 0 2px #959595
+}
+.Box .swiper-container .swiper-slide img{
+    height: 315px;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover
+}
+.swiper-slide p{
+    position: absolute;
+    height: 40px;
+    color: #fff;
+    width: 100%;
+    left: 0;
+    margin: 0;
+    bottom: 0;
+    font-size: 14px;
+    line-height: 40px;
+    padding-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: rgba(0,0,0,0.7);
+}
+.banner .book_home_news {
+    background: #f5f8fa;
+    height: 315px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    z-index: 10;
+    padding: 10px 15px;
+}
+.book_home_news h1{
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #639e2a;
+    line-height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mm-remark{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    text-indent: 2em;
+    line-height: 28px;
+    max-height: 260px;
+    overflow: hidden;
+}
+
+.p_title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/plugin/Sweiper/css/swiper.min.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/css/index.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/Sweiper/js/swiper.min.js"></script>
+</head>
+<body>
+    <#include "../include/web_header.html" />
+
+    <div class="header_menu">
+        <div class="main">
+            <a href="${ctxPath}/web" class="active">首页</a>
+            <a href="${ctxPath}/web/booklist">图书</a>
+            <a href="${ctxPath}/web/paper">报纸</a>
+            <a href="${ctxPath}/web/per">期刊</a>
+            <a href="${ctxPath}/web/inf">推荐</a>
+            <a href="${ctxPath}/web/order">排行</a>
+            <a href="${ctxPath}/web/subject">专题</a>
+            <div id="headerTime"></div>
+        </div>
+    </div>
+
+    <div class="index_page_content">
+        <div class="banner">
+            <div class="main">
+                <div class="annunciate" style="height: 40px;display: flex;margin-bottom: 10px;">
+                    <div class="news-title">
+                        <#if recommendCms ?? && recommendCms?size != 0>
+                            <label style="color: red">领导荐书：</label>
+                        </#if>
+                    </div>
+                    <div class="article_title">
+                        <marquee behavior="scroll" onmouseover=this.stop() onmouseout=this.start()>
+                            <#if recommendCms ?? && recommendCms?size != 0>
+                                <#list recommendCms as cms>
+                                    <#if cms.article_type != 2>
+                                        <a href="${ctxPath}/web/inf/${cms.article_cat_id}/${cms.article_id}"
+                                           target="_blank">
+                                            ${cms.article_title} &nbsp;[${cms.publish_time?substring(0, 10)}] &nbsp; &nbsp;
+                                            ${cms.article_remark}
+                                        </a>
+                                        <#else>
+                                            <a href="${cms.article_content}" target="_blank">
+                                                ${cms.article_title} &nbsp;[${cms.publish_time?substring(0, 10)}] &nbsp;
+                                                &nbsp; ${cms.article_remark}
+                                            </a>
+                                    </#if>
+                                </#list>
+                            </#if>
+                        </marquee>
+                    </div>
+                </div>
+
+                <div class="Box">
+                    <div class="swiper-container" style="float: left;width: 70%">
+                        <div class="swiper-wrapper">
+
+                            <#if advList ?? &&advList?size!=0>
+                                <#list advList as adv>
+                                    <div class="swiper-slide blue-slide">
+                                        <a href="${adv.adv_url}" target="_blank"><img src="${ctxPath}${adv.adv_img}"
+                                                                                      style="width: 100%"></a>
+                                        <p>${adv.adv_name}</p>
+                                    </div>
+                                </#list>
+                            </#if>
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination-white" style="bottom: 40px;"></div>
+
+                        <div class="swiper-button-prev swiper-button-white"></div>
+                        <div class="swiper-button-next swiper-button-white"></div>
+                    </div>
+
+                    <div class="book_home_news">
+                        <div class="news_title">最新动态 <a href="${ctxPath}/web/inf" target="_blank" class="m_more">更多</a>
+                        </div>
+                        <ul>
+                            <#if cmsList ?? &&cmsList?size!=0>
+                                <#list cmsList as cms>
+                                    <#if cms.type == 'article'>
+                                        <#if cms.article_type !=2>
+                                            <li><a href="${ctxPath}/web/inf/xx/${cms.id}" target="_blank"><em>■</em>${cms.title}</a><label>${cms.create_time}</label>
+                                            </li>
+                                            <#else>
+                                                <li><a href="${cms.article_content}" target="_blank"><em>■</em>${cms.title}</a><label>${cms.create_time}</label>
+                                                </li>
+                                        </#if>
+                                        <#else>
+                                            <li><a href="${ctxPath}/web/act/${cms.id}" target="_blank"><em>■</em>${cms.title}</a><label>${cms.create_time}</label>
+                                            </li>
+                                    </#if>
+                                </#list>
+
+                            </#if>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hot_content">
+            <div class="main">
+                <!--<div class="hot_title">
+                    <h1>${org_map.pro_name}</h1>
+                </div>-->
+                <div class="hot_list">
+                    <#if advDataList ?? && advDataList?size!=0>
+                        <#list advDataList as adv>
+                            <#if adv_index lt 6>
+                                <a href="${ctxPath}${adv.adv_url}" class="r_item" target="_blank">
+                                    <div class="cover"><img src="${ctxPath}${adv.adv_img}"></div>
+                                    <h3>${adv.adv_name}</h3>
+                                    <#if adv.remark ??>
+                                        <p>${adv.remark}</p>
+                                    </#if>
+                                </a>
+                            </#if>
+                        </#list>
+                    </#if>
+                </div>
+            </div>
+        </div>
+
+        <div class="book_rot" style="margin-top:50px;">
+            <div class="main" style="overflow: visible">
+                <div class="b_left">
+                    <div class="hot_title_col">
+                        <h1>图书推荐</h1>
+                        <ul>
+                            <#if recommendBookList ??>
+                                <#list recommendBookList["cats"] as bookCats>
+                                    <#if bookCats_index lt 5>
+                                        <li did="${bookCats_index}"
+                                        <#if bookCats_index ==0> class="active"</#if>
+                                        >
+                                        <a href="${ctxPath}/web/booklist?cid=${bookCats.book_cat_id}" target="_blank">${bookCats.book_cat_name}</a>
+                                        </li>
+                                    </#if>
+                                </#list>
+                            </#if>
+                        </ul>
+                        <a href="${ctxPath}/web/booklist" target="_blank" class="m_more">更多</a>
+                    </div>
+                    <div class="hot_content_col">
+
+                        <#if recommendBookList ?? &&recommendBookList?size!=0>
+                            <#list recommendBookList["books"] as books>
+                                <div class="conten_parent" did="${books_index}"
+                                <#if books_index !=0> style="display:none"</#if>
+                                >
+                                <#if books?size!=0>
+                                    <div class="col_item_max">
+                                        <div class="cover">
+                                            <#if books[0].book_cover_small ??>
+                                                <a href="javascript:void(0)"
+                                                   onclick="_toBookRead_public('${ctxPath}/web/bookinfo/${books[0].book_id}',event)"
+                                                   target="_blank"><img src="${ctxPath}${books[0].book_cover_small}"></a>
+                                                <#else>
+                                                    <a href="javascript:void(0)"
+                                                       onclick="_toBookRead_public('${ctxPath}/web/bookinfo/${books[0].book_id}',event)"
+                                                       target="_blank"><img src="${ctxPath}/static/web/img/book_cover.png"></a>
+                                            </#if>
+                                            <div class="book-pos-deal">
+                                                <s></s>
+                                                <div class="pos_name">${books[0].book_name}</div>
+                                                <div class="pos_author">${books[0].book_author}</div>
+                                                <div class="pos_remark">${books[0].book_remark}</div>
+                                                <div class="pos_button">
+                                                    <a href="javascript:void(0)"
+                                                       onclick="_toBookRead_public('${ctxPath}/web/book/${books[0].book_id}',event)"
+                                                       target="_blank" class="btn btn-green">开始阅读</a>
+                                                    <button class="btn"
+                                                            onclick="_addBookShelf_tag(${books[0].book_id}, this, event)">
+                                                        加入书架
+                                                    </button>
+                                                </div>
+                                                <div class="pos-zhichi">
+                                                    <p>适用阅读设备</p>
+                                                    <img src="${ctxPath}/static/web/img/zhichi1.jpg" style="width: auto">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h1>${books[0].book_name}</h1>
+                                        <h2>${books[0].book_author}</h2>
+                                        <div class="t_center"><a href="javascript:void(0)"
+                                                                 onclick="_toBookRead_public('${ctxPath}/web/book/${books[0].book_id}',event)"
+                                                                 target="_blank" class="btn_link">开始阅读</a></div>
+                                    </div>
+                                </#if>
+                                <#if books?size gt 1>
+                                    <div class="col_items">
+                                        <#list books as book>
+                                            <#if book_index gt 0 & book_index lt 5>
+                                                <div class="col_item_min"
+                                                <#if (book_index = 3) || (book_index = 4) >style="margin-top:50px"</#if>
+                                                >
+                                                <div class="cover">
+                                                    <#if book.book_cover_small ??>
+                                                        <a href="javascript:void(0)"
+                                                           onclick="_toBookRead_public('${ctxPath}/web/bookinfo/${book.book_id}',event)"
+                                                           target="_blank"><img
+                                                                src="${ctxPath}${book.book_cover_small}"></a>
+                                                        <#else>
+                                                            <a href="javascript:void(0)"
+                                                               onclick="_toBookRead_public('${ctxPath}/web/bookinfo/${book.book_id}',event)"
+                                                               target="_blank"><img
+                                                                    src="${ctxPath}/static/web/img/book_cover.png"></a>
+                                                    </#if>
+                                                    <div class="book-pos-deal">
+                                                        <s></s>
+                                                        <div class="pos_name">${book.book_name}</div>
+                                                        <div class="pos_author">${book.book_author}</div>
+                                                        <div class="pos_remark">${book.book_remark}</div>
+                                                        <div class="pos_button">
+                                                            <a href="javascript:void(0)"
+                                                               onclick="_toBookRead_public('${ctxPath}/web/book/${book.book_id}',event)"
+                                                               target="_blank" class="btn btn-green">开始阅读</a>
+                                                            <button class="btn" onclick="_addBookShelf_tag(${book.book_id}, this)">加入书架
+                                                            </button>
+                                                        </div>
+                                                        <div class="pos-zhichi">
+                                                            <p>适用阅读设备</p>
+                                                            <img src="${ctxPath}/static/web/img/zhichi1.jpg"
+                                                                 style="width: auto">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <#if book.book_name ??>
+                                                    <h1>${book.book_name}</h1>
+                                                </#if>
+                                                <#if book.book_author ??>
+                                                    <h2>${book.book_author}</h2>
+                                                </#if>
+                                                <#if book.book_publicsher ??>
+                                                    <h3>${book.book_publisher}</h3>
+                                                </#if>
+                                                <div class="t_center"><a href="javascript:void(0)"
+                                                                         onclick="_toBookRead_public('${ctxPath}/web/book/${book.book_id}',event)"
+                                                                         target="_blank" class="btn_link">开始阅读</a></div>
+                                    </div>
+                                </#if>
+                            </#list>
+                    </div>
+                    </#if>
+                </div>
+                </#list>
+                </#if>
+
+            </div>
+        </div>
+
+        <div class="b_right">
+            <h1>
+                <label>热榜</label>
+                <ul>
+                    <li class="week active" name="week">周</li>
+                    <li class="month" name="month">月</li>
+                    <li class="year" name="year">年</li>
+                </ul>
+            </h1>
+            <div class="hot_right">
+                <div class="con-week conn">
+                    <#if hotBookList?? && hotBookList["week"]?? && hotBookList["week"]?size != 0>
+                        <#list  hotBookList["week"] as hotBook>
+                            <#if hotBook_index lt 10>
+                                <dl
+                                <#if hotBook_index ==0> class="active"</#if>
+                                >
+                                <dt>${hotBook_index+1}</dt>
+                                <dd>
+                                    <div class="item_text">
+                                        <#if hotBook.book_name ??>
+                                            ${hotBook.book_name}
+                                        </#if>
+                                    </div>
+                                    <a href="${ctxPath}/web/bookinfo/${hotBook.book_id}" target="_blank" class="item_link">
+                                        <div class="cover">
+                                            <div class="cover">
+                                                <#if hotBook.book_cover_small??>
+                                                    <img src="${ctxPath}${hotBook.book_cover_small}">
+                                                </#if>
+                                            </div>
+                                        </div>
+                                        <#if hotBook.book_name??>
+                                            <h1>${hotBook.book_name}</h1>
+                                        </#if>
+                                        <#if hotBook.book_author??>
+                                            <h2>${hotBook.book_author}</h2>
+                                        </#if>
+                                        <#if hotBook.book_publisher??>
+                                            <p>${hotBook.book_publisher}</p>
+                                        </#if>
+                                    </a>
+                                </dd>
+                                </dl>
+                            </#if>
+                        </#list>
+                        <#else>
+                            <p class="undata">~还没有本周的热榜数据~</p>
+                    </#if>
+                </div>
+                <div class="con-month conn" style="display: none">
+                    <#if hotBookList?? && hotBookList["month"]?? && hotBookList["month"]?size != 0>
+                        <#list  hotBookList["month"] as hotBook>
+                            <#if hotBook_index lt 10>
+                                <dl
+                                <#if hotBook_index ==0> class="active"</#if>
+                                >
+                                <dt>${hotBook_index+1}</dt>
+                                <dd>
+                                    <#if hotBook.book_name ??>
+                                        <div class="item_text">${hotBook.book_name}</div>
+                                        <#else>
+                                            <div class="item_text">未知</div>
+                                    </#if>
+                                    <a href="${ctxPath}/web/bookinfo/${hotBook.book_id}" target="_blank" class="item_link">
+                                        <div class="cover">
+                                            <div class="cover">
+                                                <#if hotBook.book_cover_small??>
+                                                    <img src="${ctxPath}${hotBook.book_cover_small}">
+                                                </#if>
+                                            </div>
+                                        </div>
+                                        <#if hotBook.book_name??>
+                                            <h1>${hotBook.book_name}</h1>
+                                        </#if>
+                                        <#if hotBook.book_author??>
+                                            <h2>${hotBook.book_author}</h2>
+                                        </#if>
+                                        <#if hotBook.book_publisher??>
+                                            <p>${hotBook.book_publisher}</p>
+                                        </#if>
+                                    </a>
+                                </dd>
+                                </dl>
+                            </#if>
+                        </#list>
+                        <#else>
+                            <p class="undata">~还没有本月的热榜数据~</p>
+                    </#if>
+                </div>
+                <div class="con-year conn" style="display: none">
+                    <#if hotBookList?? && hotBookList["year"]?? && hotBookList["year"]?size != 0>
+                        <#list  hotBookList["year"] as hotBook>
+                            <#if hotBook_index lt 10>
+                                <dl
+                                <#if hotBook_index ==0> class="active"</#if>
+                                >
+                                <dt>${hotBook_index+1}</dt>
+                                <dd>
+                                    <#if hotBook.book_name ??>
+                                        <div class="item_text">${hotBook.book_name}</div>
+                                        <#else>
+                                            <div class="item_text">未知</div>
+                                    </#if>
+                                    <a href="${ctxPath}/web/bookinfo/${hotBook.book_id}" target="_blank" class="item_link">
+                                        <div class="cover">
+                                            <div class="cover">
+                                                <#if hotBook.book_cover_small??>
+                                                    <img src="${ctxPath}${hotBook.book_cover_small}">
+                                                </#if>
+                                            </div>
+                                        </div>
+                                        <#if hotBook.book_name??>
+                                            <h1>${hotBook.book_name}</h1>
+                                        </#if>
+                                        <#if hotBook.book_author??>
+                                            <h2>${hotBook.book_author}</h2>
+                                        </#if>
+                                        <#if hotBook.book_publisher??>
+                                            <p>${hotBook.book_publisher}</p>
+                                        </#if>
+                                    </a>
+                                </dd>
+                                </dl>
+                            </#if>
+                        </#list>
+                        <#else>
+                            <p class="undata">~还没有本年的热榜数据~</p>
+                    </#if>
+                </div>
+
+            </div>
+            <!--<div class="more_btm_link"></div>-->
+        </div>
+    </div>
+    </div>
+
+    <div class="gap_row">
+        <div class="main">
+            <#if advBannerList ?? && advBannerList?size != 0>
+                <#list advBannerList as advBanner>
+                    <a href="${advBanner.adv_url}" target="_blank"
+                    <#if (advBanner_index + 1)% 2 == 0>style="float: right"
+                        <#else>style="float: left"
+                    </#if>
+                    ><img src="${ctxPath}${advBanner.adv_img}"></a>
+                </#list>
+            </#if>
+        </div>
+    </div>
+
+    <!--期刊-->
+    <div class="per_list_hot" id="perContent">
+        <div class="main">
+            <div class="per_title">
+                <h1>期刊推荐</h1>
+                <#if periodicalList??>
+                    <ul>
+                        <#list periodicalList["cats"] as perCat>
+                            <li did="${perCat_index}"
+                            <#if perCat_index ==0> class="active"</#if>
+                            >
+                            <a href="/web/per/${perCat.periodical_cat_id}">${perCat.periodical_cat_name}</a>
+                            </li>
+                        </#list>
+                    </ul>
+                    <a class="m_more" href="${ctxPath}/web/per">更多</a>
+                </#if>
+            </div>
+            <div class="per_content_plans">
+                <#if periodicalList??>
+                    <#list periodicalList["pers"] as periodicals>
+                        <div class="per_list" did="${periodicals_index}"
+                        <#if periodicals_index != 0>style="display:none"</#if>
+                        >
+                        <#list periodicals as periodical>
+                            <a href="${ctxPath}/web/perlist/${periodical.periodical_id}" target="_blank" class="r_item">
+                                <div class="cover"><img src="${ctxPath}${periodical.periodical_cover_small}"></div>
+                                <p>${periodical.series_name}</p>
+                                <h4>${periodical.periodical_name?replace(periodical.series_name,"")}</h4>
+                            </a>
+                        </#list>
+            </div>
+            </#list>
+            </#if>
+        </div>
+    </div>
+    </div>
+
+
+    <!--报纸-->
+    <div class="per_list_hot" id="paperContent">
+
+        <div class="main">
+            <div class="UnderPerAdv" style="margin-bottom:15px;float:left;width:100%">
+                <#if underPeriodicalAdv ??>
+                    <a href="${underPeriodicalAdv.adv_url}" class="r_item" target="_blank">
+                        <div class="cover"><img src="${ctxPath}${underPeriodicalAdv.adv_img}"></div>
+                    </a>
+                </#if>
+            </div>
+            <div class="per_title">
+                <h1>报纸推荐</h1>
+                <#if newspaperList??>
+                    <ul>
+                        <#list newspaperList["cats"] as paperCat>
+                            <li did="${paperCat_index}"
+                            <#if paperCat_index ==0> class="active"</#if>
+                            >${paperCat.newspaper_cat_name}</li>
+                        </#list>
+                    </ul>
+                    <a class="m_more" href="${ctxPath}/web/paper">更多</a>
+                </#if>
+            </div>
+            <div class="per_content_plans">
+                <#if newspaperList??>
+                    <#list newspaperList["papers"] as papers>
+                        <div class="paper_list" did="${papers_index}"
+                        <#if papers_index != 0>style="display:none"</#if>
+                        >
+                        <#list papers as paper>
+                            <#if member_token = "">
+                                <a href="${ctxPath}/web/login" class="r_item" target="_blank">
+                                    <div class="cover"><img src="${ctxPath}${paper.paper_img_small}"></div>
+                                    <p>${paper.paper_name}</p>
+                                </a>
+
+                                <#else>
+                                    <a href="${paper.paper_url}" class="r_item" target="_blank">
+                                        <div class="cover"><img src="${ctxPath}${paper.paper_img_small}"></div>
+                                        <p>${paper.paper_name}</p>
+                                    </a>
+                            </#if>
+                        </#list>
+            </div>
+            </#list>
+            </#if>
+        </div>
+    </div>
+    </div>
+
+
+    <div class="hot_keys">
+        <div class="main">
+            <div class="underPaperAdv" style="margin-bottom:15px;float:left;width:100%">
+                <#if underPaperAdv ??>
+                    <a href="${underPaperAdv.adv_url}" class="r_item" target="_blank">
+                        <div class="cover"><img src="${ctxPath}${underPaperAdv.adv_img}"></div>
+                    </a>
+                </#if>
+            </div>
+            <div class="hot_left">
+                热门词汇<i class="ii_3"></i>
+            </div>
+            <div class="hot_right">
+                <#if keys ?? && keys?size!=0>
+                    <#list keys as key>
+                        <#if key_index gt 4>
+                            <a href="${ctxPath}/web/booklist?key=${key.name}" target="_blank"> ${key.name}</a>
+                        </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--公共底-->
+    <#include "../firstModel/web_footer.html" />
+    <style>
+            .swiper-button-white{
+                display: none;
+            }
+            .banner .Box:hover .swiper-button-white{
+                display: block;
+            }
+
+    </style>
+    <script type="text/javascript">
+            var mySwiper = new Swiper('.swiper-container',{
+                loop: true,
+                autoplay: 3000,
+                pagination: '.swiper-pagination',
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                grabCursor: true,
+                paginationClickable: true,
+                autoplayDisableOnInteraction: false
+            });
+
+            $(".b_right dl").mouseover(function () {
+                $("dl.active", this.parentNode).removeClass("active");
+                $(this).addClass('active');
+            })
+
+            $(".hot_title_col ul li").mouseover(function () {
+                $(".conten_parent").hide();
+                $(".hot_title_col ul li").removeClass("active");
+
+                var did = $(this).addClass("active").attr("did");
+                $(".conten_parent[did='"+ did +"']").show();
+            })
+
+            $("#perContent .per_title li").mouseover(function () {
+                $("#perContent .per_list").hide();
+                $("#perContent .per_title li").removeClass("active");
+
+                var did = $(this).addClass("active").attr("did");
+                $("#perContent .per_list[did='"+ did +"']").show();
+            })
+
+            $("#paperContent .per_title li").mouseover(function () {
+                $("#paperContent .paper_list").hide();
+                $("#paperContent .per_title li").removeClass("active");
+
+                var did = $(this).addClass("active").attr("did");
+                $("#paperContent .paper_list[did='"+ did +"']").show();
+            })
+            $(".b_right h1 ul li").click(function () {
+                var name = $(this).attr("name");
+                $(".b_right h1 ul li.active").removeClass("active");
+                $(this).addClass("active");
+                $(".conn").hide();
+                $(".con-"+ name).show();
+            })
+
+    </script>
+</body>
+</html>

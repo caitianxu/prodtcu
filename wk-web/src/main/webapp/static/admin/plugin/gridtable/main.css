@@ -1,0 +1,32 @@
+.table_control{float:left;width:100%;}
+.layui-table{float:left;width:100%;}
+.table_control th,.table_control td{min-width:100px}
+.layui-table th,.layui-table td{min-width:100px}
+.table_control th{font-weight:normal;cursor: pointer;border-bottom: 1px #ddd solid !important;}
+.layui-table th{font-weight:normal;cursor: pointer;border-bottom: 1px #ddd solid !important;}
+.table_pager{float:left;width:100%;text-align:center;margin-top:15px;position: relative;}
+.table_pager .pager_left{position: absolute;left: 0;top:10px;}
+.table_pager .pager_right{position: absolute;right: 0;top:10px;line-height: 35px}
+.table_pager .pager_right em{padding: 0 5px;color: #009688}
+.table_pager .form_group{display:inline-block;width:auto;float:none}
+.table_pager .form_group .btn{float:left;border-width:1px 0 1px 1px;border-radius:0}
+.table_pager .form_group .btn:last-child{border-width:1px 1px 1px 1px}
+.table_pager .form_group .form_control{float:left;margin-right:10px;text-align:center}
+.table_control .un-check tr.sel td{background: #009688;color: #fff}
+.table_control td > span{display: block;word-break: break-all;overflow: hidden;max-width: 300px;text-overflow: ellipsis}
+.table_control td span a{color: #009688;text-decoration: underline;white-space: nowrap;cursor: pointer;}
+.hide_1 th:nth-child(1),.hide_1 td:nth-child(1){display: none;}
+.hide_2 th:nth-child(2),.hide_2 td:nth-child(2){display: none;}
+.hide_3 th:nth-child(3),.hide_3 td:nth-child(3){display: none;}
+.hide_4 th:nth-child(4),.hide_4 td:nth-child(4){display: none;}
+.hide_5 th:nth-child(5),.hide_5 td:nth-child(5){display: none;}
+.hide_6 th:nth-child(6),.hide_6 td:nth-child(6){display: none;}
+.hide_7 th:nth-child(7),.hide_7 td:nth-child(7){display: none;}
+.hide_8 th:nth-child(8),.hide_8 td:nth-child(8){display: none;}
+.hide_9 th:nth-child(9),.hide_9 td:nth-child(9){display: none;}
+.hide_10 th:nth-child(10),.hide_10 td:nth-child(10){display: none;}
+.layui-layer-page .table_control td > span{white-space: nowrap}
+.layui-layer-page .layui-table{table-layout: fixed}
+.layui-layer-page .layui-laypage{margin: 0}
+
+

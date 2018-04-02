@@ -1,0 +1,13 @@
+#userExponentLog .tree-node {
+    overflow: hidden;
+}
+#userExponentLog #col_comTree{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#userExponentLog #col_comTree{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}

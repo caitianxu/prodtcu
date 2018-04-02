@@ -1,0 +1,11 @@
+#memberList{
+    float: left;
+    width: 100%;
+}
+#memberList .book_up{
+    float: left;
+    width: 150px;
+}
+#memberList .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}

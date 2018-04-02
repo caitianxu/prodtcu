@@ -1,0 +1,158 @@
+html, body {
+    background: #fff;
+}
+
+.introduction_con {
+    overflow: hidden;
+}
+
+.introduction_html {
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cp_1 {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: 400px;
+    background: #f9f9f9;
+}
+
+.cp_1 img {
+    float: left;
+    width: 100%;
+}
+
+.cp_1 .p1 {
+    position: absolute;
+    top: 150px;
+    font-size: 24px;
+    color: #fff;
+    left: 60px;
+}
+
+.cp_1 .p2 {
+    position: absolute;
+    top: 190px;
+    font-size: 18px;
+    color: #fff;
+    left: 60px;
+}
+
+.cp_1 .p3 {
+    position: absolute;
+    top: 220px;
+    font-size: 18px;
+    color: #fff;
+    left: 60px;
+}
+
+.cp_1 .p4 {
+    position: absolute;
+    top: 250px;
+    font-size: 18px;
+    color: #fff;
+    left: 60px;
+}
+.step_title{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+.step_title i{
+    position: absolute;
+    height: 5px;
+    bottom: 0;
+    left: 50%;
+    background: url("../img/cpjs/cpjs_2.jpg") 0 0 repeat-x;
+}
+.step_title_btm{
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #595959;
+}
+.cp_2{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.cp_2 .cp_2_item{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    width: 140px;
+    border: 1px #000 solid;
+    font-size: 14px;
+    margin: 10px;
+    transition: all 0.5s;
+}
+.cp_2 .cp_2_item.active,.cp_2 .cp_2_item:hover{
+    background: #000;
+    color: #fff;
+}
+.cp_content_1{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 50px;
+}
+.cp_content_1 img{
+    display: block;
+    margin: 30px auto 30px auto;
+}
+.cp_content_1 p{
+    text-indent: 4em;
+    line-height: 50px;
+    font-size: 16px;
+}
+.cp_content_2{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 50px;
+}
+.cp_content_2 dl{
+    margin-bottom: 30px;
+}
+.cp_content_2 dt{
+    font-size: 20px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.cp_content_2 dd{
+    line-height: 30px;
+    padding: 0;
+    margin: 0 0 0px 0;
+    font-size: 14px;
+}
+
+.cp_content_3{
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+    padding: 0 50px;
+}
+.cp_content_3 dl{
+    margin-bottom: 30px;
+}
+.cp_content_3 dt{
+    font-size: 20px;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+.cp_content_3 dd{
+    line-height: 30px;
+    padding: 0;
+    margin: 0 0 0px 0;
+    font-size: 14px;
+}

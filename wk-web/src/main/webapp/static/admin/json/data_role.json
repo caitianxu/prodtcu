@@ -1,0 +1,32 @@
+{
+  "code": 0,
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "size": 1,
+    "rows": [
+      {
+        "create_time": 1478684880000,
+        "is_delete": 2,
+        "remark": "bumenjinglihao",
+        "role_id": 3,
+        "role_name": "部门经理"
+      },{
+        "create_time": 1478684880000,
+        "is_delete": 2,
+        "remark": "bumenjinglihao",
+        "role_id": 3,
+        "role_name": "产品经理"
+      },{
+        "create_time": 1478684880000,
+        "is_delete": 2,
+        "remark": "bumenjinglihao",
+        "role_id": 1,
+        "role_name": "总经理"
+      }
+    ]
+  },
+  "message": "数据加载成功！"
+}

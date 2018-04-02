@@ -1,0 +1,13 @@
+#bookHotExponent .tree-node {
+    overflow: hidden;
+}
+#bookHotExponent #col_comTree{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#bookHotExponent #col_comTree{
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}

@@ -1,0 +1,90 @@
+<div id="njswOrgExtend">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('proOrgExtend_add')">新增</button>
+                <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('proOrgExtend_update')">修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="delRow()" ng-show="getBtnToken('proOrgExtend_del')">删除</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                </div>
+            </div>
+        </div>
+
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated none">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>二级域名:</label>
+                <div class="layui-input-block">
+                    <input class="layui-input"  ng-model="selRow.server_name" type="text" />
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>网站Logo:</label>
+                <div class="layui-input-block">
+                    <div class="form-inline img-file" id="table_file">
+                        <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg" autocomplete="off"  id="org_logo"
+                                   class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">微信二维码:</label>
+                <div class="layui-input-block">
+                    <div class="form-inline img-file" id="weixin_file">
+                        <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg" autocomplete="off"  id="org_weixin"
+                                   class="form-control file-pretty" name="file" data-id="file-weixin" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>所属机构:</label>
+                <div class="layui-input-block">
+                    <input class="layui-input"  ng-model="selRow.org_name" type="text" ng-click="org_list()" readonly="readonly"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>允许注册:</label>
+                <div class="layui-input-block">
+                    <label style="line-height: 36px;color: red"><input id="is_registe" type="checkbox" style="margin-top: 13px;float: left;margin-right: 5px;"> 勾选后该机构所有终端无需登录就能直接进入，并且开通注册功能</label>
+                </div>
+            </div>
+
+            <div style="display: none">
+                <div class="form-inline img-file" id="table_file_img">
+                    <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                        <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg" autocomplete="off"  id="org_img_web"
+                               class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        </form>
+        </div>
+    </div>
+
+    <!--机构选择-->
+    <sel-org></sel-org>
+</div>

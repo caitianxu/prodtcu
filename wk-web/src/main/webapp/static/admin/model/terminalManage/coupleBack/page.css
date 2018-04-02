@@ -1,0 +1,17 @@
+#coupleBack #reply textarea {
+    width: 100%;
+    height: 100%;
+    border-color: #cccccc;
+    padding-left: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+#coupleBack #reply .form_group{
+    height: 150px;
+    padding-top: 20px;
+}
+#coupleBack  .layui-layer-title{
+    background: #eff4f8 !important;
+    font-weight: 500 !important;
+}

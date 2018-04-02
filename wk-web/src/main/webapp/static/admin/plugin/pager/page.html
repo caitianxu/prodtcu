@@ -1,0 +1,23 @@
+<div class="smPager">
+    <div class="table_pager" ng-show="smPager.param.pages > 1">
+        <div class="form_group">
+            <div class="form_group" style="float: left">
+                <button class="btn btn-sm" ng-disabled="smPager.param.pageNum == 1"
+                        ng-click="smPager.selPage({count:smPager.param.pageNum - 1})">上一页</button>
+
+                <button ng-repeat="item in smPager.pagerArray" ng-click="smPager.selPage(item)" class="btn btn-sm"
+                        ng-class="{'btn-primary': item.count == smPager.param.pageNum}"
+                        ng-bind="item.count ? item.count : item.text"></button>
+
+                <button class="btn btn-sm" ng-disabled="smPager.param.pageNum == smPager.param.pages"
+                        ng-click="smPager.selPage({count:smPager.param.pageNum + 1})">下一页</button>
+            </div>
+            <div class="form_group" style="float: left;margin-left: 30px;">
+                <label class="form_label label_sm">转到</label>
+                <input type="text" class="layui-input input_sm" ng-model="smPager.pagerNumCol" style="width: 50px"
+                       onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+                <button class="btn btn-sm" ng-click="smPager.selPage()">GO</button>
+            </div>
+        </div>
+    </div>
+</div>

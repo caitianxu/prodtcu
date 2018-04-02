@@ -1,0 +1,26 @@
+#discount_boos .layui-btn-primary {
+    background-color: #fff !important;
+    border: 1px solid #c9c9c9 !important;
+    color: #555;
+}
+#discount_boos .layui-btn-primary:hover {
+    border-color: #f7b824 !important;
+    color: #f7b824 !important;
+}
+#discount_boos .cover{
+    display: block;
+    width: 80px;
+    height: 100px;
+    overflow: hidden;
+
+    margin: 0 auto;
+    border: 1px #ddd solid;
+    background: url("coverNoBook.jpg") no-repeat 0 0 / 100% 100%  #f4f4f4;
+}
+#discount_boos .df_book{
+    background: url("coverNoBook.jpg") no-repeat 0 0 / 100% 100%  #f4f4f4;
+}
+#discount_boos .warm-1{
+    background: #f90 !important;
+    color: #fff!important;
+}

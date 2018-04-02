@@ -1,0 +1,30 @@
+<div id="memberList">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <!--<button class="layui-btn " ng-click="startStop(true)" ng-show="getBtnToken('member_list_start')">启用</button>-->
+                <!--<button class="layui-btn layui-btn-danger" ng-click="startStop(false)" ng-show="getBtnToken('member_list_stop')">停用</button>-->
+                <div class="book_up" ng-show="getBtnToken('import_member')" style="margin-right: 15px">
+                    <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                        <input type="file" multiple="multiple" autocomplete="off" id="excel_upload"
+                               style="z-index: 10000"
+                               class="form-control file-pretty" name="file" data-id="file"
+                               data-ajax="true"/>
+                    </div>
+                </div>
+                <button class="layui-btn layui-btn-primary" ng-click="load_model()"  ng-show="getBtnToken('downLoadMemberExcel')">下载模板</button>
+
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+
+
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+</div>

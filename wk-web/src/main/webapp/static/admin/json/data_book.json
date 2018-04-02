@@ -1,0 +1,85 @@
+{
+  "code": "0",
+  "message": "",
+  "data": {
+    "pages": 112,
+    "pageNum": 1,
+    "total": 1120,
+    "pageSize": 10,
+    "rows": [
+      {
+        "book_id":"1",
+        "book_cover":"http://res.cjzww.com/image/book/cover/10/13/101399.jpg",
+        "book_name":"新闻1",
+        "book_isbn":1233332344,
+        "book_author":"十点多",
+        "order_weight": 1481023424162,
+        "create_time":"2012-12-12",
+        "book_status": 3,
+        "is_hot":true,
+        "is_recommend":false,
+        "click_count":1222,
+        "collect_count":343223,
+        "share_count":0
+      },{
+        "book_id":"2",
+        "book_cover":"http://res.cjzww.com/image/book/cover/10/13/101399.jpg",
+        "book_name":"新闻1",
+        "book_isbn":1233332344,
+        "book_author":"十点多",
+        "order_weight": 1481023424162,
+        "create_time":"2012-12-12",
+        "book_status": 2,
+        "is_hot":false,
+        "is_recommend":false,
+        "click_count":1222,
+        "collect_count":343223,
+        "share_count":0
+      },{
+        "book_id":"3",
+        "book_cover":"http://res.cjzww.com/image/book/cover/10/13/101399.jpg",
+        "book_name":"新闻1",
+        "book_isbn":1233332344,
+        "book_author":"十点多",
+        "order_weight": 1481023424162,
+        "create_time":"2012-12-12",
+        "book_status": 2,
+        "is_hot":true,
+        "is_recommend":true,
+        "click_count":1222,
+        "collect_count":343223,
+        "share_count":0
+      },{
+        "book_id":"4",
+        "book_cover":"http://res.cjzww.com/image/book/cover/10/13/101399.jpg",
+        "book_name":"新闻1",
+        "book_isbn":1233332344,
+        "book_author":"十点多",
+        "order_weight": 1481023424162,
+        "create_time":"2012-12-12",
+        "book_status": 3,
+        "is_hot":true,
+        "is_recommend":true,
+        "click_count":1222,
+        "collect_count":343223,
+        "share_count":0
+      },{
+        "book_id":"5",
+        "book_cover":"http://res.cjzww.com/image/book/cover/10/13/101399.jpg",
+        "book_name":"新闻1",
+        "book_isbn":1233332344,
+        "book_author":"十点多",
+        "order_weight": 1481023424162,
+        "create_time":"2012-12-12",
+        "book_status": 1,
+        "is_hot":false,
+        "is_recommend":false,
+        "click_count":1222,
+        "collect_count":343223,
+        "share_count":0
+      }
+    ]
+  }
+}
+
+

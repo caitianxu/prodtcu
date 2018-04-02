@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>发表评论</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/publishComment.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/publishComment.js"></script>
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<!-- 中 -->
+<div class="content">
+    <div class="textarea">
+        <textarea placeholder="点评这本书..." id="txt" maxlength="500"></textarea>
+    </div>
+    <div style="text-align: center;margin-top: 30px">
+        <button class="btn btn-primary" onclick="submit(this)">提交</button>
+    </div>
+</div>
+<script type="text/javascript">
+    var bookId = "${bookId}"
+    var commId = "${commId}"
+    function submit() {
+        var txt = document.getElementById("txt");
+        if (txt.value && txt.value != "") {
+            $.jsonAjax("/v2/api/mobile/bookReview/addReview", {
+                book_id: bookId,
+                pid: commId,
+                member_token: token,
+                device_type: 'weixin',
+                review_content: txt.value
+            }, function (res) {
+                if (res.code == 0) {
+                    alert("评论已发布成功!");
+                    window.history.back();
+                }
+                else {
+                    layer.msg(res.message);
+                }
+            })
+        }
+        else {
+            layer.msg("请填写评论内容!")
+        }
+    }
+</script>
+</body>
+</html>

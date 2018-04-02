@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 让更多人享受悦读</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/plugin/Sweiper/css/swiper.min.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/css/subject.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/Sweiper/js/swiper.min.js"></script>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript">
+        var all_pages = "${subjectList.pages}";
+        var jsonResult = ${jsonResult}.data;
+    </script>
+</head>
+<body>
+    <#include "../include/web_header.html" />
+
+    <div class="header_menu">
+        <div class="main">
+            <a href="${ctxPath}/web">首页</a>
+            <a href="${ctxPath}/web/booklist">图书</a>
+            <a href="${ctxPath}/web/paper">报纸</a>
+            <a href="${ctxPath}/web/per">期刊</a>
+            <a href="${ctxPath}/web/inf">推荐</a>
+            <a href="${ctxPath}/web/order">排行</a>
+            <a href="${ctxPath}/web/subject" class="active">专题</a>
+            <div id="headerTime"></div>
+        </div>
+    </div>
+
+    <div class="index_page_content">
+        <div class="nav-col banner">
+            <div class="main">
+                <div class="nav-col-list">
+                    <div class="Box">
+                        <#if advModuleList ?? &&advModuleList?size!=0>
+                            <div class="swiper-container" style="float: left;width: 70%">
+                                <div class="swiper-wrapper">
+                                    <#list advModuleList as adv>
+                                        <div class="swiper-slide blue-slide">
+                                            <a href="${adv.adv_url}" target="_blank"><img src="${ctxPath}${adv.adv_img}" style="width: 100%"></a>
+                                            <!--<p>${adv.adv_name}</p>-->
+                                        </div>
+                                    </#list>
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-pagination swiper-pagination-white"></div>
+                                <div class="swiper-button-prev swiper-button-white"></div>
+                                <div class="swiper-button-next swiper-button-white"></div>
+                            </div>
+
+                            <div class="book_home_news">
+                                <#if advModuleList ?? &&advModuleList?size!=0>
+                                    <h1>${advModuleList[0].adv_name}</h1>
+                                    <#if advModuleList[0].remark ??>
+                                        <div class="mm-remark">${advModuleList[0].remark}</div>
+                                    </#if>
+                                </#if>
+                            </div>
+                            <#else>
+                                <p class="dilMessage" style="line-height: 300px; text-align: center;float: left;width: 100%">功能升级中， 敬请期待...</p>
+                        </#if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-plan">
+            <div class="main">
+                <div class="sub-plan-list">
+                    <#if subjectList.rows?? && subjectList.rows?size != 0>
+                        <#list subjectList.rows as list>
+                            <#if list?? && list.subject_url?? && list.subject_url !="">
+                                <a href="${list.subject_url}" class="mlink" target="_blank">
+                                    <#if list.subject_cover??>
+                                        <img src="${ctxPath}${list.subject_cover}" />
+                                    </#if>
+                                    <p class="p_title" title="${list.subject_name}" >${list.subject_name}</p>
+                                </a>
+                                <#else>
+                                    <a href="${ctxPath}/web/subInfo/${list.subject_id}" class="mlink" target="_blank">
+                                        <#if list.subject_cover??>
+                                            <img src="${ctxPath}${list.subject_cover}" />
+                                        </#if>
+                                        <p class="p_title" title="${list.subject_name}" >${list.subject_name}</p>
+                                    </a>
+                            </#if>
+
+
+                        </#list>
+                    </#if>
+                </div>
+                <div class="M-box" style="float: left;width: 100%;margin-top: 30px;"></div>
+            </div>
+        </div>
+    </div>
+    <!--公共底-->
+    <#include "../firstModel/web_footer.html" />
+    <style>
+        .swiper-button-white{
+            display: none;
+        }
+        .banner .Box:hover .swiper-button-white{
+            display: block;
+        }
+    </style>
+    <script type="text/javascript" src="${ctxPath}/static/web/js/subject.js"></script>
+</body>
+</html>

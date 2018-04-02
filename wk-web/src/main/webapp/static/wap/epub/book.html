@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8">
+    <meta content="always" name="referrer"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>长江悦读</title>
+    <link rel="stylesheet" href="swiper/css/swiper.min.css" />
+    <link rel="stylesheet" href="Reader.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="swiper/js/swiper.min.js"></script>
+    <script type="text/javascript" src="iscroll/iscroll.js"></script>
+    <script type="text/javascript" src="Reader.js"></script>
+    <!--<script type="text/javascript">-->
+        <!--window.location.href = "http://cjszyun.cn/pkgApp";-->
+    <!--</script>-->
+</head>
+<body class="skin_1">
+<div id="doc" style="display: none">
+        <div id="factory">
+            <div class="content">
+                <div class="book_html"></div>
+                <div class="book_factory"></div>
+            </div>
+        </div>
+        <div id="market">
+            <div class="content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="readBook"></div>
+                    <div class="swiper-button-next slide-next"></div>
+                    <div class="swiper-button-prev slide-prev"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loaders" style="display: none">
+        <div class="ms">加载中...</div>
+    </div>
+    <div id="book_info_parent" class="">
+        <div class="book_title">
+            <span></span>
+            <label></label>
+            <i></i>
+        </div>
+        <div id="book_info" class="" style="display: none">
+            <div class="info_content">
+                <div class="ml">
+                    <div class="ml_title">目录</div>
+                    <div class="ml_content" id="wrapper">
+                        <ul id="copers"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="book_action">
+            <div class="action_1">
+                <label class="action_last">上一章</label>
+                <div class="action_step">
+                    <div class="step_bg">
+                        <div class="step_line"></div>
+                    </div>
+                </div>
+                <label class="action_next">下一章</label>
+            </div>
+            <div class="action_color">
+                <span class="col_1" data-skin="skin_1"><label></label></span>
+                <span class="col_2" data-skin="skin_2"><label></label></span>
+                <span class="col_3" data-skin="skin_3"><label></label></span>
+                <span class="col_4" data-skin="skin_4"><label></label></span>
+                <span class="col_5" data-skin="skin_5"><label></label></span>
+            </div>
+        </div>
+    </div>
+    <div class="book_cover">
+        <div class="img"></div>
+    </div>
+    <div class="app_down">
+        <span class="sp1"></span>
+        <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+        <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+        <a href="http://yc.cjszyun.cn/pkgApp" class="sp3"></a>
+    </div>
+</body>
+</html>

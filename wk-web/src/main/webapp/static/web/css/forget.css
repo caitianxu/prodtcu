@@ -1,0 +1,116 @@
+html, body {
+    -webkit-font-smoothing: antialiased;
+    background: #f8f8f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+html, body, button, input{
+    font: 12px/ 20px "Lantinghei SC", "Open Sans", "Microsoft YaHei", Arial, "Hiragino Sans GB", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+}
+*{box-sizing:border-box;-moz-box-sizing: border-box;-webkit-box-sizing: border-box}
+a{color:inherit;text-decoration:none}
+a:focus,a:hover{outline:none;text-decoration:none}
+h1,h2,h3,h4,h5{margin:0;padding:0;font-weight: normal}
+input,button,select,textarea{outline:none}textarea{resize:none}
+body ul,body li,body label,body em,body s,body i,body span{list-style:none;margin:0;padding:0;font-style:normal;font-weight:normal}
+a,button{-webkit-user-select:none;-ms-user-select:none;-moz-user-select:none;outline: 0;}
+img{border: none}
+.main{width:1000px;display:block;margin:0 auto;overflow: hidden}
+.btn{height:30px;line-height:30px;padding:0 18px;text-align:center;cursor:pointer;background:#fff;border:1px solid #d2d2d2;border-radius:5px;display:inline-block;color:#868686}
+.btn:hover{background:#f0f0f0;color:#656565;transition:all .5s}
+
+
+
+#login_content_plan{
+    position: absolute;
+    width: 410px;
+    height: 550px;
+    background: #fff;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -225px;
+    box-shadow: 0 0 5px #ccc;
+    padding: 50px;
+}
+#login_content_plan .logo{
+    float: left;
+    width: 100%;
+    padding: 0 30px;
+    margin: 20px 0 50px;
+}
+#login_content_plan .logo img{
+    float: left;
+    width: 100%;
+}
+.form-line{
+    float: left;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    border:1px #ddd solid;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 5px;
+}
+.form-line .l-user{
+    float: left;
+    width: 50px;
+    height: 26px;
+    border-right: 1px #eee solid;
+    background: url("../img/sign-in_03.png") no-repeat center center / 20px auto;
+}
+.form-line input{
+    float: left;
+    width: 220px;
+    border: none;
+    height: 26px;
+    margin-left: 10px;
+    padding-left: 5px;
+    font-size: 16px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.sin-btn{
+    float: left;
+    width: 100%;
+    background: #639e2a ;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.sin-btn:hover{
+    background: #02b559;
+}
+.forget{
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+.forget:hover{
+    text-decoration: underline;
+    color: #639e2a;
+}
+.get-code{
+    position: absolute;
+    line-height: 46px;
+    padding: 0 15px;
+    right: 0;
+    top: 0;
+    color: #999;
+    cursor: pointer;
+}
+.get-code:hover{
+    color: #639e2a;
+}

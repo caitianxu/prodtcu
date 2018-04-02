@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${org_map.org_name} - 报纸列表</title>
+    <#include "../include/web_top.html" />
+    <link href="${ctxPath}/static/web/css/paper.css" rel="stylesheet"/>
+    <link href="${ctxPath}/static/web/plugin/pagination/pagination.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${ctxPath}/static/web/plugin/pagination/jquery.pagination.js"></script>
+    <script type="text/javascript">
+        var all_pages = "${newspaperList.pages}";
+        var cat_id = "${cat_id}";
+    </script>
+</head>
+<body>
+<#include "../include/web_header.html" />
+
+<div class="header_menu">
+    <div class="main">
+        <a href="${ctxPath}/web">首页</a>
+        <a href="${ctxPath}/web/booklist">图书</a>
+        <a href="${ctxPath}/web/paper" class="active">报纸</a>
+        <a href="${ctxPath}/web/per">期刊</a>
+        <a href="${ctxPath}/web/inf">推荐</a>
+        <a href="${ctxPath}/web/order">排行</a>
+        <a href="${ctxPath}/web/subject">专题</a>
+        <div id="headerTime"></div>
+    </div>
+</div>
+<div class="newsPaperContent">
+    <div class="main">
+        <div class="content_left content_left_cat">
+            <h1>全部报纸分类</h1>
+            <ul class="left_menu">
+                <#if paperCatList ?? &&paperCatList?size!=0>
+                    <#list paperCatList as cl_item>
+                        <li <#if cl_item.newspaper_cat_id?string = cat_id> class="active"</#if>>
+                        <a onclick="getList(${cl_item.newspaper_cat_id}, 1)" <#if cl_item.newspaper_cat_id?string = cat_id>class="active_cc"</#if>>${cl_item.newspaper_cat_name}</a>
+                        <#if cl_item["children"]?? && cl_item["children"]?size != 0>
+                            <i class="cat-right" onclick="getList(${cl_item.newspaper_cat_id}, 1)"></i>
+                            <div class="cat-child-list" style="display: none;">
+                                <#list cl_item["children"] as catChild>
+                                    <a onclick="getList(${catChild.newspaper_cat_id}, 2)" style="padding:0 24px;" <#if catChild.newspaper_cat_id?string = cat_id>class="active_cc"</#if>>${catChild.newspaper_cat_name}</a>
+                                </#list>
+                            </div>
+                        </#if>
+                        </li>
+                    </#list>
+                </#if>
+            </ul>
+            <div class="left_links">
+                <#if advModuleList ?? && advModuleList?size !=0>
+                    <#list advModuleList as adv>
+                        <#if adv_index lt 6>
+                            <#if adv.adv_url ??>
+                                <a href="${ctxPath}${adv.adv_url}" class="r_item" target="_blank">
+                                    <div class="cover"><img src="${ctxPath}${adv.adv_img}"></div>
+                                </a>
+                            </#if>
+                        </#if>
+                    </#list>
+                </#if>
+            </div>
+        </div>
+        <div class="content_right">
+            <div class="nav_bar">
+                <div id="paperCats">
+                    <a href="${ctxPath}/web" target="_blank">首页</a>
+                    <em>&gt;</em>
+                    <label>报纸</label>
+                </div>
+            </div>
+
+            <div class="news_list">
+                <#if newspaperList ?? && newspaperList.rows?size != 0>
+                    <#list newspaperList.rows as list>
+                        <div class="paper_item" <#if (list_index+1)%5=0>style="margin-right:0"</#if> >
+                        <#if member_token = "">
+                            <a href="${ctxPath}/web/login" target="_blank" class="cover">
+                                <img src="${ctxPath}${list.paper_img_small}">
+                            </a>
+                            <#else>
+                                <a href="${list.paper_url}"  target="_blank" class="cover">
+                                    <img src="${ctxPath}${list.paper_img_small}">
+                                </a>
+                        </#if>
+                        <p>${list.paper_name}</p>
+            </div>
+            </#list>
+            <#else>
+                <p class="un_msg">没有你想看的报纸<a href="javascript:void(0)">告诉我们</a>~</p>
+                </#if>
+        </div>
+        <div class="M-box"></div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="${ctxPath}/static/web/js/paper.js"></script>
+<!--公共底-->
+<#include "../firstModel/web_footer.html" />
+</body>
+</html>

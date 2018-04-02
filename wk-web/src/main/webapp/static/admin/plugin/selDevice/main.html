@@ -1,0 +1,57 @@
+<div id="Select_Device" style="display: none;padding:15px 15px 0;float: left;width: 100%">
+    <div class="input_group">
+        <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="DeviceControl.dev_searchText">
+        <span class="group_addon layui-btn" ng-click="DeviceControl.reload_dev()"> 搜  索 </span>
+    </div>
+    <div class="data_array_org">
+        <div class="table_control">
+            <table class="layui-table" lay-even="" lay-skin="row" ng-class="{'un-check': !DeviceControl.config.check}">
+                <colgroup>
+                    <col width="50" ng-if="DeviceControl.config.check">
+                    <col ng-repeat="t in DeviceControl.config.columns" width="{{t.width}}">
+                </colgroup>
+
+                <thead>
+                <tr>
+                    <th style="min-width:50px;width: 50px;text-align: left" ng-if="DeviceControl.config.check">
+                        <div class="box" ng-click="DeviceControl.unSelectAll()">
+                            <label class="check">
+                                <i ng-class="{'active': DeviceControl.config.selectAll}"></i>
+                            </label>
+                        </div>
+                    </th>
+                    <th ng-repeat="t in DeviceControl.config.columns" align="{{t.align}}"
+                        ng-click="DeviceControl.orderBy(t)">
+                        {{t.title}}
+                        <label ng-show="t.order && DeviceControl.config.param.orderField == t.field" ng-if="t.order">
+                            <i class="iconfont icon-jiantou3xia paixu"
+                               ng-class="{'tran_180': t.orderType == 'asc'}"></i>
+                        </label>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in DeviceControl.rows" ng-click="DeviceControl.unSelectRow(row)"
+                    ng-class="{'sel': row.select}">
+                    <td style="min-width:50px;width: 50px" ng-if="DeviceControl.config.check">
+                        <div class="box">
+                            <label class="check">
+                                <i ng-class="{'active': row.select}"></i>
+                            </label>
+                        </div>
+                    </td>
+                    <td ng-repeat="col in row.data" align="{{col.align}}" ng-bind-html="col.value"></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="table_pager" id="device_table_pager"></div>
+
+            <!--<div class="for_btns" ng-if="DeviceControl.callback" style="text-align: right;float: right;width: 50%">-->
+                <!--<button class="layui-btn" ng-click="DeviceControl.config_btn()">确定</button>-->
+                <!--<button class="layui-btn layui-btn-primary" ng-click="DeviceControl.df_btn()">关闭</button>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+</div>

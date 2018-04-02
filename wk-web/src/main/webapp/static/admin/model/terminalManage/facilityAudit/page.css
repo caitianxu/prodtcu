@@ -1,0 +1,8 @@
+#facilityAuditForm{
+    float: left;
+    width: 100%;
+    padding: 10px 50px 10px 15px;
+}
+#facilityAudit .layui-layer-page .layui-layer-content{
+    overflow: visible;
+}

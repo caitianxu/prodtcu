@@ -1,0 +1,233 @@
+.book_list_content{
+    margin: 20px 0;
+    overflow: visible;
+    display: inline-block;
+    width: 100%;
+}
+.content_left{
+    float: left;
+    width: 190px;
+}
+.content_right{
+    float: right;
+    width: 780px;
+}
+.content_left h1{
+    float: left;
+    width: 100%;
+    background: #639e2a;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+}
+.content_left ul{
+    float: left;
+    width: 100%;
+    border: 1px #ddd solid;
+    background: #fff;
+}
+.content_left ul li{
+    float: left;
+    height: auto;
+    line-height: 42px;
+    text-align: left;
+    width: 100%;
+    border-bottom: 1px #eee solid;
+    transition: all 0.5s;
+}
+.content_left ul li:hover, .content_left ul li.active{
+    background: #f8f8f8;
+}
+.content_left ul li a{
+    display: block;
+    line-height: 42px;
+    font-size: 14px;
+}
+.left_links{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+.left_links a{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px #eee solid;
+}
+.left_links a img{
+    float: left;
+    width: 188px;
+    height: 80px;
+}
+
+.nav_bar{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.nav_bar a:hover{
+    color: #f90;
+    text-decoration: underline;
+}
+.book_list{
+    float: left;
+    width: 100%;
+}
+.book_item{
+    float: left;
+    width: 140px;
+    margin-right: 20px;
+    position: relative;
+    padding: 10px;
+    /*overflow: hidden;*/
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.book_item > h1{
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    /*white-space: nowrap;*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 5px 0 0 0;
+    height: 40px;
+}
+.order-type{
+    float: right;
+}
+.order-type li{
+    float: left;
+    font-size: 12px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+.order-type li.active, .order-type li:hover{
+    color: #639e2a;
+}
+.book_item:hover{
+    background: #dfdfdf;
+}
+.book_item .cover{
+    float: left;
+    width: 100%;
+    border: 1px #aaa solid;
+    position: relative;
+    border-radius: 10px;
+}
+.book_item .cover:hover .book-pos-deal{
+    display: block;
+}
+.book_item .cover img{
+    float: left;
+    width: 100%;
+    height: 155px;
+    border-radius: 10px;
+}
+.book_item .book_detail{
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    left: 10px;
+    top:100%;
+    background: rgba(0,0,0,0.5);
+    background: rgb(0,0,0)\9;
+    transition: all 0.2s;
+}
+.book_item:hover .book_detail{
+    top:10px;
+}
+.book_item .book_detail h1{
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 45px;
+}
+.book_item .book_detail h2{
+    color: #e9e9e9;
+    float: left;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+.book_item .book_detail h3{
+    float: left;
+    width: 100%;
+    height: 54px;
+    line-height: 18px;
+    color: #999;
+    font-size: 12px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.book_item .book_detail a{
+    float: left;
+    background: #639e2a;
+    color: #fff;
+    margin-top: 20px;
+    line-height: 20px;
+    padding: 0 10px;
+    border-radius: 3px;
+    width: 70px;
+    text-align: center;
+    margin-left: 40px;
+}
+.book_item .book_detail a:hover{
+    background: #79b63e;
+}
+.M-box{
+    float: left;
+    width: 100%;
+}
+.search_key_end{
+    float: right;
+}
+.search_key_end em{
+    color: #ff8000;
+    padding: 0 5px;
+}
+.un_msg{
+    padding: 100px 0;
+    text-align: center;
+    font-size: 14px;
+}
+.un_msg a{
+    color: blue;
+}
+.book_item:nth-child(5n) .book-pos-deal{
+    left: auto;
+    right: calc(100% + 15px);
+    right: -moz-calc(100% + 15px);
+    right: -webkit-calc(100% + 15px);
+}
+.book_item:nth-child(5n) .book-pos-deal s{
+    background:url(../img/fx-right.png) no-repeat 5px 0;
+    left: auto;
+    right: -15px;
+}
+.cat-child-list{
+background-color: #fff;
+}
+.cat-child-list a{
+    padding: 0 10px;
+    border: 1px solid #fff;
+}
+.cat-child-list a:hover{
+    background-color: #e1e1e1;
+}
+

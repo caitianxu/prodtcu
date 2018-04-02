@@ -1,0 +1,102 @@
+
+.content {
+    background: #fff;
+    padding-top: 0;
+}
+
+.comments {
+    padding:0 15px;
+}
+.comments .row{
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+}
+.comments .row.wire:before{
+    content: '';
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height:1px;
+    background:#efefef;
+
+}
+
+.comments .top {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    position: relative;
+
+}
+
+.comments .top .touxiang {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comments .top .touxiang img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.comments .top .name {
+    padding:0 10px;
+    font-weight: 200;
+    color: #aba8a8;
+}
+
+.comments .top .time {
+    font-weight: 200;
+    color: #aba8a8;
+}
+
+.comments .top .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #9c9c9c;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+.comments .top .icon span{
+    font-size: 14px;
+    color: #9c9c9c;
+    padding-left: 5px;
+}
+
+.comments p {
+    padding: 0 10px 0 30px;
+    margin: 1% 0;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.footer .del{
+    width: 100%;
+    height: 100%;
+    padding:5px 0;
+    text-align: center;
+    background: #fff;
+    color: #fff;
+}
+.footer .del a{
+    background:#5a92ff ;
+    display: inline-block;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+}

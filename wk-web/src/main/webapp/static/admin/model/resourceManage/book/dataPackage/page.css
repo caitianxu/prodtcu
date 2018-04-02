@@ -1,0 +1,13 @@
+#dataPackage{
+    float: left;
+    width: 100%;
+}
+#package_content{
+    float: left;
+    width: 100%;
+}
+#allocationPkg{
+    float: left;
+    width: 100%;
+    padding: 15px;
+}

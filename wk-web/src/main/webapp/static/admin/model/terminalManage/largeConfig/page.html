@@ -1,0 +1,267 @@
+<div id="largeConfig">
+    <div class="content_main">
+        <div class="list_bar_row">
+            <div class="bars">
+                <button class="layui-btn" ng-click="addRow()" ng-show="getBtnToken('large_config_add')">新增</button>
+                <button class="layui-btn layui-btn-link" ng-click="row_update()" ng-show="getBtnToken('large_config_update')">修改</button>
+                <button class="layui-btn layui-btn-link" ng-click="delRow()" ng-show="getBtnToken('large_config_del')">删除</button>
+            </div>
+            <div class="search_plan">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                    <span class="group_addon layui-btn" ng-click="reload()">搜索</span>
+                    <!--<button class="group_ex btn">筛选<i class="iconfont icon-jiantou3xia"></i></button>-->
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div class="form_content animated none ">
+        <div class="form_title">
+            <!--<a href="javascript:void(0)" ng-click="formClose()" class="back_link"><i class="iconfont icon-return"></i> 返回</a>-->
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn" ng-click="_form_submit(true)">保存</button>
+                <button class="layui-btn" ng-show="status" ng-click="_form_submit(false)">保存&新增</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html" id="lofj_gorm">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">配置名称:</label>
+
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" ng-model="selRow.conf_name"/>
+                    </div>
+                </div>
+                <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">使用设备:</label>-->
+                    <!--<div class="layui-input-block">-->
+                        <!--<div class="layui-unselect layui-form-select">-->
+                            <!--<div class="layui-select-title">-->
+                                <!--<input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="auditSelect"/>-->
+                                <!--<i class="layui-edge"></i>-->
+                            <!--</div>-->
+                            <!--<dl class="layui-anim layui-anim-upbit">-->
+                                <!--<ul  id="terTree"></ul>-->
+                            <!--</dl>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">LOGO:</label>
+                    <div class="layui-input-block">
+                        <div class="input-file " style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" autocomplete="off" id="prj-log1"
+                                   class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">首页背景:</label>
+
+                    <div class="layui-input-block">
+                        <div class="input-file " style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" autocomplete="off" id="prj-log2"
+                                   class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">列表背景:</label>
+
+                    <div class="layui-input-block">
+                        <div class="input-file " style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" autocomplete="off" id="prj-log3"
+                                   class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">详情背景:</label>
+
+                    <div class="layui-input-block">
+                        <div class="input-file " style="padding: 0;margin: 0;width: 100%;">
+                            <input type="file" multiple="multiple" autocomplete="off" id="prj-log4"
+                                   class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex">
+                    <div class="layui-form-item " style="width:100%;margin-right: 10px;">
+                        <label class="layui-form-label">屏保设置:</label>
+                        <div class="layui-input-block">
+                            <div class="layui-unselect layui-form-select">
+                                <div class="layui-select-title">
+                                    <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                           placeholder="请选择" ng-model="(selRow.screensaver_time||0)+'分钟'">
+                                    <i class="layui-edge"></i>
+                                </div>
+                                <dl class="layui-anim layui-anim-upbit">
+                                    <dd ng-repeat="item in ScreenList"
+                                        ng-click="selRow.screensaver_time=item.id;"
+                                        ng-class="{'layui-this':selRow.screensaver_time == item.id}">{{item.id}}分钟
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="layui-btn layui-btn-primary" ng-click="setScreen()">设置</button>
+                </div>
+
+                <!-- 动态配置行 -->
+                <div class="layui-form-item" ng-repeat="item in selRow.tabList" ng-class="{'bt':$index==selRow.tabList.length-1}">
+                    <div class="image_text_row">
+                        <div class="col-xs-2">
+                            <label class="layui-form-label">&nbsp;</label>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="col-xs-12" style="border:1px solid #cccccc;padding-top:20px">
+                                <div class="col-xs-3" >
+                                    <img style="max-height: 120px;background: #999" ng-if="item.content_icon" ng-src="{{ctxPath+item.content_icon}}">
+                                </div>
+                                <div class="col-xs-9">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label"><em>*</em>名称:</label>
+
+                                        <div class="layui-input-block">
+                                            <input type="text" class="layui-input" disabled="disabled"
+                                                   ng-model="item.content_name"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label"><em>*</em>类型:</label>
+
+                                        <div class="layui-input-block">
+                                            <input type="text" class="layui-input" disabled="disabled"
+                                                   ng-model="item.content_type_name"/>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label"><em>*</em>链接地址:</label>
+
+                                        <div class="layui-input-block">
+                                            <input type="text" class="layui-input" disabled="disabled"
+                                                   ng-model="item.content_url" placeholder="http://"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-1 hih">
+                            <div class="right hih" style="padding: 10px 0;margin-top: 15px;background: #f9f9f9;">
+                                <div style="height: 100%;padding: 0 14px;">
+                                    <label class="iconfont icon-xiugai"
+                                           ng-click="configTabindex($index,3)"></label>
+                                    <label class="iconfont icon-shangjiantou"
+                                           ng-click="configTabindex($index,1)" ng-class="{'at':$index==0}"></label>
+                                    <label class="iconfont icon-shangjiantou-copy"
+                                           ng-click="configTabindex($index,2)" ng-class="{'at':$index == selRow.tabList.length-1}"></label>
+                                    <label class="iconfont icon-x"
+                                           ng-click="configTabindex($index,0)"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="layui-form-item text-center" style="margin-bottom: 100px">
+                    <button ng-click="openForm()" class="layui-btn layui-btn-big" style="width: 240px;margin-top: 30px">添加一个菜单</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div  id="upFx_row" style="display: none;padding-top: 15px">
+        <div class="layui-form-item">
+            <div class="image_text_row">
+                <div class="col-xs-12">
+                    <div class="col-xs-12" style="padding-top:20px">
+                        <div class="layui-form-item">
+                            <div class="col-xs-6">
+                                <label class="layui-form-label"><em>*</em>名称:</label>
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" ng-model="titleTextData.content_name"/>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <label class="layui-form-label"><em>*</em>类型:</label>
+                                <div class="layui-input-block">
+                                    <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title">
+                                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value="" placeholder="请选择" ng-model="titleTextData.content_type_name"/>
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit">
+                                            <dd ng-repeat="item in configTypeSelect"  ng-click="titleTextData.content_url='';titleTextData.content_type=item.id;titleTextData.content_type_name=item.name" ng-class="{'layui-this': titleTextData.content_type_name == item.name}">
+                                                {{item.name}}
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="col-xs-12">
+                                <label class="layui-form-label"><em>*</em>图标:</label>
+                                <div class="layui-input-block">
+                                    <div class="input-file" id="pub_file"
+                                         style="padding: 0;margin: 0;width: 100%;">
+                                        <input type="file" multiple="multiple" autocomplete="off"
+                                               id="prj-log5"
+                                               class="form-control file-pretty" name="file"
+                                               data-id="file" data-ajax="true"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="col-xs-12">
+                                <label class="layui-form-label"><em>*</em>链接地址:</label>
+
+                                <div class="layui-input-block">
+                                    <input type="text" class="layui-input" placeholder="http://"
+                                           ng-disabled="titleTextData.content_type!='custom'"
+                                           ng-model="titleTextData.content_url" ng-class="{'layui-btn-disabled':titleTextData.content_type!='custom'}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item" style="text-align: center">
+                            <button class="layui-btn" ng-click="configAdd()">  确  定  </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--设置屏保-->
+    <div id="setScreen" style="display: none">
+        <div class="layui-form-item" style="margin: 50px;">
+            <label class="layui-form-label">上传图片:</label>
+            <div class="layui-input-block">
+                <div class="input-file hide-input" style="padding: 0;margin: 0;width: 100%;">
+                    <input type="file" multiple="multiple" accept="image/gif,image/jpeg,image/png,image/jpg,image/bmp" autocomplete="off"  id="prj-log6"
+                           class="form-control file-pretty" name="file" data-id="file" data-ajax="true"/>
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item" style="height:auto; display: flex;flex-wrap:wrap;width:800px;">
+            <div  ng-repeat="item in ScreenData track by $index" style="width:180px;border: none;margin: 10px; height: 150px;display:flex;" >
+                <img ng-src="{{ctxPath+item}}" style="width:150px;height: 150px;" />
+                <a href="" ng-click="del_Screen($index)"><i class="iconfont icon-x"></i></a>
+            </div>
+        </div>
+
+        <div class="row" style="text-align: center;">
+            <button class="layui-btn layui-btn-normal" ng-click="CloseScreen()">取消</button>
+            <button class="layui-btn layui-btn-normal" ng-click="submitScreen()">确定</button>
+
+        </div>
+    </div>
+    <!--设备列表-->
+    <sel-device></sel-device>
+</div>

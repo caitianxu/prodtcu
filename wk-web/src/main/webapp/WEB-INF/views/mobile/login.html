@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>用户登录</title>
+    <!-- 公共 -->
+    <#include "public_file.html" />
+    <!-- 私有js css -->
+    <link href="${ctxPath}/static/mobile/css/login.css" rel="stylesheet">
+    <script type="text/javascript" src="${ctxPath}/static/mobile/js/login.js"></script>
+
+</head>
+<body>
+<div class="app_down_top">
+    <div class="m-close-cc" onclick="close_mm()"></div>
+    <span class="sp1"></span>
+    <span class="sp2">下载APP体验<em>离线阅读！</em></span>
+    <!--<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.cjsz.read" class="sp3"></a>-->
+    <a href="/pkgApp" class="sp3"></a>
+</div>
+<div style="height: 100%;">
+    <!-- 头 -->
+    <div class="header">
+        <h3 class="header-title">登录账号</h3>
+    </div>
+
+    <!-- 中 -->
+    <div class="content" style="padding-bottom:0">
+        <div class="from-cells">
+            <div class="from-cell-row">
+                <div class="from-cell-cont">
+                    <input type="text" placeholder="请输入账号/手机号" id="member_phone">
+                </div>
+            </div>
+            <div class="from-cell-row wire">
+                <div class="from-cell-cont">
+                    <input type="password" placeholder="请输入密码" id="send_code">
+                </div>
+            </div>
+        </div>
+        <!--<p style="text-align: right"><a style="color: #5a92ff;padding-right: 5%">忘记密码?</a></p>-->
+        <div style="width: 100%;text-align: center;margin-top: 20px">
+            <a class="btn btn-primary" onclick="submit(this)">登录</a>
+        </div>
+        <#if serverName != 'sy'>
+            <p style="text-align: center;color: #ccc;font-weight: 200;margin-top: 50px;letter-spacing: 1px;">没有账号?<a href="${ctxPath}/mobile/reg" style="color: #5a92ff;padding-left: 5px;">立即注册</a></p>
+        </#if>
+
+    </div>
+</div>
+</body>
+</html>

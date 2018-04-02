@@ -1,0 +1,35 @@
+#journalClassify .cl li:hover{background:none}
+#journalClassify .cl li{
+    padding: 0;
+}
+#journalClassify #col_comTree{
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#journalClassify .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#journalClassify_org{
+    float: left;
+    width: 100%;
+    padding: 15px 15px 0;
+}
+#journalClassify_org table{
+    table-layout: fixed;
+}
+#journalClassify_org td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

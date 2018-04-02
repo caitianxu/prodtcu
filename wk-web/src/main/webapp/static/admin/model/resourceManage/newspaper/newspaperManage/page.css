@@ -1,0 +1,154 @@
+#newspaperManage .cl li:hover {
+    background: none
+}
+
+#newspaperManage .cl li {
+    padding: 0;
+}
+#newspaperManage #col_comTree {
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#newspaperManage .note-editable {
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke
+}
+
+#newspaperManage .form_html .box label {
+    color: #333;
+    padding-right: 20px;
+}
+
+#newspaperManage #temp {
+    width: 100%;
+}
+
+#newspaperManage #temp:not(:first-child) {
+    margin-left: 16.6666666%;
+}
+
+#newspaperManage #temp .input_group {
+    width: 100%;
+    border: 1px solid #DDD;
+    border-top: none;
+}
+
+#newspaperManage #temp .box {
+    padding: 0 5px;
+}
+
+#newspaperManage #temp .box:hover {
+    background: #DDD;
+    cursor: pointer;
+}
+
+#newspaperManage .image_text {
+    width: 100%;
+    height:100%;
+    float: left;
+    position: relative;
+}
+
+#newspaperManage .image_text .leftImg {
+    float: left;
+    height: 100%;
+    width: 250px;
+    cursor: pointer;
+    background-color: #dcdcdc;
+}
+
+#newspaperManage .image_text .leftImg .center {
+    height: 100%;
+    padding: 60px 95px;
+}
+
+#newspaperManage .image_text .leftImg i {
+    font-size: 60px;
+    color: #fff;
+}
+
+#newspaperManage .image_text .leftImg img {
+    width: 100%;
+    height: 100%;
+}
+
+#newspaperManage .image_text textarea {
+    width: calc(100% - 250px);
+    border-left: none;
+    border-radius: 0px;
+    height: 100%;
+}
+
+#newspaperManage .image_text .image_text_row .hih {
+    height: 100%;
+    padding: 0;
+}
+
+#newspaperManage .image_text .image_text_row {
+    width: 100%;
+    float: left;
+    height: 160px;
+    margin-bottom: 20px;
+}
+
+#newspaperManage .image_text .right label {
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+}
+
+#newspaperManage .leftImg div {
+    height: 100%;
+}
+
+#newspaperManage .leftImg span {
+    display: none !important;
+}
+#newspaperManage  td .box label,#newspaperManage  td .box i{
+    width:100%;
+}
+
+#newspaperManage .icon-x{
+    font-size: 20px;
+}
+#newspaperManage .icon-shangjiantou , .icon-shangjiantou-copy{
+    color: #3B8CFF;
+    font-size: 20px;
+}
+
+#newspaperManage .form-left {
+    float: left;
+    width: 30%;
+    padding-left: 15px;
+    padding-right: 30px;
+}
+#newspaperManage .form-right {
+    float: left;
+    width: 70%;
+}
+#newspaperManage #img_cc {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+    border: 1px #ddd solid;
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#newspaperManage .table_control td > span{
+    padding: 10px 0;
+}
+#newspaperManage .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
